@@ -42,4 +42,4 @@ local-config.php
 /content/uploads/
 *.sccsc
 *.sass-cache*
-/content/languages/*
+content/languages/*
