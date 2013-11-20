@@ -15,7 +15,7 @@ add_theme_support( 'post-thumbnails' );
 // Add support for automatic RSS feed links
 add_theme_support( 'automatic-feed-links' );
 
-/*
+/**
  * Remove unused items from Admin
  * Add as many items as you like to hide to the $restriced array
  */
@@ -30,6 +30,17 @@ global $menu;
 	}
 }
 add_action('admin_menu', 'remove_menus');
+
+/**
+ * Purge Custom Post-types from cache after update
+ */
+add_action( 'edit_post', 'w3_flush_page_custom', 10, 1 );
+
+function w3_flush_page_custom( $post_id ) {
+	if ( function_exists('w3tc_pgcache_flush' ) ):
+		w3tc_pgcache_flush();
+	endif;
+}
 
 /** 
  * Cleaner image captions
