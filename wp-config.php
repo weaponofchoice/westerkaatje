@@ -3,13 +3,15 @@
 // Load database info and local development parameters
 // ===================================================
 if ( file_exists( dirname( __FILE__ ) . '/local-config.php' ) ) {
-	define( 'WP_LOCAL_DEV', true );
 	include( dirname( __FILE__ ) . '/local-config.php' );
 } else { // Server settings
 	define( 'DB_NAME', 'YOUR_DATABASE' );
 	define( 'DB_USER', 'YOUR_DATABASE_USER' );
 	define( 'DB_PASSWORD', 'YOUR_DATABASE_PASSWORD' );
 	define( 'DB_HOST', 'localhost' ); // Probably 'localhost'
+  
+  define( 'WP_HOME' , 'http://' . $_SERVER['HTTP_HOST'] );
+  define( 'WP_SITEURL' , 'http://' . $_SERVER['HTTP_HOST'] . '/wordpress' );
 }
 
 // ================================================
@@ -49,13 +51,6 @@ define('NONCE_SALT',       ';rV7jS(Q*+eVcZm6=H.U-;%ip=Zn5$SB(je-9D*wo?bF7&-IX&04
 // ==============================================================
 $table_prefix  = 'wp_';
 
-// ==============================================================
-// Force site urls for 'easy' dbdumping
-// Don't forget to add local settings in local-config.php
-// ==============================================================
-
-define( 'WP_HOME' , 'http://' . $_SERVER['HTTP_HOST'] );
-define( 'WP_SITEURL' , 'http://' . $_SERVER['HTTP_HOST'] . '/wordpress' );
 
 // ================================
 // Language
