@@ -25,6 +25,7 @@ DS_Store
 /media/*
 !/media/index.php
 !/media/
+media/*
 
 local-config.php
 *.tmproj
@@ -43,3 +44,4 @@ local-config.php
 *.sccsc
 *.sass-cache*
 content/languages/*
+*.codekit
