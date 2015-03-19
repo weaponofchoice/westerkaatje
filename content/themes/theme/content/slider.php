@@ -23,7 +23,7 @@ echo '<section class="section section-slider">';
       // The images
       echo '<ul class="slider-images">';
         foreach( $content_images as $image ):
-          echo '<li><img src="' . $image['sizes']['medium'] . '" width="' . $image['width'] . '" height="' . $image['height'] . '"></li>';
+          echo '<li><img src="' . $image['sizes']['large'] . '" width="' . $image['width'] . '" height="' . $image['height'] . '"></li>';
         endforeach;
       echo '</ul>';
       
@@ -37,8 +37,8 @@ echo '<section class="section section-slider">';
       // The controls
       if(! $detect->isMobile() ):
         echo '<div class="slider-controls">';
-          echo '<button class="slider-prev arrow arrow-left"><i></i></button>';
-          echo '<button class="slider-next arrow arrow-right"><i></i></button>';
+          echo '<a class="slider-prev arrow arrow-left" href="javascript:;"><i></i></a>';
+          echo '<a class="slider-next arrow arrow-right" href="javascript:;"><i></i></a>';
         echo '</div>';
       endif;
       

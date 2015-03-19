@@ -51,7 +51,7 @@ $ ->
   ###
     Scroll animation
   ###
-  trigger = $('.arrow')
+  trigger = $('.arrow-scroll')
   
   trigger.css "top", hero_height - 30
   
