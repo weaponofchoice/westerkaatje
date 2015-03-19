@@ -1,14 +1,14 @@
 <?php
-// Banner fields
+// Variables
 $banner = get_sub_field( 'hero_banner' );
 
-// Content fields
 $content_logo = get_sub_field( 'hero_content_image' );
 $content_title = get_sub_field( 'hero_content_title' );
 $content_text = preg_replace( '/<p>/', '<p class="is-white">', get_sub_field( 'hero_content_text' ) );
-?>
-<section class="section section-hero pad-no">
-  <?php
+
+// Output
+echo '<section class="section section-hero pad-no">';
+  
   // Hero background image
   if( $banner ): 
     echo '<div class="section-hero-banner is-stretched-wrapper">';
@@ -37,7 +37,8 @@ $content_text = preg_replace( '/<p>/', '<p class="is-white">', get_sub_field( 'h
       
     echo '</div>';
   endif;
-  ?>
-</section>
+  
+echo '</section>';
 
-<!-- <a href="javascript:;" class="arrow arrow-scroll"><img src="<?php echo bloginfo( 'template_directory' ); ?>/img/arrow.svg"></a> -->
+// <a href="javascript:;" class="arrow arrow-scroll"><img src="<?php echo bloginfo( 'template_directory' ) . /img/arrow.svg"></a>
+?>
