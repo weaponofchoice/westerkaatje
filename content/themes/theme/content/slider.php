@@ -1,12 +1,12 @@
 <?php
 // Variables
-$header_title = get_sub_field( 'gallery_header_title' );
-$header_text = get_sub_field( 'gallery_header_text' );
+$header_title = get_sub_field( 'slider_header_title' );
+$header_text = get_sub_field( 'slider_header_text' );
 
-$content_images = get_sub_field( 'gallery_content_images' );
+$content_images = get_sub_field( 'slider_content_images' );
 
 // Output
-echo '<section class="section section-gallery">';
+echo '<section class="section section-slider">';
   
   // Gallery header
   if( $header_title || $header_text ): 
