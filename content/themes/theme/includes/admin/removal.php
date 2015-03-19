@@ -1,5 +1,5 @@
 <?php
-// Remove Comments menu item for all
+// Removes items from wp admin menu
 function remove_menu_items() {
   remove_menu_page( 'edit-comments.php' );
   remove_menu_page( 'edit.php' );
