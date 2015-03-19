@@ -1,12 +1,14 @@
 $ ->
-  gallery = $('.gallery')
-  images = $('.gallery-images')
-  bullets = $('.gallery-bullets')
-  controls = $('.gallery-controls')
-  image = $('.gallery ul.gallery-images li')
-  bullet = $('.gallery ul.gallery-bullets li')
-  next = $('.next')
-  prev = $('.prev')
+  slider = $('.section-slider')
+  images = $('.slider-images')
+  image = $('.slider-images li')
+  
+  controls = $('.slider-controls')
+  bullets = $('.slider-bullets')
+  bullet = $('.slider-bullets li')
+  
+  next = $('.slider-next')
+  prev = $('.slider-prev')
   
   # first image & bullet get first & active classes
   image.first().addClass "first-image first is-active"

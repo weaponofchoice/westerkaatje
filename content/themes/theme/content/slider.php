@@ -19,13 +19,29 @@ echo '<section class="section section-slider">';
   // Gallery content
   if( $content_images ):
     echo '<div class="section-content">';
-      echo '<ul>';
-        
+      
+      // The images
+      echo '<ul class="slider-images">';
         foreach( $content_images as $image ):
           echo '<li><img src="' . $image['sizes']['medium'] . '" width="' . $image['width'] . '" height="' . $image['height'] . '"></li>';
         endforeach;
-        
       echo '</ul>';
+      
+      // The bullets
+      echo '<ul class="slider-bullets">';
+        foreach( $content_images as $image ):
+          echo '<li><i></i></li>';
+        endforeach;
+      echo '</ul>';
+    
+      // The controls
+      if(! $detect->isMobile() ):
+        echo '<div class="slider-controls">';
+          echo '<button class="slider-prev arrow arrow-left"><i></i></button>';
+          echo '<button class="slider-next arrow arrow-right"><i></i></button>';
+        echo '</div>';
+      endif;
+      
     echo '</div>';
   endif;
   
