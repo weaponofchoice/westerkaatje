@@ -5,7 +5,7 @@ $banner = get_sub_field( 'hero_banner' );
 // Content fields
 $content_logo = get_sub_field( 'hero_content_image' );
 $content_title = get_sub_field( 'hero_content_title' );
-$content_text = get_sub_field( 'hero_content_text' );
+$content_text = preg_replace( '/<p>/', '<p class="is-white">', get_sub_field( 'hero_content_text' ) );
 ?>
 <section class="section section-hero pad-no">
   <?php
@@ -22,17 +22,17 @@ $content_text = get_sub_field( 'hero_content_text' );
       
       // Logo
       if( $content_logo ):
-        echo '<img src="' . $content_logo['sizes']['medium'] . '" width="' . $content_logo['width'] . '" height="' . $content_logo['height'] . '">';
+        echo '<img src="' . $content_logo['sizes']['medium'] . '" width="' . $content_logo['width'] . '" height="' .   $content_logo['height'] . '">';
       endif;
       
       // Title
       if( $content_title ):
-        echo '<h2>' . $content_title . '</h2>';
+        echo '<h2 class="is-white">' . $content_title . '</h2>';
       endif;
       
       // Text
       if( $content_text ):
-        echo '<p>' . $content_text . '</p>';
+        echo $content_text;
       endif;
       
     echo '</div>';
