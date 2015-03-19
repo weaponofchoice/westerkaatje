@@ -1,20 +1,43 @@
 <?php
 // Banner fields
 $banner = get_sub_field( 'hero_banner' );
-$banner_src = $banner['sizes']['large'];
 
 // Content fields
-$logo = get_sub_field( 'hero_logo' );
-$logo_src = $logo['sizes']['medium'];
+$content_logo = get_sub_field( 'hero_content_image' );
+$content_title = get_sub_field( 'hero_content_title' );
+$content_text = get_sub_field( 'hero_content_text' );
 ?>
 <section class="section section-hero pad-no">
-  <div class="section-hero-banner is-stretched-wrapper">
-    <img class="is-stretched-object" src="<?php echo $banner_src; ?>">
-  </div>
+  <?php
+  // Hero background image
+  if( $banner ): 
+    echo '<div class="section-hero-banner is-stretched-wrapper">';
+      echo '<img class="is-stretched-object" src="' . $banner['sizes']['large'] . '" width="' . $banner['width'] . '" height="' . $banner['height'] . '">';
+    echo '</div>';
+  endif;
   
-  <div class="section-hero-content">
-    <img src="<?php echo $logo_src; ?>">
-  </div>
+  // Hero content container
+  if( $content_logo || $content_title || $content_text ):
+    echo '<div class="section-hero-content">';
+      
+      // Logo
+      if( $content_logo ):
+        echo '<img src="' . $content_logo['sizes']['medium'] . '" width="' . $content_logo['width'] . '" height="' . $content_logo['height'] . '">';
+      endif;
+      
+      // Title
+      if( $content_title ):
+        echo '<h2>' . $content_title . '</h2>';
+      endif;
+      
+      // Text
+      if( $content_text ):
+        echo '<p>' . $content_text . '</p>';
+      endif;
+      
+    echo '</div>';
+  endif;
+  ?>
 </section>
 
-<a href="javascript:;" class="arrow arrow-scroll"><img src="<?php echo bloginfo( 'template_directory' ); ?>/img/arrow.svg"></a>
+<!-- <a href="javascript:;" class="arrow arrow-scroll"><img src="<?php echo bloginfo( 'template_directory' ); ?>/img/arrow.svg"></a> -->
