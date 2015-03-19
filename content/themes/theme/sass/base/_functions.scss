@@ -100,3 +100,17 @@ $modules: () !default;
 @function em-calc($values){
   @return rem-calc($values);
 }
+
+// Margin-bottom size function
+@for $b from 1 through 1000{
+  .margin-b#{$b}{
+    margin-bottom: rem-calc($b) !important;
+  }
+}
+
+// Margin-top size function
+@for $c from 1 through 1000{
+  .margin-t#{$c}{
+    margin-top: rem-calc($c) !important;
+  }
+}
