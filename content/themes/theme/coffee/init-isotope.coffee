@@ -1,5 +1,5 @@
-if $('.section-grid').length > 0
-  grid = $('.section-grid ul')
+if $('.isotope').length > 0
+  grid = $('.isotope')
   
   $('main').imagesLoaded(->
     grid.isotope {}

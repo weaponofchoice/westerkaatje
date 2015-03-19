@@ -12,8 +12,8 @@ if( have_posts() ):
           include_once( locate_template('content/hero.php') );
         elseif( get_row_layout() == 'text' ):
           include_once( locate_template('content/text.php') );
-        elseif( get_row_layout() == 'grid' ):
-          include_once( locate_template('content/grid.php') );
+        elseif( get_row_layout() == 'grid_primary' ):
+          include_once( locate_template('content/grid-pri.php') );
         elseif( get_row_layout() == 'slider' ):
           include_once( locate_template('content/slider.php') );
         endif;
