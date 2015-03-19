@@ -1,0 +1,20 @@
+body{
+  > *{
+    @include show( .5s );
+  }
+}
+
+body.is-resizing{
+  height: auto;
+  background: url('../img/logo-black.svg') center center no-repeat;
+  background-size: 200px;
+  background-attachment: fixed;
+  
+  > *{
+    @include hide( 0s );
+  }
+}
+
+body.is-mobile.is-resizing > *{
+  @include show( 0s );
+}

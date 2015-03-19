@@ -1,0 +1,13 @@
+header,
+.section{
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+@media #{$small-only}{
+  header,
+  .section{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

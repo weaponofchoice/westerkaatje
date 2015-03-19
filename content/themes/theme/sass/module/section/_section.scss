@@ -1,0 +1,14 @@
+.section{
+  height: auto;
+  overflow: hidden;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  z-index: $zIndex-section;
+  background: $white;
+}
+
+@media #{$medium-down}{
+  .section > div{
+    padding: 25px 0;
+  }
+}

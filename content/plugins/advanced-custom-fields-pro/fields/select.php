@@ -75,7 +75,7 @@ class acf_field_select extends acf_field {
 	function ajax_query() {
 		
    		// options
-   		$options = acf_parse_args( $_GET, array(
+   		$options = acf_parse_args( $_POST, array(
 			'post_id'					=>	0,
 			's'							=>	'',
 			'field_key'					=>	'',
@@ -175,27 +175,6 @@ class acf_field_select extends acf_field {
 		);
 		
 		
-		
-		// hidden input
-		if( $field['ui'] ) {
-		
-			acf_hidden_input(array(
-				'type'	=> 'hidden',
-				'id'	=> $field['id'],
-				'name'	=> $field['name'],
-				'value'	=> implode(',', $field['value'])
-			));
-			
-		} elseif( $field['multiple'] ) {
-			
-			acf_hidden_input(array(
-				'type'	=> 'hidden',
-				'name'	=> $field['name'],
-			));
-			
-		} 
-		
-		
 		// ui
 		if( $field['ui'] ) {
 		
@@ -268,6 +247,7 @@ class acf_field_select extends acf_field {
 		
 		
 		// prepende orphans
+		/*
 		if( !empty($field['value']) ) {
 			
 			foreach( $field['value'] as $v ) {
@@ -285,6 +265,30 @@ class acf_field_select extends acf_field {
 				}
 				
 			}
+			
+		}
+		*/
+		
+		
+		// hidden input
+		if( $field['ui'] ) {
+			
+			// find real value based on $choices and $field['value']
+			$real_value = array_intersect($field['value'], $choices);
+		
+			acf_hidden_input(array(
+				'type'	=> 'hidden',
+				'id'	=> $field['id'],
+				'name'	=> $field['name'],
+				'value'	=> implode(',', $real_value)
+			));
+			
+		} elseif( $field['multiple'] ) {
+			
+			acf_hidden_input(array(
+				'type'	=> 'hidden',
+				'name'	=> $field['name'],
+			));
 			
 		}
 		
@@ -358,6 +362,7 @@ class acf_field_select extends acf_field {
 	*/
 	
 	function render_field_settings( $field ) {
+		
 		
 		// encode choices (convert from array)
 		$field['choices'] = acf_encode_choices($field['choices']);

@@ -222,8 +222,14 @@ class acf_pro_options_page {
 		
 			// save data
 		    if( acf_validate_save_post(true) ) {
-		    
-				acf_save_post( "options" );
+		    	
+		    	// get post_id (allow lang modification)
+		    	$post_id = acf_get_valid_post_id('options');
+		    	
+		    	
+		    	// save
+				acf_save_post( $post_id );
+				
 				
 				// redirect
 				wp_redirect( admin_url("admin.php?page={$plugin_page}&message=1") );
@@ -310,7 +316,11 @@ class acf_pro_options_page {
 				
 				
 				// tweaks to vars
-				if( $context == 'side' ) {
+				if( $context == 'acf_after_title' ) {
+					
+					$context = 'normal';
+					
+				} elseif( $context == 'side' ) {
 				
 					$priority = 'core';
 					
@@ -354,9 +364,19 @@ class acf_pro_options_page {
 		extract( $args ); // all variables from the args argument
 		
 		
-		// classes
-		$class = 'acf-postbox ' . $field_group['style'];
-		$toggle_class = 'acf-postbox-toggle';
+		// vars
+		$o = array(
+			'id'			=> $id,
+			'key'			=> $field_group['key'],
+			'style'			=> $field_group['style'],
+			'edit_url'		=> '',
+			'edit_title'	=> __('Edit field group', 'acf'),
+			'visibility'	=> true
+		);
+		
+		
+		// vars
+		$post_id = acf_get_valid_post_id('options');
 		
 		
 		// load fields
@@ -369,31 +389,35 @@ class acf_pro_options_page {
 			?>
 			<table class="acf-table">
 				<tbody>
-					<?php acf_render_fields( 'options', $fields, 'tr', $field_group['instruction_placement'] ); ?>
+					<?php acf_render_fields( $post_id, $fields, 'tr', $field_group['instruction_placement'] ); ?>
 				</tbody>
 			</table>
 			<?php
 		
 		} else {
 		
-			acf_render_fields( 'options', $fields, 'div', $field_group['instruction_placement'] );
+			acf_render_fields( $post_id, $fields, 'div', $field_group['instruction_placement'] );
 			
 		}
 		
 		
-		// inline script
-		?>
-		<div class="acf-hidden">
-			<script type="text/javascript">
-			(function($) {
+		// edit_url
+		if( $field_group['ID'] && acf_current_user_can_admin() ) {
+			
+			$o['edit_url'] = admin_url('post.php?post=' . $field_group['ID'] . '&action=edit');
 				
-				$('#<?php echo $id; ?>').addClass('<?php echo $class; ?>').removeClass('hide-if-js');
-				$('#adv-settings label[for="<?php echo $id; ?>-hide"]').addClass('<?php echo $toggle_class; ?>');
-				
-			})(jQuery);	
-			</script>
-		</div>
-		<?php
+		}
+		
+		
+?>
+<script type="text/javascript">
+if( typeof acf !== 'undefined' ) {
+		
+	acf.postbox.render(<?php echo json_encode($o); ?>);	
+
+}
+</script>
+<?php
 		
 	}
 	

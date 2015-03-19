@@ -80,7 +80,7 @@ function acf_get_value( $post_id, $field, $db_only = false ) {
 	 	
 	} else {
 		
-		$v = get_option( "{$post_id}_{$field['name']}", false );
+		$v = get_option( "{$post_id}_{$field['name']}", null );
 	
 		if( ! is_null($v) ) {
 		
@@ -154,7 +154,6 @@ function acf_format_value( $value, $post_id, $field ) {
 	return $value;
 	
 } 
-
 
 
 /*
@@ -261,7 +260,7 @@ function acf_update_option( $option = '', $value = false, $autoload = 'no' ) {
 	    $return = update_option( $option, $value );
 	    
 	} else {
-	
+		
 		$return = add_option( $option, $value, $deprecated, $autoload );
 		
 	}

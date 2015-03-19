@@ -1,0 +1,18 @@
+@mixin chronicle{
+  font-family: 'Chronicle Text G1 A', 'Chronicle Text G1 B';
+  font-style: normal;
+  
+  &.is-bold{
+    font-weight: 700;
+  }
+}
+
+@font-face{
+  font-family: 'Archer';
+  src: url('../fonts/Archer-Semibold-Pro.otf');
+}
+
+@mixin archer{
+  font-family: 'Archer';
+  font-style: normal;
+}

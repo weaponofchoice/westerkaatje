@@ -31,18 +31,19 @@ class acf_admin_field_group {
 	function __construct() {
 		
 		// actions
-		add_action( 'admin_enqueue_scripts',							array( $this,'admin_enqueue_scripts' ) );
-		add_action( 'save_post',										array( $this,'save_post' ) );
+		add_action('current_screen',									array($this, 'current_screen'));
+		add_action('save_post',											array($this, 'save_post'));
 		
 		
 		// ajax
-		add_action( 'wp_ajax_acf/field_group/render_field_settings',	array( $this, 'ajax_render_field_settings') );
-		add_action( 'wp_ajax_acf/field_group/render_location_value',	array( $this, 'ajax_render_location_value') );
-		add_action( 'wp_ajax_acf/field_group/move_field',				array( $this, 'ajax_move_field') );
+		add_action('wp_ajax_acf/field_group/render_field_settings',		array($this, 'ajax_render_field_settings'));
+		add_action('wp_ajax_acf/field_group/render_location_value',		array($this, 'ajax_render_location_value'));
+		add_action('wp_ajax_acf/field_group/move_field',				array($this, 'ajax_move_field'));
 		
 		
 		// filters
-		add_filter( 'post_updated_messages',							array( $this, 'post_updated_messages') );
+		add_filter('post_updated_messages',								array($this, 'post_updated_messages'));
+		
 	}
 	
 	
@@ -65,15 +66,15 @@ class acf_admin_field_group {
 		$messages['acf-field-group'] = array(
 			0 => '', // Unused. Messages start at index 1.
 			1 => __('Field group updated.', 'acf'),
-			2 => __('Custom field updated.', 'acf'),
-			3 => __('Custom field deleted.', 'acf'),
+			2 => __('Field group updated.', 'acf'),
+			3 => __('Field group deleted.', 'acf'),
 			4 => __('Field group updated.', 'acf'),
 			5 => false, // field group does not support revisions
 			6 => __('Field group published.', 'acf'),
 			7 => __('Field group saved.', 'acf'),
 			8 => __('Field group submitted.', 'acf'),
 			9 => __('Field group scheduled for.', 'acf'),
-			10 => __('Field group draft updated.', 'acf'),
+			10 => __('Field group draft updated.', 'acf')
 		);
 		
 		
@@ -83,43 +84,36 @@ class acf_admin_field_group {
 	
 	
 	/*
-	*  validate_page
+	*  current_screen
 	*
-	*  This function will check if the current page is correct for this class
+	*  This function is fired when loading the admin page before HTML has been rendered.
 	*
-	*  @type	function
-	*  @date	23/06/12
-	*  @since	3.1.8
+	*  @type	action (current_screen)
+	*  @date	21/07/2014
+	*  @since	5.0.0
 	*
 	*  @param	n/a
-	*  @return	(boolean)
+	*  @return	n/a
 	*/
 	
-	function validate_page() {
+	function current_screen() {
 		
-		// global
-		global $pagenow, $typenow;
+		// validate screen
+		if( !acf_is_screen('acf-field-group') ) {
 		
-
-		// vars
-		$r = false;
-		
-		
-		// validate page
-		if( in_array( $pagenow, array('post.php', 'post-new.php') ) ) {
-			
-			// validate post type
-			if( $typenow == 'acf-field-group' ) {
-			
-				$r = true;
-				
-			}
+			return;
 			
 		}
 		
 		
-		// return
-		return $r;
+		// disable JSON to avoid conflicts between DB and JSON
+		acf_disable_local();
+		
+		
+		// actions
+		add_action('admin_enqueue_scripts',		array($this,'admin_enqueue_scripts'));
+		add_action('admin_head', 				array($this,'admin_head'));
+		
 	}
 	
 	
@@ -139,33 +133,17 @@ class acf_admin_field_group {
 	
 	function admin_enqueue_scripts() {
 		
-		// validate page
-		if( ! $this->validate_page() ) {
-		
-			return;
-			
-		}
-		
-		
 		// no autosave
-		wp_dequeue_script( 'autosave' );
+		wp_dequeue_script('autosave');
 		
 		
 		// custom scripts
-		wp_enqueue_style( 'acf-field-group' );
-		wp_enqueue_script( 'acf-field-group' );
-    
-		
-		// disable JSON to avoid conflicts between DB and JSON
-		acf_disable_local();
+		wp_enqueue_style('acf-field-group');
+		wp_enqueue_script('acf-field-group');
 		
 		
-		// actions
-		add_action( 'admin_head', array( $this,'admin_head' ) );
-		
-				
 		// 3rd party hook
-		do_action( 'acf/field_group/admin_enqueue_scripts' );
+		do_action('acf/field_group/admin_enqueue_scripts');
 		
 	}
 	
@@ -190,27 +168,30 @@ class acf_admin_field_group {
 		
 		
 		// vars
-		$l10n = apply_filters( 'acf/field_group/admin_l10n', array(
-			'move_to_trash'			=>	__("Move to trash. Are you sure?",'acf'),
-			'checked'				=>	__("checked",'acf'),
-			'no_fields'				=>	__("No toggle fields available",'acf'),
-			'title_is_required'		=>	__("Field group title is required",'acf'),
-			'copy'					=>	__("copy",'acf'),
-			'or'					=>	__("or",'acf'),
-			'fields'				=>	__("Fields",'acf'),
-			'parent_fields'			=>	__("Parent fields",'acf'),
-			'sibling_fields'		=>	__("Sibling fields",'acf'),
-			'hide_show_all'			=>	__("Hide / Show All",'acf'),
-			'move_field'			=>	__("Move Custom Field",'acf'),
-			'move_field_warning'	=>	__("This field cannot be moved until its changes have been saved",'acf'),
-			'null'					=>	__("Null",'acf'),
+		$l10n = apply_filters('acf/field_group/admin_l10n', array(
+			'move_to_trash'			=> __("Move to trash. Are you sure?",'acf'),
+			'checked'				=> __("checked",'acf'),
+			'no_fields'				=> __("No toggle fields available",'acf'),
+			'title_is_required'		=> __("Field group title is required",'acf'),
+			'copy'					=> __("copy",'acf'),
+			'or'					=> __("or",'acf'),
+			'fields'				=> __("Fields",'acf'),
+			'parent_fields'			=> __("Parent fields",'acf'),
+			'sibling_fields'		=> __("Sibling fields",'acf'),
+			'hide_show_all'			=> __("Hide / Show All",'acf'),
+			'move_field'			=> __("Move Custom Field",'acf'),
+			'move_field_warning'	=> __("This field cannot be moved until its changes have been saved",'acf'),
+			'null'					=> __("Null",'acf'),
+			'unload'				=> __('The changes you made will be lost if you navigate away from this page','acf'),
+			'field_name_start'		=> __('The string "field_" may not be used at the start of a field name','acf'),
 		));
 		
 		$o = array(
-			'post_id'				=>	$post->ID,
-			'nonce'					=>	wp_create_nonce( 'acf_nonce' ),
-			'admin_url'				=>	admin_url(),
-			'ajaxurl'				=>	admin_url( 'admin-ajax.php' )
+			'post_id'				=> $post->ID,
+			'nonce'					=> wp_create_nonce( 'acf_nonce' ),
+			'admin_url'				=> admin_url(),
+			'ajaxurl'				=> admin_url( 'admin-ajax.php' ),
+			'validation'			=> 0,
 		);
 		
 		?>
@@ -240,7 +221,7 @@ class acf_admin_field_group {
 		
 		
 		// hidden $_POST data
-		add_action( 'edit_form_after_title', array($this, 'edit_form_after_title') );
+		add_action('edit_form_after_title', array($this, 'edit_form_after_title'));
 		
 	}
 	
@@ -260,19 +241,24 @@ class acf_admin_field_group {
 	
 	function screen_settings( $current ) {
 		
+		// vars
+		$show_field_keys = acf_get_user_setting('show_field_keys', 0);
+		
+		
 		// heading
 	    $current .= '<h5>' . __("Fields",'acf') . '</h5>';
 	    
 	    
 	    // radio buttons
 	    $current .= '<div class="show-field-keys">' . __('Show Field Keys','acf') . ':';
-		$current .= '<label><input type="radio" value="1" name="show_field_keys" />' . __('Yes','acf') . '</label>';
-		$current .= '<label><input checked="checked" type="radio" value="0" name="show_field_keys" />' . __('No','acf') . '</label>';
+		$current .= '<label><input type="radio" ' . ( $show_field_keys ? 'checked="checked"' : '' ) . ' name="show_field_keys" value="1" />' . __('Yes','acf') . '</label>';
+		$current .= '<label><input type="radio" ' . ( $show_field_keys ? '' : 'checked="checked"' ) . ' name="show_field_keys" value="0" />' . __('No','acf') . '</label>';
 		$current .= '</div>';
 	    
 	    
 	    // return
 	    return $current;
+	    
 	}
 	
 	
@@ -466,6 +452,23 @@ class acf_admin_field_group {
 	
 	function mb_options() {
 		
+		// global
+		global $post;
+
+		
+		// vars
+		$field_group = acf_get_field_group( $post );
+		
+		
+		// field key (leave in for compatibility)
+		if( !acf_is_field_group_key( $field_group['key']) ) {
+			
+			$field_group['key'] = uniqid('group_');
+			
+		}
+		
+		
+		// don't use view because we need access to $this context
 		include( acf_get_path('admin/views/field-group-options.php') );
 		
 	}
@@ -486,6 +489,35 @@ class acf_admin_field_group {
 	
 	function mb_locations() {
 		
+		// global
+		global $post;
+
+		
+		// vars
+		$field_group = acf_get_field_group( $post );
+		
+		
+		// UI needs at lease 1 location rule
+		if( empty($field_group['location']) ) {
+			
+			$field_group['location'] = array(
+				
+				// group 0
+				array(
+					
+					// rule 0
+					array(
+						'param'		=>	'post_type',
+						'operator'	=>	'==',
+						'value'		=>	'post',
+					)
+				)
+				
+			);
+		}
+		
+		
+		// don't use view because we need access to $this context
 		include( acf_get_path('admin/views/field-group-locations.php') );
 		
 	}
@@ -529,8 +561,9 @@ class acf_admin_field_group {
 		
 		switch( $options['param'] ) {
 			
+			
 			/*
-			*  Basic
+			*  Post
 			*/
 			
 			case "post_type" :
@@ -541,26 +574,8 @@ class acf_admin_field_group {
 				$choices = acf_get_pretty_post_types( $choices );
 
 				break;
-			
-			
-			case "user_type" :
 				
-				global $wp_roles;
 				
-				$choices = $wp_roles->get_names();
-
-				if( is_multisite() )
-				{
-					$choices['super_admin'] = __('Super Admin');
-				}
-								
-				break;
-				
-			
-			/*
-			*  Post
-			*/
-			
 			case "post" :
 				
 				// get post types
@@ -569,7 +584,7 @@ class acf_admin_field_group {
 				
 						
 				// get posts grouped by post type
-				$groups = acf_get_posts(array(
+				$groups = acf_get_grouped_posts(array(
 					'post_type' => $post_types
 				));
 				
@@ -624,13 +639,13 @@ class acf_admin_field_group {
 			case "post_status" :
 				
 				$choices = array(
-					'publish'	=> __( 'Publish' ),
-					'pending'	=> __( 'Pending Review' ),
-					'draft'		=> __( 'Draft' ),
-					'future'	=> __( 'Future' ),
-					'private'	=> __( 'Private' ),
-					'inherit'	=> __( 'Revision' ),
-					'trash'		=> __( 'Trash' )
+					'publish'	=> __('Publish', 'acf'),
+					'pending'	=> __('Pending Review', 'acf'),
+					'draft'		=> __('Draft', 'acf'),
+					'future'	=> __('Future', 'acf'),
+					'private'	=> __('Private', 'acf'),
+					'inherit'	=> __('Revision', 'acf'),
+					'trash'		=> __('Trash', 'acf')
 				);
 								
 				break;
@@ -658,7 +673,7 @@ class acf_admin_field_group {
 				
 				
 				// get posts grouped by post type
-				$groups = acf_get_posts(array(
+				$groups = acf_get_grouped_posts(array(
 					'post_type' => 'page'
 				));
 				
@@ -696,7 +711,7 @@ class acf_admin_field_group {
 				$choices = array(
 					'front_page'	=>	__("Front Page",'acf'),
 					'posts_page'	=>	__("Posts Page",'acf'),
-					'top_level'		=>	__("Top Level Page (parent of 0)",'acf'),
+					'top_level'		=>	__("Top Level Page (no parent)",'acf'),
 					'parent'		=>	__("Parent Page (has children)",'acf'),
 					'child'			=>	__("Child Page (has parent)",'acf'),
 				);
@@ -731,6 +746,38 @@ class acf_admin_field_group {
 			/*
 			*  User
 			*/
+			
+			case "current_user" :
+				
+				// viewing
+				$choices = array(
+					'logged_in'		=> __('Logged in', 'acf'),
+					'viewing_front'	=> __('Viewing front end', 'acf'),
+					'viewing_back'	=> __('Viewing back end', 'acf')
+				);
+								
+				break;
+			
+			case "current_user_role" :
+				
+				// global
+				global $wp_roles;
+				
+				
+				// specific roles
+				$choices = $wp_roles->get_names();
+				
+				
+				// multi-site
+				if( is_multisite() ) {
+					
+					$choices = array_merge(array(
+						'super_admin' => __('Super Admin', 'acf')
+					), $choices);
+					
+				}
+				
+				break;
 			
 			case "user_role" :
 				
@@ -978,7 +1025,7 @@ class acf_admin_field_group {
 			$v2 = '<a href="' . admin_url("post.php?post={$field_group['ID']}&action=edit") . '" target="_blank">' . $field_group['title'] . '</a>';
 			
 			echo '<p><strong>' . __('Move Complete.', 'acf') . '</strong></p>';
-			echo  sprintf( __('The %s field can now be found in the %s field group', 'acf'), $v1, $v2 ). '</p>';
+			echo '<p>' . sprintf( __('The %s field can now be found in the %s field group', 'acf'), $v1, $v2 ). '</p>';
 			
 			echo '<a href="#" class="acf-button blue acf-close-popup">' . __("Close Window",'acf') . '</a>';
 			

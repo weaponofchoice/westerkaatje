@@ -116,9 +116,10 @@ class acf_field_checkbox extends acf_field {
 					
 				}
 				
-				if( isset($field['disabled']) && in_array($value, $field['disabled']) ) {
 				
-					$atts['disabled'] = 'true';
+				if( isset($field['disabled']) && acf_in_array($value, $field['disabled']) ) {
+				
+					$atts['disabled'] = 'disabled';
 					
 				}
 				
@@ -160,6 +161,7 @@ class acf_field_checkbox extends acf_field {
 		
 		// encode choices (convert from array)
 		$field['choices'] = acf_encode_choices($field['choices']);
+		$field['default_value'] = acf_encode_choices($field['default_value']);
 				
 		
 		// choices
@@ -216,6 +218,7 @@ class acf_field_checkbox extends acf_field {
 		
 		// decode choices (convert to array)
 		$field['choices'] = acf_decode_choices($field['choices']);
+		$field['default_value'] = acf_decode_choices($field['default_value']);
 		
 		
 		// return

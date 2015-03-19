@@ -1,0 +1,25 @@
+.section-grid{
+  ul{
+    width: 100%;
+    
+    li{
+      width: 50%;
+      float: left;
+      
+      img{
+        min-width: 100%;
+        display: block;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1400px){
+  .section-grid{
+    ul{
+      li{
+        width: 25%;
+      }
+    }
+  }
+}

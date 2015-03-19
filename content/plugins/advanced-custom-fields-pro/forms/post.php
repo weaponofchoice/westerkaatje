@@ -39,6 +39,7 @@ class acf_form_post {
 		
 		
 		// save
+		add_filter('wp_insert_post_empty_content',		array($this, 'wp_insert_post_empty_content'), 10, 2);
 		add_action('save_post', 						array($this, 'save_post'), 10, 1);
 		
 		
@@ -287,9 +288,15 @@ class acf_form_post {
 		extract( $args ); // all variables from the args argument
 		
 		
-		// classes
-		$class = 'acf-postbox ' . $field_group['style'];
-		$toggle_class = 'acf-postbox-toggle';
+		// vars
+		$o = array(
+			'id'			=> $id,
+			'key'			=> $field_group['key'],
+			'style'			=> $field_group['style'],
+			'edit_url'		=> '',
+			'edit_title'	=> __('Edit field group', 'acf'),
+			'visibility'	=> $visibility
+		);
 		
 		
 		// render fields, or render a replace-me div
@@ -316,31 +323,30 @@ class acf_form_post {
 				
 			}
 			
-			
 		} else {
-			
-			// update classes
-			$class .= ' acf-hidden';
-			$toggle_class .= ' acf-hidden';
 			
 			echo '<div class="acf-replace-with-fields"><div class="acf-loading"></div></div>';
 			
 		}
 		
 		
-		// inline script
-		echo '<div class="acf-hidden">';
-			?>
-			<script type="text/javascript">
-			(function($) {
+		// edit_url
+		if( $field_group['ID'] && acf_current_user_can_admin() ) {
+			
+			$o['edit_url'] = admin_url('post.php?post=' . $field_group['ID'] . '&action=edit');
 				
-				$('#<?php echo $id; ?>').addClass('<?php echo $class; ?>').removeClass('hide-if-js');
-				$('#adv-settings label[for="<?php echo $id; ?>-hide"]').addClass('<?php echo $toggle_class; ?>');
-				
-			})(jQuery);	
-			</script>
-			<?php
-		echo '</div>';
+		}
+		
+		
+?>
+<script type="text/javascript">
+if( typeof acf !== 'undefined' ) {
+		
+	acf.postbox.render(<?php echo json_encode($o); ?>);	
+
+}
+</script>
+<?php
 		
 	}
 	
@@ -464,6 +470,34 @@ class acf_form_post {
 		// return
 		wp_send_json_success( $r );
 		
+	}
+	
+	
+	/*
+	*  wp_insert_post_empty_content
+	*
+	*  This function will allow WP to insert a new post without title / content if ACF data exists
+	*
+	*  @type	function
+	*  @date	16/07/2014
+	*  @since	5.0.1
+	*
+	*  @param	$maybe_empty (bool) whether the post should be considered "empty"
+	*  @param	$postarr (array) Array of post data
+	*  @return	$maybe_empty
+	*/
+	
+	function wp_insert_post_empty_content( $maybe_empty, $postarr ) {
+		
+		if( $maybe_empty && !empty($_POST['_acfchanged']) ) {
+			
+			$maybe_empty = false;
+			
+		}
+
+		
+		// return
+		return $maybe_empty;
 	}
 	
 	

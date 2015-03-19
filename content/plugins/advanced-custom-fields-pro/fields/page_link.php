@@ -55,36 +55,28 @@ class acf_field_page_link extends acf_field {
 	
 	
 	/*
-	*  query_posts
+	*  get_choices
 	*
-	*  description
+	*  This function will return an array of data formatted for use in a select2 AJAX response
 	*
 	*  @type	function
-	*  @date	24/10/13
-	*  @since	5.0.0
+	*  @date	15/10/2014
+	*  @since	5.0.9
 	*
-	*  @param	$post_id (int)
-	*  @return	$post_id (int)
+	*  @param	$options (array)
+	*  @return	(array)
 	*/
 	
-	function ajax_query() {
+	function get_choices( $options = array() ) {
 		
-   		// options
-   		$options = acf_parse_args( $_GET, array(
+		// defaults
+   		$options = acf_parse_args($options, array(
 			'post_id'		=> 0,
 			's'				=> '',
 			'lang'			=> false,
 			'field_key'		=> '',
-			'nonce'			=> '',
+			'paged'			=> 1
 		));
-		
-		
-		// validate
-		if( ! wp_verify_nonce($options['nonce'], 'acf_nonce') ) {
-		
-			die();
-			
-		}
 		
 		
    		// vars
@@ -92,12 +84,17 @@ class acf_field_page_link extends acf_field {
    		$args = array();
    		
 		
+		// paged
+   		$args['posts_per_page'] = 20;
+   		$args['paged'] = $options['paged'];
+   		
+   		
 		// load field
 		$field = acf_get_field( $options['field_key'] );
 		
 		if( !$field ) {
 		
-			die();
+			return false;
 			
 		}
 		
@@ -121,7 +118,6 @@ class acf_field_page_link extends acf_field {
 			$args['post_type'] = acf_get_post_types();
 			
 		}
-		
 		
 		// create tax queries
 		if( !empty($field['taxonomy']) ) {
@@ -162,35 +158,63 @@ class acf_field_page_link extends acf_field {
 		
 		
 		// add archives to $r
-		$archives = array();
-		$archives[] = array(
-			'id'	=> home_url(),
-			'text'	=> home_url()
-		);
-		
-		foreach( $args['post_type'] as $post_type ) {
+		if( $args['paged'] == 1 ) {
 			
-			$archive_link = get_post_type_archive_link( $post_type );
+			$archives = array();
+			$archives[] = array(
+				'id'	=> home_url(),
+				'text'	=> home_url()
+			);
 			
-			if( $archive_link ) {
+			foreach( $args['post_type'] as $post_type ) {
+				
+				$archive_link = get_post_type_archive_link( $post_type );
+				
+				if( $archive_link ) {
+				
+					$archives[] = array(
+						'id'	=> $archive_link,
+						'text'	=> $archive_link
+					);
+					
+				}
+				
+			}
 			
-				$archives[] = array(
-					'id'	=> $archive_link,
-					'text'	=> $archive_link
+			
+			// search
+			if( !empty($args['s']) ) {
+				
+				foreach( array_keys($archives) as $i ) {
+					
+					if( strpos( $archives[$i]['text'], $args['s'] ) === false ) {
+						
+						unset($archives[$i]);
+						
+					}
+					
+				}
+				
+				$archives = array_values($archives);
+				
+			}
+			
+			
+			if( !empty($archives) ) {
+				
+				$r[] = array(
+					'text'		=> __('Archives', 'acf'),
+					'children'	=> $archives
 				);
 				
 			}
 			
 		}
 		
-		$r[] = array(
-			'text'		=> __('Archives', 'acf'),
-			'children'	=> $archives
-		);
 		
 		
 		// get posts grouped by post type
-		$groups = acf_get_posts( $args );
+		$groups = acf_get_grouped_posts( $args );
 		
 		if( !empty($groups) ) {
 			
@@ -243,8 +267,49 @@ class acf_field_page_link extends acf_field {
 		}
 				
 		
+		// return
+		return $r;
+			
+	}
+	
+	
+	/*
+	*  ajax_query
+	*
+	*  description
+	*
+	*  @type	function
+	*  @date	24/10/13
+	*  @since	5.0.0
+	*
+	*  @param	$post_id (int)
+	*  @return	$post_id (int)
+	*/
+	
+	function ajax_query() {
+		
+		// validate
+		if( empty($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'], 'acf_nonce') ) {
+		
+			die();
+			
+		}
+		
+		
+		// get choices
+		$choices = $this->get_choices( $_POST );
+		
+		
+		// validate
+		if( !$choices ) {
+			
+			die();
+			
+		}
+		
+		
 		// return JSON
-		echo json_encode( $r );
+		echo json_encode( $choices );
 		die();
 			
 	}
@@ -320,38 +385,62 @@ class acf_field_page_link extends acf_field {
 		
 		
 		// get selected post ID's
-		$post_ids = array();
+		$post__in = array();
 		
-		foreach( $value as $v ) {
+		foreach( array_keys($value) as $k ) {
 			
-			if( is_numeric($v) ) {
+			if( is_numeric($value[ $k ]) ) {
 				
-				$post_ids[] = intval($v);
+				// convert to int
+				$value[ $k ] = intval($value[ $k ]);
+				
+				
+				// append to $post__in
+				$post__in[] = $value[ $k ];
 				
 			}
 			
 		}
 		
 		
-		// load posts in 1 query to save multiple DB calls from following code
-		if( count($post_ids) > 1 ) {
+		// bail early if no posts
+		if( empty($post__in) ) {
 			
-			$posts = get_posts(array(
-				'posts_per_page'	=> -1,
-				'post_type'			=> acf_get_post_types(),
-				'post_status'		=> 'any',
-				'post__in'			=> $post_ids,
-			));
+			return $value;
 			
 		}
 		
 		
-		// upate value to include $post
-		foreach( array_keys($value) as $i ) {
+		// get posts
+		$posts = acf_get_posts(array(
+			'post__in' => $post__in,
+		));
+		
+		
+		// override value with post
+		$return = array();
+		
+		
+		// append to $return
+		foreach( $value as $k => $v ) {
 			
-			if( is_numeric($value[ $i ]) ) {
+			if( is_numeric($v) ) {
 				
-				$value[ $i ] = get_post( $value[ $i ] );
+				// find matching $post
+				foreach( $posts as $post ) {
+					
+					if( $post->ID == $v ) {
+						
+						$return[] = $post;
+						break;
+						
+					}
+					
+				}
+				
+			} else {
+				
+				$return[] = $v;
 				
 			}
 			
@@ -359,7 +448,8 @@ class acf_field_page_link extends acf_field {
 		
 		
 		// return
-		return $value;
+		return $return;
+		
 	}
 	
 	
@@ -463,7 +553,7 @@ class acf_field_page_link extends acf_field {
 			'multiple'		=> 1,
 			'ui'			=> 1,
 			'allow_null'	=> 1,
-			'placeholder'	=> __("No taxonomy filter",'acf'),
+			'placeholder'	=> __("All taxonomies",'acf'),
 		));
 		
 		

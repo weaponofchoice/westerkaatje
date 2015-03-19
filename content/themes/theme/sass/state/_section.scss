@@ -1,0 +1,39 @@
+@mixin section-padding{
+  &.pad-no{
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  &.pad-no-top{
+    padding-top: 0;
+  }
+  
+  &.pad-no-bottom{
+    padding-bottom: 0;
+  }
+  
+  &.pad-no-left{
+    padding-left: 0;
+  }
+  
+  &.pad-no-right{
+    padding-right: 0;
+  }
+  
+  &.pad-extra-top{
+    padding-top: 120px;
+  }
+  
+  &.pad-extra-bottom{
+    padding-bottom: 120px;
+  }
+}
+
+.section,
+.section-heading,
+.section-content,
+.section-footer{
+  @include section-padding;
+}

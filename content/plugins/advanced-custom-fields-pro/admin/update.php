@@ -128,7 +128,7 @@ class acf_update {
 		
 		
 		// update admin page
-		$page = add_submenu_page('edit.php?post_type=acf-field-group', __('Upgrade','acf'), __('Upgrade','acf'), 'manage_options','acf-upgrade', array($this,'html') );
+		$page = add_submenu_page('edit.php?post_type=acf-field-group', __('Upgrade','acf'), __('Upgrade','acf'), acf_get_setting('capability'),'acf-upgrade', array($this,'html') );
 		
 		
 		// vars
@@ -164,7 +164,7 @@ class acf_update {
 		
 		
 		// actions
-		add_action( 'admin_notices', array( $this, 'admin_notices') );
+		add_action( 'admin_notices', array( $this, 'admin_notices'), 1 );
 		
 		
 		

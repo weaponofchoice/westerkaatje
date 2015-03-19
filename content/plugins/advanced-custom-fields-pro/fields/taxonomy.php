@@ -57,35 +57,26 @@ class acf_field_taxonomy extends acf_field {
 	
 	
 	/*
-	*  query_posts
+	*  get_choices
 	*
-	*  description
+	*  This function will return an array of data formatted for use in a select2 AJAX response
 	*
 	*  @type	function
-	*  @date	24/10/13
-	*  @since	5.0.0
+	*  @date	15/10/2014
+	*  @since	5.0.9
 	*
-	*  @param	$post_id (int)
-	*  @return	$post_id (int)
+	*  @param	$options (array)
+	*  @return	(array)
 	*/
 	
-	function ajax_query() {
+	function get_choices( $options = array() ) {
 		
-   		// options
-   		$options = acf_parse_args( $_GET, array(
+   		// defaults
+   		$options = acf_parse_args($options, array(
 			'post_id'		=> 0,
 			's'				=> '',
 			'field_key'		=> '',
-			'nonce'			=> '',
 		));
-		
-		
-		// validate
-		if( ! wp_verify_nonce($options['nonce'], 'acf_nonce') ) {
-		
-			die();
-			
-		}
 		
 		
 		// vars
@@ -98,7 +89,7 @@ class acf_field_taxonomy extends acf_field {
 		
 		if( !$field ) {
 		
-			die();
+			return false;
 			
 		}
 		
@@ -146,8 +137,50 @@ class acf_field_taxonomy extends acf_field {
 		}
 		
 		
+		// return
+		return $r;
+			
+	}
+	
+	
+	/*
+	*  ajax_query
+	*
+	*  description
+	*
+	*  @type	function
+	*  @date	24/10/13
+	*  @since	5.0.0
+	*
+	*  @param	$post_id (int)
+	*  @return	$post_id (int)
+	*/
+	
+	function ajax_query() {
+		
+		
+		// validate
+		if( empty($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'], 'acf_nonce') ) {
+		
+			die();
+			
+		}
+		
+		
+		// get choices
+		$choices = $this->get_choices( $_POST );
+		
+		
+		// validate
+		if( !$choices ) {
+			
+			die();
+			
+		}
+		
+		
 		// return JSON
-		echo json_encode( $r );
+		echo json_encode( $choices );
 		die();
 			
 	}
@@ -250,6 +283,10 @@ class acf_field_taxonomy extends acf_field {
 		}
 		
 		
+		// filter out null values
+		$value = array_filter($value);
+		
+		
 		// return
 		return $value;
 	}
@@ -273,19 +310,41 @@ class acf_field_taxonomy extends acf_field {
 	
 	function load_value( $value, $post_id, $field ) {
 		
+		// get valid terms
+		$value = acf_get_valid_terms($value, $field['taxonomy']);
+		
+		
+		// load/save
 		if( $field['load_save_terms'] ) {
 			
-			$value = array();
-			
-			$terms = get_the_terms( $post_id, $field['taxonomy'] );
-			
-			if( !empty($terms) ) {
+			// bail early if no value
+			if( empty($value) ) {
 				
-				foreach( $terms as $term ) {
-					
-					$value[] = $term->term_id;
-					
-				}
+				return $value;
+				
+			}
+			
+			
+			// get current ID's
+			$term_ids = wp_get_object_terms($post_id, $field['taxonomy'], array('fields' => 'ids', 'orderby' => 'none'));
+			
+			
+			// case
+			if( empty($term_ids) ) {
+				
+				// 1. no terms for this post
+				return null;
+				
+			} elseif( is_array($value) ) {
+				
+				// 2. remove metadata terms which are no longer for this post
+				$value = array_map('intval', $value);
+				$value = array_intersect( $value, $term_ids );
+				
+			} elseif( !in_array($value, $term_ids)) {
+				
+				// 3. term is no longer for this post
+				return null;
 				
 			}
 			
@@ -326,6 +385,10 @@ class acf_field_taxonomy extends acf_field {
 		// load_save_terms
 		if( $field['load_save_terms'] ) {
 			
+			// vars
+			$taxonomy = $field['taxonomy'];
+			
+			
 			// force value to array
 			$term_ids = acf_force_type_array( $value );
 			
@@ -334,14 +397,76 @@ class acf_field_taxonomy extends acf_field {
 			$term_ids = array_map('intval', $term_ids);
 			
 			
-			// save term relationships
-			wp_set_object_terms( $post_id, $term_ids, $field['taxonomy'], false );
+			// bypass $this->set_terms if called directly from update_field
+			if( !did_action('acf/save_post') ) {
+				
+				wp_set_object_terms( $post_id, $term_ids, $taxonomy, false );
+				
+				return $value;
+				
+			}
+			
+			
+			// initialize
+			if( empty($this->set_terms) ) {
+				
+				// create holder
+				$this->set_terms = array();
+				
+				
+				// add action
+				add_action('acf/save_post', array($this, 'set_terms'), 15, 1);
+				
+			}
+			
+			
+			// append
+			if( empty($this->set_terms[ $taxonomy ]) ) {
+				
+				$this->set_terms[ $taxonomy ] = array();
+				
+			}
+			
+			$this->set_terms[ $taxonomy ] = array_merge($this->set_terms[ $taxonomy ], $term_ids);
 			
 		}
 		
 		
 		// return
 		return $value;
+		
+	}
+	
+	
+	/*
+	*  set_terms
+	*
+	*  description
+	*
+	*  @type	function
+	*  @date	26/11/2014
+	*  @since	5.0.9
+	*
+	*  @param	$post_id (int)
+	*  @return	$post_id (int)
+	*/
+	
+	function set_terms( $post_id ) {
+		
+		// bail ealry if no terms
+		if( empty($this->set_terms) ) {
+			
+			return;
+			
+		}
+		
+		
+		// loop over terms
+		foreach( $this->set_terms as $taxonomy => $term_ids ){
+			
+			wp_set_object_terms( $post_id, $term_ids, $taxonomy, false );
+			
+		}
 		
 	}
 	
@@ -384,7 +509,7 @@ class acf_field_taxonomy extends acf_field {
 		if( $field['return_format'] == 'object' ) {
 			
 			// get posts
-			$value = $this->get_terms( $value );
+			$value = $this->get_terms( $value, $field["taxonomy"] );
 		
 		}
 		
@@ -415,18 +540,14 @@ class acf_field_taxonomy extends acf_field {
 	*/
 	
 	function render_field( $field ) {
-	
-		// format value
-		if( !empty($field['value']) ) {
-			
-			// force value to array
-			$field['value'] = acf_force_type_array( $field['value'] );
-			
-			
-			// convert values to int
-			$field['value'] = array_map('intval', $field['value']);
-			
-		}
+		
+		
+		// force value to array
+		$field['value'] = acf_force_type_array( $field['value'] );
+		
+		
+		// convert values to int
+		$field['value'] = array_map('intval', $field['value']);
 		
 		?>
 <div class="acf-taxonomy-field" data-load_save="<?php echo $field['load_save_terms']; ?>">

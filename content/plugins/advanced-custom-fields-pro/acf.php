@@ -2,16 +2,14 @@
 /*
 Plugin Name: Advanced Custom Fields Pro
 Plugin URI: http://www.advancedcustomfields.com/
-Description: Fully customise WordPress edit screens with powerful fields. Boasting a professional interface and a powerful API, it’s a must have for any web developer working with WordPress. Field types include: Wysiwyg, text, textarea, image, file, select, checkbox, page link, post object, date picker, color picker, repeater, flexible content, gallery and more!
-Version: 5.0.0
+Description: Customise WordPress with powerful, professional and intuitive fields
+Version: 5.2.1
 Author: elliot condon
 Author URI: http://www.elliotcondon.com/
 Copyright: Elliot Condon
 Text Domain: acf
 Domain Path: /lang
 */
-
-// Current with acf v4 as of 27th Feb 1dde13a0bb8af763ef086f2ca0be4553ac955346
 
 if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -62,21 +60,24 @@ class acf {
 		$this->settings = array(
 			
 			// basic
-			'name'			=> __('Advanced Custom Fields', 'acf'),
-			'version'		=> '5.0.0',
+			'name'				=> __('Advanced Custom Fields', 'acf'),
+			'version'			=> '5.2.1',
 						
 			// urls
-			'basename'		=> plugin_basename( __FILE__ ),
-			'path'			=> plugin_dir_path( __FILE__ ),
-			'dir'			=> plugin_dir_url( __FILE__ ),
+			'basename'			=> plugin_basename( __FILE__ ),
+			'path'				=> plugin_dir_path( __FILE__ ),
+			'dir'				=> plugin_dir_url( __FILE__ ),
 			
 			// options
-			'show_admin'	=> true,
-			'stripslashes'	=> true,
-			'local'			=> true,
-			'json'			=> true,
-			'save_json'		=> '',
-			'load_json'		=> array()
+			'show_admin'		=> true,
+			'stripslashes'		=> false,
+			'local'				=> true,
+			'json'				=> true,
+			'save_json'			=> '',
+			'load_json'			=> array(),
+			'default_language'	=> '',
+			'current_language'	=> '',
+			'capability'		=> 'manage_options'
 		);
 		
 		
@@ -96,11 +97,13 @@ class acf {
 		
 		
 		// core
+		acf_include('core/ajax.php');
 		acf_include('core/field.php');
 		acf_include('core/input.php');
 		acf_include('core/json.php');
 		acf_include('core/local.php');
 		acf_include('core/location.php');
+		acf_include('core/media.php');
 		acf_include('core/revisions.php');
 		acf_include('core/compatibility.php');
 		acf_include('core/third_party.php');
@@ -125,7 +128,6 @@ class acf {
 			acf_include('admin/settings-export.php');
 			//acf_include('admin/settings-addons.php');
 			acf_include('admin/settings-info.php');
-			
 		}
 		
 		
@@ -134,6 +136,7 @@ class acf {
 		acf_include('fields/textarea.php');
 		acf_include('fields/number.php');
 		acf_include('fields/email.php');
+		acf_include('fields/url.php');
 		acf_include('fields/password.php');
 		acf_include('fields/wysiwyg.php');
 		acf_include('fields/oembed.php');
@@ -162,6 +165,9 @@ class acf {
 		// actions
 		add_action('init',			array($this, 'wp_init'), 5);
 		add_filter('posts_where',	array($this, 'wp_posts_where'), 10, 2 );
+		//add_filter('posts_orderby',	array($this, 'wp_posts_orderby'), 10, 2 );
+		//add_filter('posts_groupby',	array($this, 'wp_posts_groupby'), 10, 2 );
+		//add_filter('posts_request',	array($this, 'posts_request'), 10, 1 );
 		
 	}
 	
@@ -235,10 +241,14 @@ class acf {
 		$this->complete();
 		
 		
+		// vars
+		$cap = acf_get_setting('capability');
+		
+		
 		// Create post type 'acf-field-group'
 		register_post_type( 'acf-field-group', array(
 			'labels'			=> array(
-			    'name'					=> __( 'Field&nbsp;Groups', 'acf' ),
+			    'name'					=> __( 'Field Groups', 'acf' ),
 				'singular_name'			=> __( 'Field Group', 'acf' ),
 			    'add_new'				=> __( 'Add New' , 'acf' ),
 			    'add_new_item'			=> __( 'Add New Field Group' , 'acf' ),
@@ -252,11 +262,17 @@ class acf {
 			'public'			=> false,
 			'show_ui'			=> true,
 			'_builtin'			=> false,
-			'capability_type'	=> 'page',
+			'capability_type'	=> 'post',
+			'capabilities'		=> array(
+				'edit_post'			=> $cap,
+				'delete_post'		=> $cap,
+				'edit_posts'		=> $cap,
+				'delete_posts'		=> $cap,
+			),
 			'hierarchical'		=> true,
 			'rewrite'			=> false,
 			'query_var'			=> false,
-			'supports' 			=> array( 'title' ),
+			'supports' 			=> array('title'),
 			'show_in_menu'		=> false,
 		));
 		
@@ -278,18 +294,23 @@ class acf {
 			'public'			=> false,
 			'show_ui'			=> false,
 			'_builtin'			=> false,
-			'capability_type'	=> 'page',
+			'capability_type'	=> 'post',
+			'capabilities'		=> array(
+				'edit_post'			=> $cap,
+				'delete_post'		=> $cap,
+				'edit_posts'		=> $cap,
+				'delete_posts'		=> $cap,
+			),
 			'hierarchical'		=> true,
 			'rewrite'			=> false,
 			'query_var'			=> false,
-			'supports' 			=> array( 'title' ),
+			'supports' 			=> array('title'),
 			'show_in_menu'		=> false,
 		));
 		
 		
 		// min
-		//$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-		$min = '';
+		$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 		
 		
 		// register scripts
@@ -297,20 +318,20 @@ class acf {
 			
 			array(
 				'handle'	=> 'select2',
-				'src'		=> acf_get_dir( "inc/select2/select2{$min}.js" ),
-				'deps'		=> array('jquery'),
+				'src'		=> acf_get_dir( "assets/inc/select2/select2{$min}.js" ),
+				'deps'		=> false
 			),
 			
 			array(
 				'handle'	=> 'acf-input',
-				'src'		=> acf_get_dir( "js/input{$min}.js" ),
-				'deps'		=> array('jquery', 'jquery-ui-core', 'jquery-ui-datepicker', 'underscore', 'select2'),
+				'src'		=> acf_get_dir( "assets/js/acf-input{$min}.js" ),
+				'deps'		=> array('jquery', 'jquery-ui-core', 'jquery-ui-sortable', 'jquery-ui-resizable', 'jquery-ui-datepicker', 'wp-color-picker', 'select2')
 			),
 			
 			array(
 				'handle'	=> 'acf-field-group',
-				'src'		=> acf_get_dir( "js/field-group{$min}.js"),
-				'deps'		=> array('acf-input'),
+				'src'		=> acf_get_dir( "assets/js/acf-field-group{$min}.js"),
+				'deps'		=> array('acf-input')
 			)
 			
 		);
@@ -327,32 +348,32 @@ class acf {
 			
 			array(
 				'handle'	=> 'select2',
-				'src'		=> acf_get_dir( 'inc/select2/select2.css' ),
-				'deps'		=> array(),
+				'src'		=> acf_get_dir('assets/inc/select2/select2.css'),
+				'deps'		=> false
 			),
 			
 			array(
 				'handle'	=> 'acf-datepicker',
-				'src'		=> acf_get_dir( 'inc/datepicker/jquery-ui-1.10.4.custom.min.css' ),
-				'deps'		=> array(),
+				'src'		=> acf_get_dir('assets/inc/datepicker/jquery-ui-1.10.4.custom.min.css'),
+				'deps'		=> false
 			),
 			
 			array(
 				'handle'	=> 'acf-global',
-				'src'		=> acf_get_dir( 'css/global.css' ),
-				'deps'		=> array(),
-			),
-			
-			array(
-				'handle'	=> 'acf-field-group',
-				'src'		=> acf_get_dir( 'css/field-group.css' ),
-				'deps'		=> array(),
+				'src'		=> acf_get_dir('assets/css/acf-global.css'),
+				'deps'		=> false
 			),
 			
 			array(
 				'handle'	=> 'acf-input',
-				'src'		=> acf_get_dir( 'css/input.css' ),
-				'deps'		=> array('acf-datepicker', 'select2'),
+				'src'		=> acf_get_dir('assets/css/acf-input.css'),
+				'deps'		=> array('acf-global', 'wp-color-picker', 'select2', 'acf-datepicker')
+			),
+			
+			array(
+				'handle'	=> 'acf-field-group',
+				'src'		=> acf_get_dir('assets/css/acf-field-group.css'),
+				'deps'		=> array('acf-input')
 			)
 			
 		);		
@@ -399,13 +420,6 @@ class acf {
 	    
 			$where .= $wpdb->prepare(" AND {$wpdb->posts}.post_excerpt = %s", $field_name );
 			
-			// acf_post_id
-		    if( $post_id = $wp_query->get('acf_post_id') ) {
-		    
-				$where .= $wpdb->prepare(" AND {$wpdb->postmeta}.post_id = %d", $post_id );
-				
-			}
-			
 	    }
 	    
 	    
@@ -423,46 +437,11 @@ class acf {
 	
 	
 	/*
-	*  debug SQL
-	*
-	*  description
-	*
-	*  @type	function
-	*  @date	27/02/2014
-	*  @since	5.0.0
-	*
-	*  @param	$post_id (int)
-	*  @return	$post_id (int)
-	*/
-	
-	function wp_posts_join( $join, $wp_query ) {
-		
-		/*
-// acf_field_name
-		if( $post_id = $wp_query->get('acf_post_id') )
-		{
-			$join = str_replace('.ID', '.post_name', $join);
-			$join = str_replace('.post_id', '.meta_value', $join);
-	   }
-*/
-	   
-	   return $join;
-	    
-	    
-	}
-	
-	
-	function posts_request( $thing ) {
-		/*
-
-		echo '<pre>';
-			print_r($thing );
-		echo '</pre>';
-		die;
-*/
+function posts_request( $thing ) {
 		
 		return $thing;
 	}
+*/
 	
 }
 
