@@ -14,6 +14,8 @@ if( have_posts() ):
           include_once( locate_template('content/text.php') );
         elseif( get_row_layout() == 'grid_primary' ):
           include_once( locate_template('content/grid-pri.php') );
+        elseif( get_row_layout() == 'grid_secondary' ):
+          include_once( locate_template('content/grid-sec.php') );
         elseif( get_row_layout() == 'slider' ):
           include_once( locate_template('content/slider.php') );
         endif;
