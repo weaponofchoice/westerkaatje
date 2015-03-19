@@ -1,8 +1,24 @@
 <?php
-$images = get_sub_field( 'grid_images' );
+// Variables
+$header_title = get_sub_field( 'grid_pri_header_title' );
+$header_text = get_sub_field( 'grid_pri_header_text' );
 
-if( $images ):
-  echo '<section class="section section-grid pad-no pad-extra-bottom">';
+$images = get_sub_field( 'grid_pri_images' );
+
+// Output
+echo '<section class="section section-grid">';
+  
+  // Grid header
+  if( $header_title || $header_text ): 
+    echo '<div class="section-header">';
+      echo '<h2>' . $content_title . '</h2>';
+      echo $header_text;
+    echo '</div>';
+  endif;
+  
+  // Grid content
+  if( $images ):
+    echo '<section class="section section-grid pad-no pad-extra-bottom">';
   
     echo '<ul>';
       foreach( $images as $image ):
@@ -10,6 +26,8 @@ if( $images ):
       endforeach;
     echo '</ul>';
     
-  echo '</section>';
+  
 endif;
+
+echo '</section>';
 ?>
