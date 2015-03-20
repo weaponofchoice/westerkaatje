@@ -6,9 +6,3 @@
   z-index: $zIndex-section;
   background: $white;
 }
-
-@media #{$medium-down}{
-  .section > div{
-    padding: 25px 0;
-  }
-}

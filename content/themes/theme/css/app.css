@@ -7275,9 +7275,6 @@ footer {
   z-index: 900;
   background: white; }
 
-@media only screen and (max-width: 40.625em) {
-  .section > div {
-    padding: 25px 0; } }
 .section-hero {
   height: 90vh;
   overflow: hidden; }
@@ -7346,12 +7343,9 @@ body.is-mobile .section-hero .section-hero-banner {
 
 .section-grid ul {
   width: 100%; }
-  .section-grid ul li {
-    width: 50%;
-    float: left; }
-    .section-grid ul li img {
-      min-width: 100%;
-      display: block; }
+  .section-grid ul li img {
+    min-width: 100%;
+    display: block; }
 
 @media screen and (min-width: 1400px) {
   .section-grid ul li {
