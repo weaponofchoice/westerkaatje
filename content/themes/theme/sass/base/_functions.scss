@@ -1,13 +1,13 @@
-// Margin-bottom size function
-@for $b from 1 through 1000{
-  .margin-b#{$b}{
-    margin-bottom: rem-calc($b) !important;
+// Margin-top classes
+@for $a from 1 through 1000{
+  .margin-t#{$a}{
+    margin-top: rem-calc($a) !important;
   }
 }
 
-// Margin-top size function
-@for $c from 1 through 1000{
-  .margin-t#{$c}{
-    margin-top: rem-calc($c) !important;
+// Margin-bottom classes
+@for $b from 1 through 1000{
+  .margin-b#{$b}{
+    margin-bottom: rem-calc($b) !important;
   }
 }
