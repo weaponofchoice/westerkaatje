@@ -7089,15 +7089,15 @@ body {
 header,
 main,
 footer {
-  padding-left: 45px;
-  padding-right: 45px; }
+  padding-left: 2.8125rem;
+  padding-right: 2.8125rem; }
 
 @media only screen and (max-width: 31.25em) {
   header,
   main,
   footer {
-    padding-left: 15px;
-    padding-right: 15px; } }
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem; } }
 main {
   height: auto !important;
   height: 100%;
@@ -7478,9 +7478,9 @@ body.is-mobile.is-resizing > * {
   transition: 0s; }
 
 .is-fullwidth {
-  width: calc(100% + 90px);
-  margin-left: -45px; }
+  width: calc(100% + ($side-margin * 2));
+  margin-left: -3.75rem; }
 
 @media only screen and (max-width: 31.25em) {
   .is-fullwidth {
-    margin-left: -15px; } }
+    margin-left: -1.875rem; } }

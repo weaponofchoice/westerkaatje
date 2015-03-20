@@ -3,21 +3,19 @@
 // Gutters are 30
 // So on either sides of a column it's 30 / 2 = 15px
 // Side margin = 60 - 15 = 45px
-//
-// IMPORTANT: if any of these sizes change, you'll also need to change the values in state/_fullwidth.scss
 
 header,
 main,
 footer{
-  padding-left: 45px;
-  padding-right: 45px;
+  padding-left: $side-margin - ($column-gutter / 2);
+  padding-right: $side-margin - ($column-gutter / 2);
 }
 
 @media #{$small-only}{
   header,
   main,
   footer{
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: $side-margin-small - ($column-gutter / 2);
+    padding-right: $side-margin-small - ($column-gutter / 2);
   }
 }
