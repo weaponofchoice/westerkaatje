@@ -7087,15 +7087,17 @@ body {
   background: white; }
 
 header,
-.section {
-  padding-left: 50px;
-  padding-right: 50px; }
+main,
+footer {
+  padding-left: 45px;
+  padding-right: 45px; }
 
 @media only screen and (max-width: 31.25em) {
   header,
-  .section {
-    padding-left: 20px;
-    padding-right: 20px; } }
+  main,
+  footer {
+    padding-left: 15px;
+    padding-right: 15px; } }
 main {
   height: auto !important;
   height: 100%;
@@ -7277,11 +7279,11 @@ footer {
 
 .section-hero {
   height: 90vh;
-  overflow: hidden; }
+  overflow: hidden;
+  z-index: 0; }
   .section-hero .section-hero-banner {
     position: fixed;
-    overflow: hidden;
-    z-index: -100; }
+    overflow: hidden; }
   .section-hero .section-hero-content {
     top: 50%;
     left: 50%;
@@ -7355,7 +7357,7 @@ body.is-mobile .section-hero .section-hero-banner {
   .section-grid ul li {
     width: 25%; } }
 .section.pad-no,
-.section-heading.pad-no,
+.section-header.pad-no,
 .section-content.pad-no,
 .section-footer.pad-no {
   padding-top: 0;
@@ -7363,32 +7365,32 @@ body.is-mobile .section-hero .section-hero-banner {
   padding-left: 0;
   padding-right: 0; }
 .section.pad-no-top,
-.section-heading.pad-no-top,
+.section-header.pad-no-top,
 .section-content.pad-no-top,
 .section-footer.pad-no-top {
   padding-top: 0; }
 .section.pad-no-bottom,
-.section-heading.pad-no-bottom,
+.section-header.pad-no-bottom,
 .section-content.pad-no-bottom,
 .section-footer.pad-no-bottom {
   padding-bottom: 0; }
 .section.pad-no-left,
-.section-heading.pad-no-left,
+.section-header.pad-no-left,
 .section-content.pad-no-left,
 .section-footer.pad-no-left {
   padding-left: 0; }
 .section.pad-no-right,
-.section-heading.pad-no-right,
+.section-header.pad-no-right,
 .section-content.pad-no-right,
 .section-footer.pad-no-right {
   padding-right: 0; }
 .section.pad-extra-top,
-.section-heading.pad-extra-top,
+.section-header.pad-extra-top,
 .section-content.pad-extra-top,
 .section-footer.pad-extra-top {
   padding-top: 120px; }
 .section.pad-extra-bottom,
-.section-heading.pad-extra-bottom,
+.section-header.pad-extra-bottom,
 .section-content.pad-extra-bottom,
 .section-footer.pad-extra-bottom {
   padding-bottom: 120px; }
@@ -7474,3 +7476,11 @@ body.is-mobile.is-resizing > * {
   -ms-transition: 0s;
   -o-transition: 0s;
   transition: 0s; }
+
+.is-fullwidth {
+  width: calc(100% + 90px);
+  margin-left: -45px; }
+
+@media only screen and (max-width: 31.25em) {
+  .is-fullwidth {
+    margin-left: -15px; } }

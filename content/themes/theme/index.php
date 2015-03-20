@@ -8,9 +8,9 @@ if( have_posts() ):
     if( have_rows('page') ):
       while( have_rows('page') ): the_row();
         
-        if( get_row_layout() == 'hero' ):
-          include_once( locate_template('content/hero.php') );
-        elseif( get_row_layout() == 'text' ):
+        // Hero section is placed before main
+        
+        if( get_row_layout() == 'text' ):
           include_once( locate_template('content/text.php') );
         elseif( get_row_layout() == 'grid_primary' ):
           include_once( locate_template('content/grid-pri.php') );

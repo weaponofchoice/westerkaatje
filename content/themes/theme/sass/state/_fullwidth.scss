@@ -1,0 +1,12 @@
+// Check the layout/_layout.scss file for the correct measurements
+
+.is-fullwidth{
+  width: calc(100% + 90px);
+  margin-left: -45px;
+}
+
+@media #{$small-only}{
+  .is-fullwidth{
+    margin-left: -15px;
+  }
+}

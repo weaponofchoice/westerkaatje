@@ -1,13 +1,23 @@
+// Example calculation:
+// Desired side margin is 60
+// Gutters are 30
+// So on either sides of a column it's 30 / 2 = 15px
+// Side margin = 60 - 15 = 45px
+//
+// IMPORTANT: if any of these sizes change, you'll also need to change the values in state/_fullwidth.scss
+
 header,
-.section{
-  padding-left: 50px;
-  padding-right: 50px;
+main,
+footer{
+  padding-left: 45px;
+  padding-right: 45px;
 }
 
 @media #{$small-only}{
   header,
-  .section{
-    padding-left: 20px;
-    padding-right: 20px;
+  main,
+  footer{
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }

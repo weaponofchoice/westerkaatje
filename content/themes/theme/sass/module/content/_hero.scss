@@ -1,11 +1,11 @@
 .section-hero{
   height: 90vh;
   overflow: hidden;
+  z-index: $zIndex-hero;
   
   .section-hero-banner{
     position: fixed;
     overflow: hidden;
-    z-index: $zIndex-heroBanner;
   }
   
   .section-hero-content{
