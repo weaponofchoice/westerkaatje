@@ -1,7 +1,7 @@
 <?php
 // Variables
 $header_title = get_sub_field( 'slider_header_title' );
-$header_text = get_sub_field( 'slider_header_text' );
+$header_text = preg_replace( '/<p>/', '<p class="s-4 columns">', get_sub_field( 'slider_header_text' ) );
 
 $content_images = get_sub_field( 'slider_content_images' );
 
@@ -10,18 +10,18 @@ echo '<section class="section section-slider">';
   
   // Gallery header
   if( $header_title || $header_text ): 
-    echo '<div class="section-header">';
-      echo '<h2>' . $content_title . '</h2>';
+    echo '<div class="section-header row">';
+      echo '<h2 class="s-4 columns">' . $content_title . '</h2>';
       echo $header_text;
     echo '</div>';
   endif;
   
   // Gallery content
   if( $content_images ):
-    echo '<div class="section-content">';
+    echo '<div class="section-content row">';
       
       // The images
-      echo '<ul class="slider-images">';
+      echo '<ul class="slider-images s-4 columns">';
         foreach( $content_images as $image ):
           echo '<li><img src="' . $image['sizes']['large'] . '" width="' . $image['width'] . '" height="' . $image['height'] . '"></li>';
         endforeach;

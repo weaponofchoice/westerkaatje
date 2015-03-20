@@ -1035,6 +1035,9 @@ ul {
   padding: 0;
   list-style: none; }
 
+.row {
+  max-width: none; }
+
 .margin-t1 {
   margin-top: 0.0625rem !important; }
 
@@ -7340,9 +7343,13 @@ body.is-mobile .section-hero .section-hero-banner {
 
 .section-grid ul {
   width: 100%; }
-  .section-grid ul li img {
-    min-width: 100%;
-    display: block; }
+  .section-grid ul li {
+    margin-bottom: 50px; }
+    .section-grid ul li > * {
+      margin-bottom: 15px; }
+    .section-grid ul li img {
+      min-width: 100%;
+      display: block; }
 
 @media screen and (min-width: 1400px) {
   .section-grid ul li {

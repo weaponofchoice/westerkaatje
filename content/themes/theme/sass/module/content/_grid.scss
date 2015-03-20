@@ -3,6 +3,12 @@
     width: 100%;
     
     li{
+      margin-bottom: 50px;
+      
+      > *{
+        margin-bottom: 15px;
+      }
+      
       img{
         min-width: 100%;
         display: block;
