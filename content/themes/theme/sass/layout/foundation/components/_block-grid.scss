@@ -57,35 +57,35 @@ $block-grid-media-queries: true !default;
 // $size - Name of class to use, i.e. "large" will generate .large-block-grid-1, .large-block-grid-2, etc.
 @mixin block-grid-html-classes($size) {
   @for $i from 1 through $block-grid-elements {
-    .#{$size}-block-grid-#{($i)} {
+    .#{$size}-grid-#{($i)} {
       @include block-grid($i,$block-grid-default-spacing,false);
     }
   }
 }
 
-@include exports("block-grid") {
+@include exports("grid") {
   @if $include-html-grid-classes {
     
-    [class*="block-grid-"] { @include block-grid; }
+    [class*="grid-"] { @include block-grid; }
 
     @media #{$small-up} {
-      @include block-grid-html-classes($size:small);
+      @include block-grid-html-classes($size:s);
     }
 
     @media #{$medium-up} {
-      @include block-grid-html-classes($size:medium);
+      @include block-grid-html-classes($size:m);
     }
 
     @media #{$large-up} {
-      @include block-grid-html-classes($size:large);
+      @include block-grid-html-classes($size:l);
     }
     
     @media #{$xlarge-up} {
-      @include block-grid-html-classes($size:xlarge);
+      @include block-grid-html-classes($size:xl);
     }
     
     @media #{$xxlarge-up} {
-      @include block-grid-html-classes($size:xxlarge);
+      @include block-grid-html-classes($size:xxl);
     }
   }
 }
