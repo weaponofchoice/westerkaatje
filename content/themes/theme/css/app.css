@@ -7067,14 +7067,20 @@ body {
   min-height: 100%;
   background: white; }
 
-header,
+header {
+  padding-left: 3.75rem;
+  padding-right: 3.75rem; }
+
 main,
 footer {
   padding-left: 2.8125rem;
   padding-right: 2.8125rem; }
 
 @media only screen and (max-width: 31.25em) {
-  header,
+  header {
+    padding-left: 1.875rem;
+    padding-right: 1.875rem; }
+
   main,
   footer {
     padding-left: 0.9375rem;
@@ -7086,30 +7092,33 @@ main {
   background: white; }
 
 header {
-  width: calc(100% - 100px);
-  top: 35px;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
   left: 0;
-  position: absolute;
-  z-index: 1000; }
-  header .logo {
-    width: 150px;
-    float: left; }
-    header .logo img {
-      max-width: 150px; }
-  header .lang {
-    float: right; }
-    header .lang * {
-      color: white;
-      display: inline; }
+  position: fixed;
+  z-index: 1000;
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flex;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between; }
+  header .link-logo {
+    width: 50px; }
 
-@media only screen and (max-width: 31.25em) {
-  header {
-    width: calc(100% - 40px);
-    text-align: center; }
-    header .logo,
-    header .lang {
-      width: 100%;
-      margin-bottom: 15px; } }
 footer {
   padding: 50px;
   text-align: center;
@@ -7124,6 +7133,36 @@ footer {
     width: 35px;
     padding: 0 .5em;
     display: inline-block; }
+
+a.trigger-menu {
+  width: 35px;
+  height: 35px;
+  display: block;
+  position: relative; }
+  a.trigger-menu i {
+    width: 100%;
+    height: 3px;
+    display: block;
+    top: calc(50% - 1.5px);
+    background: black; }
+    a.trigger-menu i:before, a.trigger-menu i:after {
+      content: " ";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: black;
+      transition: .2s; }
+    a.trigger-menu i:before {
+      margin-top: -8px; }
+    a.trigger-menu i:after {
+      margin-top: 8px; }
+
+a.trigger-menu:hover i:before, a.trigger-menu:hover i:after {
+  transition: .2s; }
+a.trigger-menu:hover i:before {
+  margin-top: -11px; }
+a.trigger-menu:hover i:after {
+  margin-top: 11px; }
 
 .slider {
   position: relative; }

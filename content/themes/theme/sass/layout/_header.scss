@@ -1,38 +1,16 @@
 header{
-  width: calc(100% - 100px);
-  top: 35px;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
   left: 0;
-  position: absolute;
+  position: fixed;
   z-index: $zIndex-header;
   
-  .logo{
-    width: 150px;
-    float: left;
-    
-    img{
-      max-width: 150px;
-    }
-  }
+  @include flex;
+  @include align-items( center );
+  @include justify-content( space-between );
   
-  .lang{
-    float: right;
-    
-    *{
-      color: $white;
-      display: inline;
-    }
-  }
-}
-
-@media #{$small-only}{
-  header{
-    width: calc(100% - 40px);
-    text-align: center;
-    
-    .logo,
-    .lang{
-      width: 100%;
-      margin-bottom: 15px;
-    }
+  .link-logo{
+    width: 50px;
   }
 }
