@@ -11,7 +11,7 @@ echo '<section class="section section-slider">';
   // Gallery header
   if( $header_title || $header_text ): 
     echo '<div class="section-header row">';
-      echo '<h2 class="s-4 columns">' . $content_title . '</h2>';
+      echo '<h2 class="s-4 columns">' . $header_title . '</h2>';
       echo $header_text;
     echo '</div>';
   endif;

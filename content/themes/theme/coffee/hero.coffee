@@ -35,13 +35,14 @@ $ ->
   ###
   wrapper = $('.is-stretched-wrapper')
   object = $('.is-stretched-object')
+  ratio = object.width() / object.height()
   
   wrapper_w = wrapper.width()
   wrapper_h = wrapper.height()
   
   object.css "min-height", wrapper_h
   
-  if wrapper_w < 2 * wrapper_h
+  if wrapper_w < wrapper_h * ratio
     object.removeClass "is-stretched-wide"
     object.addClass "is-stretched-high"
   else
@@ -72,13 +73,14 @@ $ ->
     
     wrapper = $('.is-stretched-wrapper')
     object = $('.is-stretched-object')
+    ratio = object.width() / object.height()
     
     wrapper_w = wrapper.width()
     wrapper_h = wrapper.height()
     
     object.css "min-height", wrapper_h
     
-    if wrapper_w < 2 * wrapper_h
+    if wrapper_w < wrapper_h * ratio
       object.removeClass "is-stretched-wide"
       object.addClass "is-stretched-high"
     else
