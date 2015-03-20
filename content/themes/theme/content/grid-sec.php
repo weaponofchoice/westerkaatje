@@ -10,7 +10,7 @@ echo '<section class="section section-grid section-grid-sec">';
   
   // Grid header
   if( $header_title || $header_text ): 
-    echo '<div class="section-header">';
+    echo '<div class="section-header s-2 columns">';
       echo '<h2>' . $header_title . '</h2>';
       echo $header_text;
     echo '</div>';
@@ -20,7 +20,7 @@ echo '<section class="section section-grid section-grid-sec">';
   if( have_rows('grid_sec_item') ):
     echo '<div class="section-content">';
       
-      // If isotope is what you seek, remove block-grid classes and add 'isotope' class
+      // If isotope is what you seek, just add the 'isotope' class
       echo '<ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-4">';
         
         while( have_rows('grid_sec_item') ): the_row();

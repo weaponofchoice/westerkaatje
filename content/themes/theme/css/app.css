@@ -881,32 +881,32 @@ select {
   float: left; }
 
 @media only screen {
-  .small-push-1 {
+  .s-push-1 {
     position: relative;
     left: 25%;
     right: auto; }
 
-  .small-pull-1 {
+  .s-pull-1 {
     position: relative;
     right: 25%;
     left: auto; }
 
-  .small-push-2 {
+  .s-push-2 {
     position: relative;
     left: 50%;
     right: auto; }
 
-  .small-pull-2 {
+  .s-pull-2 {
     position: relative;
     right: 50%;
     left: auto; }
 
-  .small-push-3 {
+  .s-push-3 {
     position: relative;
     left: 75%;
     right: auto; }
 
-  .small-pull-3 {
+  .s-pull-3 {
     position: relative;
     right: 75%;
     left: auto; }
@@ -918,31 +918,31 @@ select {
     padding-right: 0.9375rem;
     float: left; }
 
-  .small-1 {
+  .s-1 {
     position: relative;
     width: 25%; }
 
-  .small-2 {
+  .s-2 {
     position: relative;
     width: 50%; }
 
-  .small-3 {
+  .s-3 {
     position: relative;
     width: 75%; }
 
-  .small-4 {
+  .s-4 {
     position: relative;
     width: 100%; }
 
-  .small-offset-0 {
+  .s-offset-0 {
     position: relative;
     margin-left: 0%; }
 
-  .small-offset-1 {
+  .s-offset-1 {
     position: relative;
     margin-left: 25%; }
 
-  .small-offset-2 {
+  .s-offset-2 {
     position: relative;
     margin-left: 50%; }
 
@@ -952,49 +952,49 @@ select {
   [class*="column"] + [class*="column"].end {
     float: left; }
 
-  .column.small-centered,
-  .columns.small-centered {
+  .column.s-centered,
+  .columns.s-centered {
     position: relative;
     margin-left: auto;
     margin-right: auto;
     float: none !important; }
 
-  .column.small-uncentered,
-  .columns.small-uncentered {
+  .column.s-uncentered,
+  .columns.s-uncentered {
     margin-left: 0;
     margin-right: 0;
     float: left !important; }
 
-  .column.small-uncentered.opposite,
-  .columns.small-uncentered.opposite {
+  .column.s-uncentered.opposite,
+  .columns.s-uncentered.opposite {
     float: right !important; } }
 @media only screen and (min-width: 31.313em) {
-  .medium-push-1 {
+  .m-push-1 {
     position: relative;
     left: 25%;
     right: auto; }
 
-  .medium-pull-1 {
+  .m-pull-1 {
     position: relative;
     right: 25%;
     left: auto; }
 
-  .medium-push-2 {
+  .m-push-2 {
     position: relative;
     left: 50%;
     right: auto; }
 
-  .medium-pull-2 {
+  .m-pull-2 {
     position: relative;
     right: 50%;
     left: auto; }
 
-  .medium-push-3 {
+  .m-push-3 {
     position: relative;
     left: 75%;
     right: auto; }
 
-  .medium-pull-3 {
+  .m-pull-3 {
     position: relative;
     right: 75%;
     left: auto; }
@@ -1006,31 +1006,31 @@ select {
     padding-right: 0.9375rem;
     float: left; }
 
-  .medium-1 {
+  .m-1 {
     position: relative;
     width: 25%; }
 
-  .medium-2 {
+  .m-2 {
     position: relative;
     width: 50%; }
 
-  .medium-3 {
+  .m-3 {
     position: relative;
     width: 75%; }
 
-  .medium-4 {
+  .m-4 {
     position: relative;
     width: 100%; }
 
-  .medium-offset-0 {
+  .m-offset-0 {
     position: relative;
     margin-left: 0%; }
 
-  .medium-offset-1 {
+  .m-offset-1 {
     position: relative;
     margin-left: 25%; }
 
-  .medium-offset-2 {
+  .m-offset-2 {
     position: relative;
     margin-left: 50%; }
 
@@ -1040,21 +1040,21 @@ select {
   [class*="column"] + [class*="column"].end {
     float: left; }
 
-  .column.medium-centered,
-  .columns.medium-centered {
+  .column.m-centered,
+  .columns.m-centered {
     position: relative;
     margin-left: auto;
     margin-right: auto;
     float: none !important; }
 
-  .column.medium-uncentered,
-  .columns.medium-uncentered {
+  .column.m-uncentered,
+  .columns.m-uncentered {
     margin-left: 0;
     margin-right: 0;
     float: left !important; }
 
-  .column.medium-uncentered.opposite,
-  .columns.medium-uncentered.opposite {
+  .column.m-uncentered.opposite,
+  .columns.m-uncentered.opposite {
     float: right !important; }
 
   .push-1 {
@@ -1087,32 +1087,32 @@ select {
     right: 75%;
     left: auto; } }
 @media only screen and (min-width: 62.563em) {
-  .large-push-1 {
+  .l-push-1 {
     position: relative;
     left: 25%;
     right: auto; }
 
-  .large-pull-1 {
+  .l-pull-1 {
     position: relative;
     right: 25%;
     left: auto; }
 
-  .large-push-2 {
+  .l-push-2 {
     position: relative;
     left: 50%;
     right: auto; }
 
-  .large-pull-2 {
+  .l-pull-2 {
     position: relative;
     right: 50%;
     left: auto; }
 
-  .large-push-3 {
+  .l-push-3 {
     position: relative;
     left: 75%;
     right: auto; }
 
-  .large-pull-3 {
+  .l-pull-3 {
     position: relative;
     right: 75%;
     left: auto; }
@@ -1124,31 +1124,31 @@ select {
     padding-right: 0.9375rem;
     float: left; }
 
-  .large-1 {
+  .l-1 {
     position: relative;
     width: 25%; }
 
-  .large-2 {
+  .l-2 {
     position: relative;
     width: 50%; }
 
-  .large-3 {
+  .l-3 {
     position: relative;
     width: 75%; }
 
-  .large-4 {
+  .l-4 {
     position: relative;
     width: 100%; }
 
-  .large-offset-0 {
+  .l-offset-0 {
     position: relative;
     margin-left: 0%; }
 
-  .large-offset-1 {
+  .l-offset-1 {
     position: relative;
     margin-left: 25%; }
 
-  .large-offset-2 {
+  .l-offset-2 {
     position: relative;
     margin-left: 50%; }
 
@@ -1158,49 +1158,49 @@ select {
   [class*="column"] + [class*="column"].end {
     float: left; }
 
-  .column.large-centered,
-  .columns.large-centered {
+  .column.l-centered,
+  .columns.l-centered {
     position: relative;
     margin-left: auto;
     margin-right: auto;
     float: none !important; }
 
-  .column.large-uncentered,
-  .columns.large-uncentered {
+  .column.l-uncentered,
+  .columns.l-uncentered {
     margin-left: 0;
     margin-right: 0;
     float: left !important; }
 
-  .column.large-uncentered.opposite,
-  .columns.large-uncentered.opposite {
+  .column.l-uncentered.opposite,
+  .columns.l-uncentered.opposite {
     float: right !important; } }
 @media only screen and (min-width: 87.5em) {
-  .xlarge-push-1 {
+  .xl-push-1 {
     position: relative;
     left: 25%;
     right: auto; }
 
-  .xlarge-pull-1 {
+  .xl-pull-1 {
     position: relative;
     right: 25%;
     left: auto; }
 
-  .xlarge-push-2 {
+  .xl-push-2 {
     position: relative;
     left: 50%;
     right: auto; }
 
-  .xlarge-pull-2 {
+  .xl-pull-2 {
     position: relative;
     right: 50%;
     left: auto; }
 
-  .xlarge-push-3 {
+  .xl-push-3 {
     position: relative;
     left: 75%;
     right: auto; }
 
-  .xlarge-pull-3 {
+  .xl-pull-3 {
     position: relative;
     right: 75%;
     left: auto; }
@@ -1212,31 +1212,31 @@ select {
     padding-right: 0.9375rem;
     float: left; }
 
-  .xlarge-1 {
+  .xl-1 {
     position: relative;
     width: 25%; }
 
-  .xlarge-2 {
+  .xl-2 {
     position: relative;
     width: 50%; }
 
-  .xlarge-3 {
+  .xl-3 {
     position: relative;
     width: 75%; }
 
-  .xlarge-4 {
+  .xl-4 {
     position: relative;
     width: 100%; }
 
-  .xlarge-offset-0 {
+  .xl-offset-0 {
     position: relative;
     margin-left: 0%; }
 
-  .xlarge-offset-1 {
+  .xl-offset-1 {
     position: relative;
     margin-left: 25%; }
 
-  .xlarge-offset-2 {
+  .xl-offset-2 {
     position: relative;
     margin-left: 50%; }
 
@@ -1246,49 +1246,49 @@ select {
   [class*="column"] + [class*="column"].end {
     float: left; }
 
-  .column.xlarge-centered,
-  .columns.xlarge-centered {
+  .column.xl-centered,
+  .columns.xl-centered {
     position: relative;
     margin-left: auto;
     margin-right: auto;
     float: none !important; }
 
-  .column.xlarge-uncentered,
-  .columns.xlarge-uncentered {
+  .column.xl-uncentered,
+  .columns.xl-uncentered {
     margin-left: 0;
     margin-right: 0;
     float: left !important; }
 
-  .column.xlarge-uncentered.opposite,
-  .columns.xlarge-uncentered.opposite {
+  .column.xl-uncentered.opposite,
+  .columns.xl-uncentered.opposite {
     float: right !important; } }
 @media only screen and (min-width: 120em) {
-  .xxlarge-push-1 {
+  .xxl-push-1 {
     position: relative;
     left: 25%;
     right: auto; }
 
-  .xxlarge-pull-1 {
+  .xxl-pull-1 {
     position: relative;
     right: 25%;
     left: auto; }
 
-  .xxlarge-push-2 {
+  .xxl-push-2 {
     position: relative;
     left: 50%;
     right: auto; }
 
-  .xxlarge-pull-2 {
+  .xxl-pull-2 {
     position: relative;
     right: 50%;
     left: auto; }
 
-  .xxlarge-push-3 {
+  .xxl-push-3 {
     position: relative;
     left: 75%;
     right: auto; }
 
-  .xxlarge-pull-3 {
+  .xxl-pull-3 {
     position: relative;
     right: 75%;
     left: auto; }
@@ -1300,31 +1300,31 @@ select {
     padding-right: 0.9375rem;
     float: left; }
 
-  .xxlarge-1 {
+  .xxl-1 {
     position: relative;
     width: 25%; }
 
-  .xxlarge-2 {
+  .xxl-2 {
     position: relative;
     width: 50%; }
 
-  .xxlarge-3 {
+  .xxl-3 {
     position: relative;
     width: 75%; }
 
-  .xxlarge-4 {
+  .xxl-4 {
     position: relative;
     width: 100%; }
 
-  .xxlarge-offset-0 {
+  .xxl-offset-0 {
     position: relative;
     margin-left: 0%; }
 
-  .xxlarge-offset-1 {
+  .xxl-offset-1 {
     position: relative;
     margin-left: 25%; }
 
-  .xxlarge-offset-2 {
+  .xxl-offset-2 {
     position: relative;
     margin-left: 50%; }
 
@@ -1334,21 +1334,21 @@ select {
   [class*="column"] + [class*="column"].end {
     float: left; }
 
-  .column.xxlarge-centered,
-  .columns.xxlarge-centered {
+  .column.xxl-centered,
+  .columns.xxl-centered {
     position: relative;
     margin-left: auto;
     margin-right: auto;
     float: none !important; }
 
-  .column.xxlarge-uncentered,
-  .columns.xxlarge-uncentered {
+  .column.xxl-uncentered,
+  .columns.xxl-uncentered {
     margin-left: 0;
     margin-right: 0;
     float: left !important; }
 
-  .column.xxlarge-uncentered.opposite,
-  .columns.xxlarge-uncentered.opposite {
+  .column.xxl-uncentered.opposite,
+  .columns.xxl-uncentered.opposite {
     float: right !important; } }
 * {
   margin: 0;

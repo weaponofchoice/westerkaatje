@@ -206,11 +206,11 @@ $total-columns: 12 !default;
     .columns { @include grid-column($columns:$total-columns); }
 
     @media #{$small-up} {
-      @include grid-html-classes($size:small);
+      @include grid-html-classes($size:s);
     }
 
     @media #{$medium-up} {
-      @include grid-html-classes($size:medium);
+      @include grid-html-classes($size:m);
       // Old push and pull classes
       @for $i from 1 through $total-columns - 1 {
         .push#{-$i} {
@@ -222,13 +222,13 @@ $total-columns: 12 !default;
       }
     }
     @media #{$large-up} {
-      @include grid-html-classes($size:large);
+      @include grid-html-classes($size:l);
     }
     @media #{$xlarge-up} {
-      @include grid-html-classes($size:xlarge);
+      @include grid-html-classes($size:xl);
     }
     @media #{$xxlarge-up} {
-      @include grid-html-classes($size:xxlarge);
+      @include grid-html-classes($size:xxl);
     }
   }
 }
