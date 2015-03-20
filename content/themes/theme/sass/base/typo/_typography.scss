@@ -1,44 +1,27 @@
 %base{
+  @include opensans;
   font-size: 16px;
   font-weight: normal;
   text-rendering: geometricPrecision;
-  
-  &.system{
-    font-size: 15px;
-  }
 }
 
 h1{
-  @include chronicle;
   @extend %base;
-  
-  font-size: 48px;
+  font-size: 3em;
 }
 
 h2{
   @extend h1;
-  
-  font-size: 35px;
-}
-
-h3{
-  @extend %base;
-  
-  font-size: 20px;
+  font-size: 2em;
 }
 
 p{
   @extend %base;
-  @include archer;
-  
-  font-size: 20px;
 }
 
 a{
   @extend %base;
-  @include archer;
   
-  font-size: 15px;
   color: black;
   text-decoration: underline;
   cursor: pointer;
@@ -49,9 +32,4 @@ a{
   &.link-p{
     text-decoration: none;
   }
-}
-
-a:has(p){
-  text-decoration: none;
-  border-bottom: thin solid red;
 }

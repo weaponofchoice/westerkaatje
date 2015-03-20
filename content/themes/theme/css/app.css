@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
 [class*="grid-"] {
   display: block;
   padding: 0;
@@ -7038,47 +7039,27 @@ ul {
 .margin-b1000 {
   margin-bottom: 62.5rem !important; }
 
-@font-face {
-  font-family: 'Archer';
-  src: url("../fonts/Archer-Semibold-Pro.otf"); }
-h1, h2, h3, p, a {
+h1, h2, p, a {
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
   font-size: 16px;
   font-weight: normal;
   text-rendering: geometricPrecision; }
-  h1.system, h2.system, h3.system, p.system, a.system {
-    font-size: 15px; }
-
-h1, h2 {
-  font-family: 'Chronicle Text G1 A', 'Chronicle Text G1 B';
-  font-style: normal;
-  font-size: 48px; }
-  h1.is-bold, h2.is-bold {
+  h1.is-bold, h2.is-bold, p.is-bold, a.is-bold {
     font-weight: 700; }
 
+h1, h2 {
+  font-size: 3em; }
+
 h2 {
-  font-size: 35px; }
-
-h3 {
-  font-size: 20px; }
-
-p {
-  font-family: 'Archer';
-  font-style: normal;
-  font-size: 20px; }
+  font-size: 2em; }
 
 a {
-  font-family: 'Archer';
-  font-style: normal;
-  font-size: 15px;
   color: black;
   text-decoration: underline;
   cursor: pointer; }
   a.link-h1, a.link-h2, a.link-h3, a.link-p {
     text-decoration: none; }
-
-a:has(p) {
-  text-decoration: none;
-  border-bottom: thin solid red; }
 
 html,
 body {
@@ -7395,27 +7376,27 @@ body.is-mobile .section-hero .section-hero-banner {
 .section-footer.pad-extra-bottom {
   padding-bottom: 120px; }
 
-h1.is-italic, h2.is-italic, h3.is-italic, p.is-italic, a.is-italic {
+h1.is-italic, h2.is-italic, p.is-italic, a.is-italic {
   font-style: italic; }
-h1.is-underlined, h2.is-underlined, h3.is-underlined, p.is-underlined, a.is-underlined {
+h1.is-underlined, h2.is-underlined, p.is-underlined, a.is-underlined {
   text-decoration: underline; }
-h1.is-capitalized, h2.is-capitalized, h3.is-capitalized, p.is-capitalized, a.is-capitalized {
+h1.is-capitalized, h2.is-capitalized, p.is-capitalized, a.is-capitalized {
   text-transform: capitalize; }
-h1.is-uppercase, h2.is-uppercase, h3.is-uppercase, p.is-uppercase, a.is-uppercase {
+h1.is-uppercase, h2.is-uppercase, p.is-uppercase, a.is-uppercase {
   text-transform: uppercase; }
-h1.is-lowercase, h2.is-lowercase, h3.is-lowercase, p.is-lowercase, a.is-lowercase {
+h1.is-lowercase, h2.is-lowercase, p.is-lowercase, a.is-lowercase {
   text-transform: lowercase; }
-h1.is-bold, h2.is-bold, h3.is-bold, p.is-bold, a.is-bold {
+h1.is-bold, h2.is-bold, p.is-bold, a.is-bold {
   font-weight: 700; }
-h1.is-aligned-center, h2.is-aligned-center, h3.is-aligned-center, p.is-aligned-center, a.is-aligned-center {
+h1.is-aligned-center, h2.is-aligned-center, p.is-aligned-center, a.is-aligned-center {
   text-align: center; }
-h1.is-aligned-left, h2.is-aligned-left, h3.is-aligned-left, p.is-aligned-left, a.is-aligned-left {
+h1.is-aligned-left, h2.is-aligned-left, p.is-aligned-left, a.is-aligned-left {
   text-align: left; }
-h1.is-aligned-right, h2.is-aligned-right, h3.is-aligned-right, p.is-aligned-right, a.is-aligned-right {
+h1.is-aligned-right, h2.is-aligned-right, p.is-aligned-right, a.is-aligned-right {
   text-align: right; }
-h1.is-black, h2.is-black, h3.is-black, p.is-black, a.is-black {
+h1.is-black, h2.is-black, p.is-black, a.is-black {
   color: black; }
-h1.is-white, h2.is-white, h3.is-white, p.is-white, a.is-white {
+h1.is-white, h2.is-white, p.is-white, a.is-white {
   color: white; }
 
 p.is-small {
