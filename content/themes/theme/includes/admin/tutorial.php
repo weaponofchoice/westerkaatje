@@ -1,9 +1,14 @@
 <?php
+/*
+ * Adding an extra admin page for tutorials
+ * This page is information reference about the admin panel, created for clients
+ */
+
 add_action( 'admin_menu', 'custom_page_tutorial_register' );
 
 function custom_page_tutorial_register(){
   add_submenu_page(
-    'edit.php?post_type=page', // Parent slug
+    'index.php', // Parent slug
     'Tutorial',                // page title
     'Tutorial',                // menu title
     'read',                    // capability
@@ -16,7 +21,7 @@ function custom_page_tutorial_render(){
   <div class="wrap tutorial">
     <div class="tutorial-header">
       <h1>Tutorial</h1>
-      <p>In this tutorial, you'll find everything you need to know about the admin screen that you are looking at now. The difference between posts and pages, adding media and filling out content blocks.</p>
+      <p>In this tutorial, you'll find everything you need to know about the admin panel that you are looking at now. The difference between posts and pages, adding media, filling out content blocks and more.</p>
     </div>
   
     <!-- 01. Tutorial Block -->
@@ -53,14 +58,14 @@ function custom_css_tutorial(){
   echo '<style>
     .tutorial-header{
       width: 50%;
-      margin-bottom: 50px;
+      margin-bottom: 40px;
     }
     
     .tutorial .tutorial-block{
       width: 100%;
       height: auto;
       overflow: hidden;
-      margin-bottom: 50px;
+      margin-bottom: 40px;
       border-bottom: thin dotted black;
     }
     
@@ -71,15 +76,15 @@ function custom_css_tutorial(){
     
     .tutorial .tutorial-block .tutorial-block-left img{
       max-width: 100%;
-      margin-bottom: 50px;
+      margin-bottom: 40px;
     }
     
     .tutorial .tutorial-block .tutorial-block-right{
-      width: calc(50% - 25px);
+      width: calc(50% - 40px);
       max-width: 500px;
       padding: 0;
-      margin-bottom: 50px;
-      padding-left: 25px;
+      margin-bottom: 40px;
+      padding-left: 40px;
       float: left;
     }
   </style>';
