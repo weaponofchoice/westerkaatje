@@ -1,10 +1,18 @@
 <?php
+// Controlling text color
+$text_isWhite = get_sub_field( 'text_isWhite' );
+if( $text_isWhite ){
+  $text_class = 'is-white';
+} else {
+  $text_class = '';
+}
+
 // Variables
 $banner = get_sub_field( 'hero_banner' );
 
 $content_logo = get_sub_field( 'hero_content_image' );
 $content_title = get_sub_field( 'hero_content_title' );
-$content_text = preg_replace( '/<p>/', '<p class="is-white">', get_sub_field( 'hero_content_text' ) );
+$content_text = preg_replace( '/<p>/', '<p class="' . $text_class . '">', get_sub_field( 'hero_content_text' ) );
 
 // Output
 echo '<section class="section section-hero pad-no">';
@@ -27,7 +35,7 @@ echo '<section class="section section-hero pad-no">';
       
       // Title
       if( $content_title ):
-        echo '<h2 class="is-white">' . $content_title . '</h2>';
+        echo '<h2 class="' . $text_class . '">' . $content_title . '</h2>';
       endif;
       
       // Text
