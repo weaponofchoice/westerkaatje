@@ -7067,6 +7067,15 @@ body {
   min-height: 100%;
   background: white; }
 
+.hide {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s; }
+
 header {
   padding-left: 3.75rem;
   padding-right: 3.75rem; }
@@ -7486,12 +7495,12 @@ body > * {
   -o-transition: 0.5s;
   transition: 0.5s; }
 
-body.is-resizing {
+body.is-loading {
   height: auto;
   background: url("../img/logo-black.svg") center center no-repeat;
   background-size: 200px;
   background-attachment: fixed; }
-  body.is-resizing > * {
+  body.is-loading > * {
     opacity: 0;
     visibility: hidden;
     -webkit-transition: 0s;
@@ -7500,7 +7509,7 @@ body.is-resizing {
     -o-transition: 0s;
     transition: 0s; }
 
-body.is-mobile.is-resizing > * {
+body.is-mobile.is-loading > * {
   opacity: 1;
   visibility: visible;
   -webkit-transition: 0s;
