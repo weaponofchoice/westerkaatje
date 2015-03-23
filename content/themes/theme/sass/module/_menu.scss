@@ -45,3 +45,19 @@ a.trigger-menu:hover i{
     margin-top: 11px;
   }
 }
+
+@keyframes activebefore{
+  50%{
+    margin-top: 0;
+  }
+  
+  100%{
+    @include transform( rotate(45deg) );
+  }
+}
+
+a.trigger-menu:focus i{
+  &:before{
+    -webkit-animation: activebefore .4s linear;
+  }
+}

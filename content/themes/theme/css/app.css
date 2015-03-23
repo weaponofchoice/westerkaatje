@@ -7164,6 +7164,18 @@ a.trigger-menu:hover i:before {
 a.trigger-menu:hover i:after {
   margin-top: 11px; }
 
+@keyframes activebefore {
+  50% {
+    margin-top: 0; }
+  100% {
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg); } }
+a.trigger-menu:focus i:before {
+  -webkit-animation: activebefore .4s linear; }
+
 .slider {
   position: relative; }
 
