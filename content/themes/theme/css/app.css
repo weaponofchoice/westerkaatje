@@ -7067,15 +7067,6 @@ body {
   min-height: 100%;
   background: white; }
 
-.hide {
-  opacity: 0;
-  visibility: hidden;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -ms-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s; }
-
 header {
   padding-left: 3.75rem;
   padding-right: 3.75rem; }
@@ -7397,6 +7388,24 @@ body.is-mobile .section-hero .section-hero-banner {
 @media screen and (min-width: 1400px) {
   .section-grid ul li {
     width: 25%; } }
+.is-visible {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s; }
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s; }
+
 .section.pad-no,
 .section-header.pad-no,
 .section-content.pad-no,

@@ -1,0 +1,7 @@
+.is-visible{
+  @include show( .3s );
+}
+
+.is-hidden{
+  @include hide( .3s );
+}
