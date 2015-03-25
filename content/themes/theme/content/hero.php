@@ -10,7 +10,7 @@ if( $text_isWhite ){
 // Variables
 $banner = get_sub_field( 'hero_banner' );
 
-$content_logo = get_sub_field( 'hero_content_image' );
+$content_image = get_sub_field( 'hero_content_image' );
 $content_title = get_sub_field( 'hero_content_title' );
 $content_text = preg_replace( '/<p>/', '<p class="' . $text_class . '">', get_sub_field( 'hero_content_text' ) );
 
@@ -29,8 +29,8 @@ echo '<section class="section section-hero pad-no">';
     echo '<div class="section-hero-content">';
       
       // Logo
-      if( $content_logo ):
-        echo '<img src="' . $content_logo['sizes']['medium'] . '" width="' . $content_logo['width'] . '" height="' .   $content_logo['height'] . '">';
+      if( $content_image ):
+        echo '<img src="' . $content_image['sizes']['medium'] . '" width="' . $content_image['width'] . '" height="' .   $content_image['height'] . '">';
       endif;
       
       // Title
