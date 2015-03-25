@@ -1689,6 +1689,7 @@ main {
   height: auto !important;
   height: 100%;
   min-height: 100%;
+  overflow: hidden;
   background: white;
   z-index: 900; }
 
@@ -2307,7 +2308,7 @@ body.is-mobile.is-loading > * {
   transition: 0s; }
 
 .is-fullwidth {
-  width: calc(100% + ($side-margin * 2));
+  width: calc(100% + (3.75rem * 2));
   margin-left: -3.75rem; }
 
 @media only screen and (max-width: 31.25em) {

@@ -3,7 +3,7 @@ $parallax_id = "parallax-" . $i;
 $image = get_sub_field( 'parallax_image' );
 ?>
 
-<section id="<?php echo $parallax_id; ?>" class="section parallax pad-no">
+<section id="<?php echo $parallax_id; ?>" class="section parallax pad-no is-fullwidth">
   <div class="section-content">
     <div class="bcg"
       style="background-image: url('<?php echo $image['sizes']['large']; ?>')"
