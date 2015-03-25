@@ -5,22 +5,24 @@ if( have_posts() ):
   while( have_posts() ): the_post();
     
     // Loop into ACF groups
-    if( have_rows('page') ):
+    if( have_rows('page') ): $i = 1;
       while( have_rows('page') ): the_row();
         
         // Hero section is placed before main
         
         if( get_row_layout() == 'text' ):
-          include_once( locate_template('content/text.php') );
+          include( locate_template('content/text.php') );
         elseif( get_row_layout() == 'grid_primary' ):
-          include_once( locate_template('content/grid-pri.php') );
+          include( locate_template('content/grid-pri.php') );
         elseif( get_row_layout() == 'grid_secondary' ):
-          include_once( locate_template('content/grid-sec.php') );
+          include( locate_template('content/grid-sec.php') );
         elseif( get_row_layout() == 'slider' ):
-          include_once( locate_template('content/slider.php') );
+          include( locate_template('content/slider.php') );
+        elseif( get_row_layout() == 'parallax' ):
+          include( locate_template('content/parallax.php') );
         endif;
         
-      endwhile;
+        $i++; endwhile;
     endif;
         
   endwhile;

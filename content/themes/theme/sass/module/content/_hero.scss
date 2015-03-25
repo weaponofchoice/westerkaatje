@@ -1,7 +1,6 @@
 .section-hero{
   height: 90vh;
   overflow: hidden;
-  z-index: $zIndex-hero;
   
   .section-hero-banner{
     position: fixed;
@@ -13,7 +12,6 @@
     left: 50%;
     margin: auto;
     position: absolute;
-    z-index: $zIndex-heroContent;
     @include transform( translate(-50%, -50%) );
   }
 }
