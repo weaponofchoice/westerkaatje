@@ -20,7 +20,7 @@ echo '<section class="section section-grid section-grid-pri">';
   if( $images ):
     echo '<div class="section-content row">';
       
-      // If isotope is what you seek, remove block-grid classes and add 'isotope' class
+      // If isotope is what you seek, just add the 'isotope' class
       echo '<ul class="s-grid-1 m-grid-2 l-grid-4">';
         foreach( $images as $image ):
           echo '<li><img src="' . $image['sizes']['large'] . '" width="' . $image['width'] . '" height="' . $image['height'] . '"></li>';

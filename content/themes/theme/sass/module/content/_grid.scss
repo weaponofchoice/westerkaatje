@@ -26,6 +26,12 @@
   }
 }
 
+.section-grid ul.isotope{
+  li:nth-child(n){
+    margin-bottom: 50px;
+  }
+}
+
 @media screen and (min-width: 1400px){
   .section-grid{
     ul{

@@ -1909,6 +1909,9 @@ a.trigger-menu:focus i:before {
   padding-top: 80px;
   padding-bottom: 80px;
   background: white; }
+  .section .section-header,
+  .section .section-content {
+    clear: both; }
 
 .section-hero {
   height: 90vh;
@@ -2008,6 +2011,9 @@ body.is-mobile .section-hero .section-hero-banner {
   margin-bottom: 0; }
 .section-grid [class*="grid-12"] li:nth-last-child(-n+12) {
   margin-bottom: 0; }
+
+.section-grid ul.isotope li:nth-child(n) {
+  margin-bottom: 50px; }
 
 @media screen and (min-width: 1400px) {
   .section-grid ul li {
