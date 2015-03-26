@@ -1,16 +1,17 @@
-header{
-  width: 100%;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  left: 0;
-  position: fixed;
-  z-index: $zIndex-header;
-  
+header {
   @include flex;
   @include align-items( center );
   @include justify-content( space-between );
   
-  .link-logo{
+  left: 0;
+  position: fixed;
+  z-index: $zIndex-header;
+  
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  
+  .link-logo {
     width: 50px;
   }
 }

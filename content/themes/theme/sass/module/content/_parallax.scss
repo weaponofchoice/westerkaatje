@@ -1,10 +1,10 @@
-.parallax .section-content,
+.section_parallax .section_content,
 .bcg{
   height: 0;
   padding-bottom: 50% !important;
 }
 
-.parallax{
+.section_parallax{
   width: 100%;
   z-index: $zIndex-parallax;
 }

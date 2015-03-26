@@ -5,12 +5,12 @@
   padding-bottom: $section-spacing;
   background: $white;
   
-  .section-header,
-  .section-content{
+  .section_header,
+  .section_content{
     clear: both;
   }
   
-  .section-header{
+  .section_header{
     margin-bottom: $section-spacing / 2;
   }
 }

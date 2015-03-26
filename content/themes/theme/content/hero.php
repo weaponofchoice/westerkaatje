@@ -15,18 +15,18 @@ $content_title = get_sub_field( 'hero_content_title' );
 $content_text = preg_replace( '/<p>/', '<p class="' . $text_class . '">', get_sub_field( 'hero_content_text' ) );
 
 // Output
-echo '<section class="section section-hero pad-none">';
+echo '<section class="section section_hero pad-none">';
   
   // Hero background image
   if( $banner ): 
-    echo '<div class="section-hero-banner is-stretched-wrapper">';
+    echo '<div class="section_hero-banner is-stretched-wrapper">';
       echo '<img class="is-stretched-object" src="' . $banner['sizes']['large'] . '" width="' . $banner['width'] . '" height="' . $banner['height'] . '">';
     echo '</div>';
   endif;
   
   // Hero content container
   if( $content_logo || $content_title || $content_text ):
-    echo '<div class="section-hero-content">';
+    echo '<div class="section_content">';
       
       // Logo
       if( $content_image ):

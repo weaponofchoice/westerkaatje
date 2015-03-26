@@ -1,4 +1,4 @@
-if $('.parallax').length > 0
+if $('.section_parallax').length > 0
   (($) ->
     # Init Skrollr
     s = skrollr.init(render: (data) ->

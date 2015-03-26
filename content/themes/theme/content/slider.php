@@ -6,11 +6,11 @@ $header_text = preg_replace( '/<p>/', '<p class="s-4 columns">', get_sub_field( 
 $content_images = get_sub_field( 'slider_content_images' );
 
 // Output
-echo '<section class="section section-slider">';
+echo '<section class="section section_slider">';
   
   // Gallery header
   if( $header_title || $header_text ): 
-    echo '<div class="section-header row">';
+    echo '<div class="section_header row">';
       echo '<h2 class="s-4 columns">' . $header_title . '</h2>';
       echo $header_text;
     echo '</div>';
@@ -18,7 +18,7 @@ echo '<section class="section section-slider">';
   
   // Gallery content
   if( $content_images ):
-    echo '<div class="section-content row">';
+    echo '<div class="section_content row">';
       
       // The images
       echo '<ul class="slider-images s-4 columns">';

@@ -20,8 +20,8 @@ $ ->
   ###
     First, give heights to the hero
   ###
-  hero = $('.section-hero')
-  hero_banner = $('.section-hero-banner')
+  hero = $('.section_hero')
+  hero_banner = $('.section_hero-banner')
   
   # Determine heights
   hero_height = window.innerHeight - 50
@@ -62,11 +62,11 @@ $ ->
   ###
     Fade effect
   ###
-  hero_content = $('.section-hero-content')
+  hero_content = $('.section_hero .section_content')
   hero_content.addClass "is-visible-0.7s"
   
   waypoint = new Waypoint(
-    element: $('.section-hero-content')
+    element: $('.section_hero .section_content')
     handler: (direction) ->
       hero_content.toggleClass "is-visible-0.7s"
       hero_content.toggleClass "is-hidden-0.7s"

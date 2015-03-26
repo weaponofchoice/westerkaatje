@@ -1,4 +1,4 @@
-.section-grid{
+.section_grid{
   ul{
     width: 100%;
     
@@ -18,7 +18,7 @@
 }
 
 // Removing margin-bottom for last row
-.section-grid{
+.section_grid{
   @for $value from 1 through $block-grid-elements{
     [class*="grid-#{$value}"] li:nth-last-child(-n+#{$value}){
       margin-bottom: 0;
@@ -26,14 +26,14 @@
   }
 }
 
-.section-grid ul.isotope{
+.section_grid ul.isotope{
   li:nth-child(n){
     margin-bottom: 50px;
   }
 }
 
 @media screen and (min-width: 1400px){
-  .section-grid{
+  .section_grid{
     ul{
       li{
         width: 25%;
