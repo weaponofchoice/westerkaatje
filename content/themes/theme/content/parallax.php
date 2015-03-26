@@ -1,6 +1,8 @@
 <?php
 $parallax_id = "parallax-" . $i;
 $image = get_sub_field( 'parallax_image' );
+
+if(! $detect->isMobile() ):
 ?>
 
 <section id="<?php echo $parallax_id; ?>" class="section parallax pad-no is-fullwidth">
@@ -14,3 +16,13 @@ $image = get_sub_field( 'parallax_image' );
     </div>
   </div>
 </section>
+
+<?php else: ?>
+
+<section id="<?php echo $parallax_id; ?>" class="section pad-no is-fullwidth">
+  <div class="section-content">
+    <img src="<?php echo $image['sizes']['large']; ?>">
+  </div>
+</section>
+
+<?php endif; ?>
