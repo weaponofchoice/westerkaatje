@@ -1906,14 +1906,20 @@ a.trigger-menu:focus i:before {
 .section {
   height: auto;
   overflow: hidden;
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 3.75rem;
+  padding-bottom: 3.75rem;
   background: white; }
   .section .section-header,
   .section .section-content {
     clear: both; }
   .section .section-header {
-    margin-bottom: 50px; }
+    margin-bottom: 1.875rem; }
+
+main .section:first-child {
+  padding-top: 7.5rem; }
+
+main .section:last-child {
+  padding-bottom: 7.5rem; }
 
 .section-hero {
   height: 90vh;
@@ -2257,12 +2263,12 @@ body.is-mobile .section-hero .section-hero-banner {
 .section-header.pad-extra-top,
 .section-content.pad-extra-top,
 .section-footer.pad-extra-top {
-  padding-top: 120px; }
+  padding-top: 7.5rem; }
 .section.pad-extra-bottom,
 .section-header.pad-extra-bottom,
 .section-content.pad-extra-bottom,
 .section-footer.pad-extra-bottom {
-  padding-bottom: 120px; }
+  padding-bottom: 7.5rem; }
 
 h1.is-italic, h2.is-italic, p.is-italic, a.is-italic {
   font-style: italic; }

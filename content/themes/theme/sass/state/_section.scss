@@ -28,11 +28,11 @@
   }
   
   &.pad-extra-top{
-    padding-top: 120px;
+    padding-top: $section-spacing * 2;
   }
   
   &.pad-extra-bottom{
-    padding-bottom: 120px;
+    padding-bottom: $section-spacing * 2;
   }
 }
 
