@@ -18,9 +18,25 @@
 }
 
 // Removing margin-bottom for last row
-.section_grid{
-  @for $value from 1 through $block-grid-elements{
-    [class*="grid-#{$value}"] li:nth-last-child(-n+#{$value}){
+@media #{$large-up}{
+  @for $value from $block-grid-elements through 1{
+    .l-grid-#{$value} li:nth-last-child(-n + #{$value}){
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media #{$medium-only}{
+  @for $value from $block-grid-elements through 1{
+    .m-grid-#{$value} li:nth-last-child(-n + #{$value}){
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media #{$small-only}{
+  @for $value from $block-grid-elements through 1{
+    .s-grid-#{$value} li:nth-last-child(-n + #{$value}){
       margin-bottom: 0;
     }
   }
