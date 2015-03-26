@@ -1912,6 +1912,8 @@ a.trigger-menu:focus i:before {
   .section .section-header,
   .section .section-content {
     clear: both; }
+  .section .section-header {
+    margin-bottom: 50px; }
 
 .section-hero {
   height: 90vh;
