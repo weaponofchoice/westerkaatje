@@ -5,7 +5,7 @@ $image = get_sub_field( 'parallax_image' );
 if(! $detect->isMobile() ):
 ?>
 
-<section id="<?php echo $parallax_id; ?>" class="section parallax pad-no is-fullwidth">
+<section id="<?php echo $parallax_id; ?>" class="section parallax pad-no-sides is-fullwidth">
   <div class="section-content">
     <div class="bcg"
       style="background-image: url('<?php echo $image['sizes']['large']; ?>')"

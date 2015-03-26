@@ -17,6 +17,15 @@
   }
 }
 
+// Removing margin-bottom for last row
+.section-grid{
+  @for $value from 1 through $block-grid-elements{
+    [class*="grid-#{$value}"] li:nth-last-child(-n+#{$value}){
+      margin-bottom: 0;
+    }
+  }
+}
+
 @media screen and (min-width: 1400px){
   .section-grid{
     ul{

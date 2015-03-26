@@ -15,7 +15,7 @@ $content_title = get_sub_field( 'hero_content_title' );
 $content_text = preg_replace( '/<p>/', '<p class="' . $text_class . '">', get_sub_field( 'hero_content_text' ) );
 
 // Output
-echo '<section class="section section-hero pad-no">';
+echo '<section class="section section-hero pad-none">';
   
   // Hero background image
   if( $banner ): 
