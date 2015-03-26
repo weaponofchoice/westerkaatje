@@ -1,44 +1,44 @@
-@mixin section-padding{
-  &.pad-none{
+@mixin section_padding{
+  &.has_no-pad{
     padding-top: 0;
     padding-bottom: 0;
     padding-left: 0;
     padding-right: 0;
   }
   
-  &.pad-no-top{
+  &.has_no-padTop{
     padding-top: 0;
   }
   
-  &.pad-no-bottom{
+  &.has_no-padBottom{
     padding-bottom: 0;
   }
   
-  &.pad-no-left{
+  &.has_no-padLeft{
     padding-left: 0;
   }
   
-  &.pad-no-right{
+  &.has_no-padRight{
     padding-right: 0;
   }
   
-  &.pad-no-sides{
+  &.has_no-padSides{
     padding-left: 0;
     padding-right: 0;
   }
   
-  &.pad-extra-top{
+  &.has_extra-padTop{
     padding-top: $section-spacing * 2;
   }
   
-  &.pad-extra-bottom{
+  &.has_extra-padBottom{
     padding-bottom: $section-spacing * 2;
   }
 }
 
 .section,
-.section-header,
-.section-content,
-.section-footer{
-  @include section-padding;
+.section_header,
+.section_content,
+.section_footer{
+  @include section_padding;
 }
