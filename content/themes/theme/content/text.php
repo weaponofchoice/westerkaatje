@@ -1,9 +1,9 @@
 <?php
-$text_pos = get_sub_field( 'text_pos' );
-$text_align = get_sub_field( 'text_align' );
+$text_pos = get_sub_field( 'text_o_c_pos' );
+$text_align = get_sub_field( 'text_o_c_align' );
 
-$title = get_sub_field( 'text_title' );
-$content = preg_replace( '/<p>/', '<p class="is-aligned-' . $text_align . '">', get_sub_field( 'text_content' ) );
+$title = get_sub_field( 'text_c_title' );
+$content = preg_replace( '/<p>/', '<p class="is-aligned-' . $text_align . '">', get_sub_field( 'text_c_text' ) );
 ?>
 <section class="section section_text">
   <div class="section_content row <?php echo 'is-positioned-' . $text_pos; ?>">

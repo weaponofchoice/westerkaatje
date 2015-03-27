@@ -1,9 +1,9 @@
 <?php
 // Variables
-$header_title = get_sub_field( 'slider_header_title' );
-$header_text = preg_replace( '/<p>/', '<p class="s-4 columns">', get_sub_field( 'slider_header_text' ) );
+$header_title = get_sub_field( 'slider_h_title' );
+$header_text = preg_replace( '/<p>/', '<p class="s-4 columns">', get_sub_field( 'slider_h_text' ) );
 
-$content_images = get_sub_field( 'slider_content_images' );
+$content_images = get_sub_field( 'slider_c_images' );
 
 // Output
 echo '<section class="section section_slider">';

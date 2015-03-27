@@ -79,10 +79,10 @@ hero_c_text
 hero_o_c_textColor
 --------------------------
 text_c_title
-text_c_content
+text_c_text
 
-text_o_pos
-text_o_align
+text_o_c_pos
+text_o_c_align
 --------------------------
 gridPri_h_title
 gridPri_h_text

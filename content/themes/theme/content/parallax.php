@@ -1,6 +1,6 @@
 <?php
 $parallax_id = "parallax-" . $i;
-$image = get_sub_field( 'parallax_image' );
+$image = get_sub_field( 'parallax_c_image' );
 
 if(! $detect->isMobile() ):
 ?>

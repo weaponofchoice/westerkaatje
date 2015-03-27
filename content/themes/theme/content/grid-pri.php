@@ -1,10 +1,10 @@
 <?php
 // Variables
-$header_title = get_sub_field( 'grid_pri_header_title' );
-$header_text = preg_replace( '/<p>/', '<p class="s-4 columns">', get_sub_field( 'grid_pri_header_text' ) );
+$header_title = get_sub_field( 'gridPri_h_title' );
+$header_text = preg_replace( '/<p>/', '<p class="s-4 columns">', get_sub_field( 'gridPri_h_text' ) );
 
-$images = get_sub_field( 'grid_pri_images' );
-$layout = get_sub_field( 'grid_pri_layout' );
+$images = get_sub_field( 'gridPri_c_images' );
+$layout = get_sub_field( 'gridPri_o_c_layout' );
 
 // Output
 echo '<section class="section section_grid section_grid-pri">';

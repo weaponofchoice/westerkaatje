@@ -1,7 +1,7 @@
 <?php
 // Controlling text color
-$text_isWhite = get_sub_field( 'text_isWhite' );
-if( $text_isWhite ){
+$content_textColor = get_sub_field( 'hero_o_c_textColor' );
+if( $content_textColor ){
   $text_class = 'is-white';
 } else {
   $text_class = '';
@@ -10,9 +10,9 @@ if( $text_isWhite ){
 // Variables
 $banner = get_sub_field( 'hero_banner' );
 
-$content_image = get_sub_field( 'hero_content_image' );
-$content_title = get_sub_field( 'hero_content_title' );
-$content_text = preg_replace( '/<p>/', '<p class="' . $text_class . '">', get_sub_field( 'hero_content_text' ) );
+$content_image = get_sub_field( 'hero_c_image' );
+$content_title = get_sub_field( 'hero_c_title' );
+$content_text = preg_replace( '/<p>/', '<p class="' . $text_class . '">', get_sub_field( 'hero_c_text' ) );
 
 // Output
 echo '<section class="section section_hero has_no-pad">';
