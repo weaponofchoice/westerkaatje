@@ -1,8 +1,8 @@
 if $('.isotope').length > 0
-  grid = $('.isotope')
+  masonry = $('.isotope_masonry')
   
   $('main').imagesLoaded(->
-    grid.isotope {
+    masonry.isotope {
       layoutMode: 'masonry'
     }
     return

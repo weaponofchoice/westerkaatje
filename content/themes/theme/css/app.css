@@ -1711,8 +1711,10 @@ body.is-mobile .section-hero .section-hero-banner {
 
   .s-grid-1 li:nth-last-child(-n + 1) {
     margin-bottom: 0; } }
-.section_grid ul.isotope li:nth-child(n) {
-  margin-bottom: 50px; }
+.section_grid ul.isotope_masonry li:nth-child(n) {
+  margin-bottom: 1.875rem; }
+  .section_grid ul.isotope_masonry li:nth-child(n) img {
+    margin-bottom: 0; }
 
 @media screen and (min-width: 1400px) {
   .section_grid ul li {

@@ -42,9 +42,13 @@
   }
 }
 
-.section_grid ul.isotope{
+.section_grid ul.isotope_masonry{
   li:nth-child(n){
-    margin-bottom: 50px;
+    margin-bottom: $column-gutter;
+    
+    img{
+      margin-bottom: 0;
+    }
   }
 }
 

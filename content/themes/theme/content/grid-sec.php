@@ -4,6 +4,8 @@ $header_title = get_sub_field( 'grid_sec_header_title' );
 $header_text = get_sub_field( 'grid_sec_header_text' );
 
 $content_items = get_sub_field( 'grid_sec_item' );
+$layout = get_sub_field( 'grid_sec_layout' );
+$text_align = get_sub_field( 'grid_sec_textAlign' );
 
 // Output
 echo '<section class="section section_grid section_grid-sec">';
@@ -20,17 +22,20 @@ echo '<section class="section section_grid section_grid-sec">';
   if( have_rows('grid_sec_item') ):
     echo '<div class="section_content">';
       
-      // If isotope is what you seek, just add the 'isotope' class
+    if( $layout == 'masonry' ){
+      echo '<ul class="s-grid-1 m-grid-2 l-grid-4 isotope isotope_masonry">';
+    } else {
       echo '<ul class="s-grid-1 m-grid-2 l-grid-4">';
+    }
         
         while( have_rows('grid_sec_item') ): the_row();
           $image = get_sub_field( 'grid_sec_item_image' );
           $title = get_sub_field( 'grid_sec_item_title' );
-          $text = get_sub_field( 'grid_sec_item_text' );
+          $text = preg_replace( '/<p>/', '<p class="is-aligned-' . $text_align . '">', get_sub_field( 'grid_sec_item_text' ) );
           
           echo '<li>';
             echo '<img src="' . $image['sizes']['medium'] . '" width="' . $image['width'] . '" height="' . $image['height'] . '">';
-            echo '<h2>' . $title . '</h2>';
+            echo '<h2 class="is-aligned-' . $text_align . '">' . $title . '</h2>';
             echo $text;
           echo '</li>';
         endwhile;
