@@ -26,4 +26,8 @@ main .section:last-child{
 
 .section_header{
   max-width: 600px;
+  
+  h2{
+    margin-bottom: $section-spacing / 4;
+  }
 }
