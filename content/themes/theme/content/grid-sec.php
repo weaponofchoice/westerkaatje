@@ -1,7 +1,7 @@
 <?php
 // Variables
 $header_title = get_sub_field( 'grid_sec_header_title' );
-$header_text = get_sub_field( 'grid_sec_header_text' );
+$header_text = preg_replace( '/<p>/', '<p class="s-4 columns">', get_sub_field( 'grid_sec_header_text' ) );
 
 $content_items = get_sub_field( 'grid_sec_item' );
 $layout = get_sub_field( 'grid_sec_layout' );
@@ -12,10 +12,7 @@ echo '<section class="section section_grid section_grid-sec">';
   
   // Grid header
   if( $header_title || $header_text ): 
-    echo '<div class="section_header s-4 columns">';
-      echo '<h2>' . $header_title . '</h2>';
-      echo $header_text;
-    echo '</div>';
+    include( 'section_header.php' );
   endif;
   
   // Grid content

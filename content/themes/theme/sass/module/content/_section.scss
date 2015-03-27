@@ -23,3 +23,7 @@ main .section:first-child{
 main .section:last-child{
   padding-bottom: $section-spacing * 2;
 }
+
+.section_header{
+  max-width: 600px;
+}

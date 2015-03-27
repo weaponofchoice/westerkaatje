@@ -19,7 +19,7 @@ if(! $detect->isMobile() ):
 
 <?php else: ?>
 
-<section id="<?php echo $parallax_id; ?>" class="section section_parallax pad-no is-fullwidth">
+<section class="section section_parallax pad-no is-fullwidth" id="<?php echo $parallax_id; ?>">
   <div class="section_content">
     <img src="<?php echo $image['sizes']['large']; ?>">
   </div>

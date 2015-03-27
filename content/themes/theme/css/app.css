@@ -1601,6 +1601,9 @@ main .section:first-child {
 main .section:last-child {
   padding-bottom: 7.5rem; }
 
+.section_header {
+  max-width: 600px; }
+
 .section_hero {
   height: 90vh;
   overflow: hidden; }
@@ -1658,7 +1661,7 @@ body.is-mobile .section-hero .section-hero-banner {
 .section_text {
   text-align: center; }
   .section_text .section_content {
-    max-width: 500px;
+    max-width: 600px;
     margin: auto; }
     .section_text .section_content h2,
     .section_text .section_content p,
@@ -1917,6 +1920,12 @@ body.is-mobile .section-hero .section-hero-banner {
   -ms-transition: 0.9s;
   -o-transition: 0.9s;
   transition: 0.9s; }
+
+.is-positioned-left {
+  float: left; }
+
+.is-positioned-right {
+  float: right; }
 
 .section.has_no-pad,
 .section_header.has_no-pad,

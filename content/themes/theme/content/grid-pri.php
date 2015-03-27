@@ -11,10 +11,7 @@ echo '<section class="section section_grid section_grid-pri">';
   
   // Grid header
   if( $header_title || $header_text ): 
-    echo '<div class="section_header row">';
-      echo '<h2 class="s-4 columns">' . $header_title . '</h2>';
-      echo $header_text;
-    echo '</div>';
+    include( 'section_header.php' );
   endif;
   
   // Grid content

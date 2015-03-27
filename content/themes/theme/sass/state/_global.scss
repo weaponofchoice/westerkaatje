@@ -18,3 +18,11 @@
     @include hide($i / 10 * 1s);
   }
 }
+
+.is-positioned-left{
+  float: left;
+}
+
+.is-positioned-right{
+  float: right;
+}
