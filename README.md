@@ -1,3 +1,5 @@
+!! Still very much in development !!
+
 Monomark OnePage
 ==============================
 
@@ -59,3 +61,56 @@ Although this framework is initially build for onepagers, of course it can easil
   font-size: 16px;
   text-align: right;
 }
+
+## Database custom fields
+
+block_section_element_subelementVariation
+
+h = header
+c = content
+o = options
+--------------------------
+hero_banner
+
+hero_c_image
+hero_c_title
+hero_c_text
+
+hero_o_c_textColor
+--------------------------
+text_c_title
+text_c_content
+
+text_o_pos
+text_o_align
+--------------------------
+gridPri_h_title
+gridPri_h_text
+
+gridPri_c_images
+
+gridPri_o_h_pos
+gridPri_o_h_align
+gridPri_o_c_layout
+--------------------------
+gridSec_h_title
+gridSec_h_text
+
+gridSec_c_item
+gridSec_c_item_image
+gridSec_c_item_title
+gridSec_c_item_text
+
+gridSec_o_h_pos
+gridSec_o_h_align
+gridSec_o_c_layout
+--------------------------
+slider_h_title
+slider_h_text
+
+slider_c_images
+
+slider_o_h_pos
+slider_o_h_align
+--------------------------
+parallax_c_image
