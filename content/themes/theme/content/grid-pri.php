@@ -6,7 +6,7 @@ $layout = get_sub_field( 'gridPri_o_c_layout' );
 
 // Variables
 $header_title = get_sub_field( 'gridPri_h_title' );
-$header_text = preg_replace( '/<p>/', '<p class="s-4 columns is_aligned-' . $text_align . '">', get_sub_field( 'slider_h_text' ) );
+$header_text = preg_replace( '/<p>/', '<p class="s-4 columns is_aligned-' . $text_align . '">', get_sub_field( 'gridPri_h_text' ) );
 $content_images = get_sub_field( 'gridPri_c_images' );
 
 // Output
@@ -14,7 +14,7 @@ echo '<section class="section section_grid section_grid-pri">';
   
   // Grid header
   if( $header_title || $header_text ): 
-    echo '<div class="section_header row">';
+    echo '<div class="section_header row is_positioned-' . $text_pos . '">';
       echo '<h2 class="s-4 columns is_aligned-' . $text_align . '">' . $header_title . '</h2>';
       echo $header_text;
     echo '</div>';

@@ -1923,10 +1923,10 @@ body.is-mobile .section-hero .section-hero-banner {
   -o-transition: 0.9s;
   transition: 0.9s; }
 
-.is-positioned-left {
+.is_positioned-left {
   float: left; }
 
-.is-positioned-right {
+.is_positioned-right {
   float: right; }
 
 .section.has_no-pad,
