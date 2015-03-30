@@ -2,7 +2,7 @@
 // Controlling text color
 $content_textColor = get_sub_field( 'hero_o_c_textColor' );
 if( $content_textColor ){
-  $text_class = 'is-white';
+  $text_class = 'is_white';
 } else {
   $text_class = '';
 }

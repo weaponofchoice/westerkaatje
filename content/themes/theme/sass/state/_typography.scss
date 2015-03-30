@@ -1,52 +1,52 @@
 %base{
   // Styles
-  &.is-italic{
+  &.is_italic{
     font-style: italic;
   }
   
-  &.is-underlined{
+  &.is_underlined{
     text-decoration: underline;
   }
   
-  &.is-capitalized{
+  &.is_capitalized{
     text-transform: capitalize;
   }
   
-  &.is-uppercase{
+  &.is_uppercase{
     text-transform: uppercase;
   }
   
-  &.is-lowercase{
+  &.is_lowercase{
     text-transform: lowercase;
   }
   
-  &.is-bold{
+  &.is_bold{
     font-weight: 700;
   }
   
   // Alignment
-  &.is-aligned-center{
+  &.is_aligned-center{
     text-align: center;
   }
   
-  &.is-aligned-left{
+  &.is_aligned-left{
     text-align: left;
   }
   
-  &.is-aligned-right{
+  &.is_aligned-right{
     text-align: right;
   }
   
   // Colors
-  &.is-black{
+  &.is_black{
     color: $black;
   }
   
-  &.is-white{
+  &.is_white{
     color: $white;
   }
 }
 
-p.is-small{
+p.is_small{
   font-size: 15px;
 }

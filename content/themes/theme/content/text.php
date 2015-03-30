@@ -7,7 +7,7 @@ $content = preg_replace( '/<p>/', '<p class="is-aligned-' . $text_align . '">', 
 ?>
 <section class="section section_text">
   <div class="section_content row <?php echo 'is-positioned-' . $text_pos; ?>">
-    <h2 class="s-4 columns is-uppercase is-bold <?php echo 'is-aligned-' . $text_align; ?>">
+    <h2 class="s-4 columns is_uppercase is_bold <?php echo 'is-aligned-' . $text_align; ?>">
       <?php echo $title; ?>
     </h2>
     <div class="s-4 columns">
