@@ -1,19 +1,23 @@
 <?php
+// Options
+$text_pos = get_sub_field( 'gridSec_o_h_pos' );
+$text_align = get_sub_field( 'gridSec_o_h_align' );
+$layout = get_sub_field( 'gridSec_o_c_layout' );
+
 // Variables
 $header_title = get_sub_field( 'gridSec_h_title' );
-$header_text = preg_replace( '/<p>/', '<p class="s-4 columns">', get_sub_field( 'gridSec_h_text' ) );
-
+$header_text = preg_replace( '/<p>/', '<p class="s-4 columns is_aligned-' . $text_align . '">', get_sub_field( 'slider_h_text' ) );
 $content_items = get_sub_field( 'gridSec_c_item' );
-
-$layout = get_sub_field( 'gridSec_o_c_layout' );
-// $text_align = get_sub_field( 'gridSec_o_c_align' );
 
 // Output
 echo '<section class="section section_grid section_grid-sec">';
   
   // Grid header
   if( $header_title || $header_text ): 
-    include( 'section_header.php' );
+    echo '<div class="section_header row">';
+      echo '<h2 class="s-4 columns is_aligned-' . $text_align . '">' . $header_title . '</h2>';
+      echo $header_text;
+    echo '</div>';
   endif;
   
   // Grid content
