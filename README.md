@@ -11,6 +11,15 @@ Wordpress Elements initially assumes a setup with these dependencies:
 - You have multiple servers(local, development, production)
 - You have an Advanced Custom Fields(ACF) license key
 
+1. Git clone git@github.com:LucAwater/Wordpress-Elements.git .
+2. Git submodule init
+3. Git submodule update
+4. Go to http://yourwebsite.com/wordpress/wp-admin
+5. Install all plugins
+6. Activate 'Elements' theme
+7. import 'acf.json' file in ACF
+8. Begin building something awesome
+
 ## Classnaming & writing sass
 
 ### Classnames
