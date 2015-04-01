@@ -1,11 +1,15 @@
 !! Still very much in development !!
 
-Monomark OnePage
+Wordpress Elements
 ==============================
 
-This is a Wordpress framework, used for basic Monomark onepagers. It contains a wordpress setup with a multiple server config method and wordpress as a submodule. It also has a basic wordpres theme. It contains elements like a gallery, grid, text block and more. To make it even easier, there's also an ACF export file so you don't have to manually add these with every install.
+This is a Wordpress framework, which can be used in a variety of ways. It contains a wordpress setup with a multiple server config method and wordpress as a submodule. It also has a basic wordpres theme. It contains elements like a gallery, grid, text block and more. To make it even easier, there's also an Advanced Custom Fields(ACF) export file so you don't have to manually add these with every install.
 
 Although this framework is initially build for onepagers, of course it can easily be used to make larger websites.
+
+Wordpress Elements initially assumes a setup with these dependencies:
+- You have multiple servers(local, development, production)
+- You have an Advanced Custom Fields(ACF) license key
 
 ## Classnaming & writing sass
 
