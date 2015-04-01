@@ -14,7 +14,7 @@ Wordpress Elements initially assumes a setup with these dependencies:
 ## Classnaming & writing sass
 
 ### Classnames
-
+```
 .block_kind-variation 
   .has_no-something
   .has-something
@@ -23,7 +23,8 @@ Wordpress Elements initially assumes a setup with these dependencies:
   .is_not-something
   .is-something
   .is_something-otherthing (example: .is_aligned-center)
-  
+```
+
 ### Sass guidelines
 
 - One selector per line
@@ -34,6 +35,7 @@ Wordpress Elements initially assumes a setup with these dependencies:
 - Use 2 soft tabs(spaces)
 - 
 
+```
 .selector-1,
 .selector-2 {
   @extend something;
@@ -65,6 +67,7 @@ Wordpress Elements initially assumes a setup with these dependencies:
   font-size: 16px;
   text-align: right;
 }
+```
 
 ## Database custom fields
 
