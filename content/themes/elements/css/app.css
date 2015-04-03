@@ -1673,6 +1673,10 @@ body.is-mobile .section-hero .section-hero-banner {
     .section_text .section_content a {
       margin-bottom: 1em; }
 
+.section_image .section_content figure {
+  display: inline-block;
+  text-align: left; }
+
 .section_grid ul {
   width: 100%; }
   .section_grid ul li {
@@ -1932,6 +1936,10 @@ body.is-mobile .section-hero .section-hero-banner {
 .is_positioned-right {
   float: right; }
 
+.is_positioned-center {
+  display: block;
+  margin: auto; }
+
 .section.has_no-pad,
 .section_header.has_no-pad,
 .section_content.has_no-pad,
@@ -1976,6 +1984,13 @@ body.is-mobile .section-hero .section-hero-banner {
 .section_content.has_extra-padBottom,
 .section_footer.has_extra-padBottom {
   padding-bottom: 7.5rem; }
+
+.section_image .section_content.is_positioned-left {
+  text-align: left; }
+.section_image .section_content.is_positioned-center {
+  text-align: center; }
+.section_image .section_content.is_positioned-right {
+  text-align: right; }
 
 h1.is_italic, h2.is_italic, p.is_italic, a.is_italic {
   font-style: italic; }

@@ -1,4 +1,6 @@
 <?php
+get_header();
+
 // Loop into ACF groups
 if( have_rows('page') ): $i = 0;
   while( have_rows('page') ): the_row();
@@ -7,6 +9,8 @@ if( have_rows('page') ): $i = 0;
     
     if( get_row_layout() == 'text' ):
       include( locate_template('content/text.php') );
+    elseif( get_row_layout() == 'image' ):
+      include( locate_template('content/image.php') );
     elseif( get_row_layout() == 'grid_primary' ):
       include( locate_template('content/grid-pri.php') );
     elseif( get_row_layout() == 'grid_secondary' ):
@@ -19,4 +23,6 @@ if( have_rows('page') ): $i = 0;
     
     endwhile;
 endif;
+
+get_footer();
 ?>
