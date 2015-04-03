@@ -1,0 +1,13 @@
+.section_image .section_content{
+  &.is_positioned-left{
+    text-align: left;
+  }
+  
+  &.is_positioned-center{
+    text-align: center;
+  }
+  
+  &.is_positioned-right{
+    text-align: right;
+  }
+}
