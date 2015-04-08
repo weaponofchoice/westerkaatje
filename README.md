@@ -131,6 +131,26 @@ slider_o_h_align
 --------------------------
 parallax_c_image
 
+
+### Project setup w/ Wordpress Elements
+
+- mkdir your-project
+- cd your-project
+- git clone git@github.com:LucAwater/Wordpress-Elements.git .
+- git remote set-url origin [created git repository]
+- git submodule init
+- git submodule update
+- git push -u origin master
+- git flow init
+- go to: http://localhost:8888/phpmymadin
+- create new directory "your-project"
+- nano local-config.php
+- go to http://localhost:8888/your-project
+- activate all plugins
+- 'settings' > 'permalinks' > check 'post name' and save
+- import acf.json file
+
+
 ### .htaccess
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
@@ -160,7 +180,8 @@ ExpiresByType image/x-icon "access 1 year"
 ExpiresDefault "access 1 month"
 </IfModule>
 ## EXPIRES CACHING ##
-```
+
+
 
 ### config file
 ```
@@ -191,6 +212,3 @@ define('AUTH_SALT',        '8-tQb3d|W8,;Y_#mfuFB.1&b%U2fnlLD|F&yH).tLRX=ANEdNap{
 define('SECURE_AUTH_SALT', 'RSa%^qd~T|@+!-;qgh,qK-GJ}zPpgxz#+@v6-I;BMwqT`TzGTtg_^n*ILxGOdbq4');
 define('LOGGED_IN_SALT',   ']+XV)YK.Q-EU1vR [BT!Y$!d(J_[AO37OP[Fg[/esFx;6cI-L[^O|cvtw9F[;_*Q');
 define('NONCE_SALT',       'iP{nTQBzy&f^hSbwBgyan.v9<+ErvAMi2ymLhz`Tl-fF?HXa(j<W`wA*8U3R#-|w');
-```
-
-
