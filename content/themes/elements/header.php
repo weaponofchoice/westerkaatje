@@ -29,7 +29,10 @@
       <img src="<?php echo bloginfo( 'template_directory' ); ?>/img/logo.svg">
     </a>
     
-    <a class="trigger trigger-menu"><i></i></a>
+    <?php include( 'includes/nav.php' ); ?>
+    
+    <!-- <a class="trigger trigger-menu"><i></i></a> -->
+    
   </header>
   
   <?php
