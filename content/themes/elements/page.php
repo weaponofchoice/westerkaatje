@@ -2,7 +2,7 @@
 get_header();
 
 // Loop into ACF groups
-if( have_rows('page') ): $i = 0;
+if( have_rows('page') ): $i_par = 0;
   while( have_rows('page') ): the_row();
     
     // Hero section is placed before main
@@ -17,11 +17,11 @@ if( have_rows('page') ): $i = 0;
       include( locate_template('content/grid-sec.php') );
     elseif( get_row_layout() == 'slider' ):
       include( locate_template('content/slider.php') );
-    elseif( get_row_layout() == 'parallax' ): $i++;
+    elseif( get_row_layout() == 'parallax' ): $i_par++;
       include( locate_template('content/parallax.php') );
     endif;
     
-    endwhile;
+  endwhile;
 endif;
 
 get_footer();

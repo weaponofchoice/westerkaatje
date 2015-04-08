@@ -1,5 +1,5 @@
 <?php
-$parallax_id = "parallax-" . $i;
+$parallax_id = "parallax-" . $i_par;
 $image = get_sub_field( 'parallax_c_image' );
 
 if(! $detect->isMobile() ):

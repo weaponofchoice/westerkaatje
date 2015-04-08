@@ -1,15 +1,21 @@
 <?php
 // Options
+$slider_menu = get_sub_field( 'slider_o_menu' );
+$slider_menu_name = get_sub_field( 'slider_o_menu_name' );
+if( $slider_menu == true ){
+  $slider_id = strtolower( $slider_menu_name );
+}
+
 $text_pos = get_sub_field( 'slider_o_h_pos' );
 $text_align = get_sub_field( 'slider_o_h_align' );
 
-// Variables
+// Content
 $header_title = get_sub_field( 'slider_h_title' );
 $header_text = preg_replace( '/<p>/', '<p class="s-4 columns is_aligned-' . $text_align . '">', get_sub_field( 'slider_h_text' ) );
 $content_images = get_sub_field( 'slider_c_images' );
 
 // Output
-echo '<section class="section section_slider">';
+echo '<section class="section section_slider" id="' . $slider_id . '">';
   
   // Gallery header
   if( $header_title || $header_text ): 
