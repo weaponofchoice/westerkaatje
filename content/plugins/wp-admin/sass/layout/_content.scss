@@ -19,11 +19,12 @@
         background: $grey-light;
         
         .nav-tab-wrapper{
-          width: calc(100% + 80px);
+          width: 100%;
           margin-left: -40px;
           margin-top: -26px;
           margin-bottom: 25px;
           padding-left: 40px;
+          padding-right: 40px;
           background: $white;
           border-bottom: 0;
           

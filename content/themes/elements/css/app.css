@@ -1402,10 +1402,10 @@ header {
     width: 50px; }
 
 footer {
+  z-index: 1100;
   padding: 50px;
-  text-align: center;
   background: black;
-  z-index: 1100; }
+  text-align: center; }
   footer > img {
     max-width: 250px;
     margin-bottom: 50px; }
@@ -1457,6 +1457,12 @@ a.trigger-menu:hover i:after {
     transform: rotate(45deg); } }
 a.trigger-menu:focus i:before {
   -webkit-animation: activebefore .4s linear; }
+
+nav ul {
+  display: inline; }
+  nav ul li {
+    display: inline-block;
+    padding-right: 1em; }
 
 .slider {
   position: relative; }

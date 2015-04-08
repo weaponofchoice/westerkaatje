@@ -1,11 +1,6 @@
 <?php
 // Controlling text color
 $content_textColor = get_sub_field( 'hero_o_c_textColor' );
-if( $content_textColor ){
-  $text_class = 'is_white';
-} else {
-  $text_class = '';
-}
 
 // Variables
 $banner = get_sub_field( 'hero_banner' );
@@ -35,7 +30,7 @@ echo '<section class="section section_hero has_no-pad">';
       
       // Title
       if( $content_title ):
-        echo '<h2 class="' . $text_class . '">' . $content_title . '</h2>';
+        echo '<h2 class="is_bold is_' . $content_textColor . '">' . $content_title . '</h2>';
       endif;
       
       // Text

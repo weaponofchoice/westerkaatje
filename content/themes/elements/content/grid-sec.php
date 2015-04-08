@@ -1,16 +1,18 @@
 <?php
 // Options
+$gridSec_menu = get_sub_field( 'gridSec_o_menu' );
+
 $text_pos = get_sub_field( 'gridSec_o_h_pos' );
 $text_align = get_sub_field( 'gridSec_o_h_align' );
 $layout = get_sub_field( 'gridSec_o_c_layout' );
 
-// Variables
+// Content
 $header_title = get_sub_field( 'gridSec_h_title' );
 $header_text = preg_replace( '/<p>/', '<p class="s-4 columns is_aligned-' . $text_align . '">', get_sub_field( 'gridSec_h_text' ) );
 $content_items = get_sub_field( 'gridSec_c_item' );
 
 // Output
-echo '<section class="section section_grid section_grid-sec">';
+echo '<section class="section section_grid section_grid-sec"' . (( $gridSec_menu == true ) ? 'id="anchor-' . $i_anchor : "") . '">';
   
   // Grid header
   if( $header_title || $header_text ): 

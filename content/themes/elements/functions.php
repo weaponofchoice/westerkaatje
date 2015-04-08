@@ -25,6 +25,13 @@ add_theme_support( 'post-thumbnails' );
 // Add support for automatic RSS feed links
 add_theme_support( 'automatic-feed-links' );
 
+// Allow svg files to be added to the media folder
+function cc_mime_types($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');
+
 // Purge Custom Post-types from cache after update
 add_action( 'edit_post', 'w3_flush_page_custom', 10, 1 );
 
