@@ -1402,10 +1402,10 @@ header {
     width: 50px; }
 
 footer {
+  z-index: 1100;
   padding: 50px;
-  text-align: center;
   background: black;
-  z-index: 1100; }
+  text-align: center; }
   footer > img {
     max-width: 250px;
     margin-bottom: 50px; }

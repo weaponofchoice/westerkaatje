@@ -20,30 +20,30 @@
   "layout/_layout",
   "layout/_main",
   "layout/_header",
-  "layout/_footer";
+  "layout/_footer",
+  
+  "layout/navigation/_menu.scss",
+  "layout/navigation/_nav.scss";
   
 // MODULE
 @import
-  "module/navigation/_menu.scss",
-  "module/navigation/_nav.scss",
+  "modules/slider/_slider",
+  "modules/slider/_slider-bullets",
+  "modules/slider/_slider-controls",
   
-  "module/slider/_slider",
-  "module/slider/_slider-bullets",
-  "module/slider/_slider-controls",
-  
-  "module/content/_section",
-  "module/content/_hero",
-  "module/content/_text",
-  "module/content/_image",
-  "module/content/_grid",
-  "module/content/_parallax";
+  "modules/content/_section",
+  "modules/content/_hero",
+  "modules/content/_text",
+  "modules/content/_image",
+  "modules/content/_grid",
+  "modules/content/_parallax";
   
 // STATE
 @import
-  "state/_global",
-  "state/_section",
-  "state/_section-image",
-  "state/_typography",
-  "state/_stretch",
-  "state/_resizing",
-  "state/_fullwidth";
+  "states/_global",
+  "states/_section",
+  "states/_section-image",
+  "states/_typography",
+  "states/_stretch",
+  "states/_resizing",
+  "states/_fullwidth";
