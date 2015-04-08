@@ -1458,6 +1458,12 @@ a.trigger-menu:hover i:after {
 a.trigger-menu:focus i:before {
   -webkit-animation: activebefore .4s linear; }
 
+nav ul {
+  display: inline; }
+  nav ul li {
+    display: inline-block;
+    padding-right: 1em; }
+
 .slider {
   position: relative; }
 
