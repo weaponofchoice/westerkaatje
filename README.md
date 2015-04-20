@@ -8,8 +8,8 @@ Although this framework is initially build for onepagers, of course it can easil
 
 **Table of contents:**
 1. Classnaming & writing sass
-  1. Classnames
-  2. Sass guidelines
+  - Classnames
+  - Sass guidelines
 2. Database custom fields
 3. Project setup w/ Wordpress Elements
 4. .htaccess
