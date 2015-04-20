@@ -1,7 +1,6 @@
 !! Still very much in development !!
 
-Wordpress Elements
-==============================
+# Wordpress Elements
 
 This is a Wordpress framework, which can be used in a variety of ways. It contains a wordpress setup with a multiple server config method and wordpress as a submodule. It also has a basic wordpres theme. It contains elements like a gallery, grid, text block and more. To make it even easier, there's also an Advanced Custom Fields(ACF) export file so you don't have to manually add these with every install.
 
@@ -22,7 +21,7 @@ Wordpress Elements initially assumes a setup with these dependencies:
 
 ## Classnaming & writing sass
 
-### Classnames
+#### Classnames
 ```
 .block_kind-variation 
   .has_no-something
@@ -34,7 +33,7 @@ Wordpress Elements initially assumes a setup with these dependencies:
   .is_something-otherthing (example: .is_aligned-center)
 ```
 
-### Sass guidelines
+#### Sass guidelines
 
 - One selector per line
 - Single space before opening bracket
@@ -81,48 +80,45 @@ Wordpress Elements initially assumes a setup with these dependencies:
 
 block_section_element_subelementVariation
 
-**h = header
-c = content
-o = options**
+**h = header | c = content | o = options**
 
-hero_banner
-hero_c_image
-hero_c_title
-hero_c_text
-hero_o_c_textColor
+- hero_banner
+- hero_c_image
+- hero_c_title
+- hero_c_text
+- hero_o_c_textColor
 
-text_c_title
-text_c_text
-text_o_c_pos
-text_o_c_align
+- text_c_title
+- text_c_text
+- text_o_c_pos
+- text_o_c_align
 
-gridPri_h_title
-gridPri_h_text
-gridPri_c_images
-gridPri_o_h_pos
-gridPri_o_h_align
-gridPri_o_c_layout
+- gridPri_h_title
+- gridPri_h_text
+- gridPri_c_images
+- gridPri_o_h_pos
+- gridPri_o_h_align
+- gridPri_o_c_layout
 
-gridSec_h_title
-gridSec_h_text
-gridSec_c_item
-gridSec_c_item_image
-gridSec_c_item_title
-gridSec_c_item_text
-gridSec_o_h_pos
-gridSec_o_h_align
-gridSec_o_c_layout
+- gridSec_h_title
+- gridSec_h_text
+- gridSec_c_item
+- gridSec_c_item_image
+- gridSec_c_item_title
+- gridSec_c_item_text
+- gridSec_o_h_pos
+- gridSec_o_h_align
+- gridSec_o_c_layout
 
-slider_h_title
-slider_h_text
-slider_c_images
-slider_o_h_pos
-slider_o_h_align
+- slider_h_title
+- slider_h_text
+- slider_c_images
+- slider_o_h_pos
+- slider_o_h_align
 
-parallax_c_image
+- parallax_c_image
 
-
-### Project setup w/ Wordpress Elements
+## Project setup w/ Wordpress Elements
 
 - mkdir your-project
 - cd your-project
@@ -141,7 +137,7 @@ parallax_c_image
 - import acf.json file
 
 
-### .htaccess
+## .htaccess
 ```
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
@@ -174,7 +170,7 @@ ExpiresDefault "access 1 month"
 ```
 
 
-### config file
+## config file
 ```
 <?php
 /* WordPress Local Environment DB credentials */
