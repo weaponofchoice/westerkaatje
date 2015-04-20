@@ -1,4 +1,4 @@
--> Still very much in development <-
+**! Still very much in development !**
 
 # Wordpress Elements
 
