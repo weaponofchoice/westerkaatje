@@ -42,7 +42,6 @@ Wordpress Elements initially assumes a setup with these dependencies:
 - Includes come second
 - Then the rest in three blocks: positioning, display & box model and other
 - Use 2 soft tabs(spaces)
-- 
 
 ```
 .selector-1,
@@ -82,53 +81,44 @@ Wordpress Elements initially assumes a setup with these dependencies:
 
 block_section_element_subelementVariation
 
-h = header
+**h = header
 c = content
-o = options
---------------------------
-hero_banner
+o = options**
 
+hero_banner
 hero_c_image
 hero_c_title
 hero_c_text
-
 hero_o_c_textColor
---------------------------
+
 text_c_title
 text_c_text
-
 text_o_c_pos
 text_o_c_align
---------------------------
+
 gridPri_h_title
 gridPri_h_text
-
 gridPri_c_images
-
 gridPri_o_h_pos
 gridPri_o_h_align
 gridPri_o_c_layout
---------------------------
+
 gridSec_h_title
 gridSec_h_text
-
 gridSec_c_item
 gridSec_c_item_image
 gridSec_c_item_title
 gridSec_c_item_text
-
 gridSec_o_h_pos
 gridSec_o_h_align
 gridSec_o_c_layout
---------------------------
+
 slider_h_title
 slider_h_text
-
 slider_c_images
-
 slider_o_h_pos
 slider_o_h_align
---------------------------
+
 parallax_c_image
 
 
@@ -152,6 +142,7 @@ parallax_c_image
 
 
 ### .htaccess
+```
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On
@@ -163,7 +154,7 @@ RewriteRule . /index.php [L]
 </IfModule>
 
 # END WordPress
-```
+
 ## EXPIRES CACHING ##
 <IfModule mod_expires.c>
 ExpiresActive On
@@ -180,35 +171,17 @@ ExpiresByType image/x-icon "access 1 year"
 ExpiresDefault "access 1 month"
 </IfModule>
 ## EXPIRES CACHING ##
-
+```
 
 
 ### config file
 ```
 <?php
-
-/**
- * WordPress config file to use one directory above WordPress root, when awesome version of wp-config.php is in use.
- *
- * Awesome wp-config.php file - https://gist.github.com/1923821
- */
-
 /* WordPress Local Environment DB credentials */
-
 define('DB_NAME', 'bonanza_dev');
 define('DB_USER', 'bonanza');
 define('DB_PASSWORD', 'hQFvYqaRj8Y7TX');
 define('DB_HOST', 'localhost');
 define('DB_CHARSET', 'utf8');
 define('DB_COLLATE', '');
-
-/* Keys & Salts */
-
-define('AUTH_KEY',         '5H%)s-nQ,+fn0gwg/p1UjBTmCQ?l[8-!>Q{MW&?X3DM,OF;TaI<SOOTrl0+-@) *');
-define('SECURE_AUTH_KEY',  '+%rr@,XIt-V+[.B9++uH1L,L+r)uq}5(:~=&4~Lk|.LV|y;R}fEo?G}+Sntf_JN}');
-define('LOGGED_IN_KEY',    'Szv!gQm9#(L&TUD OnM`>sXGge:m1j`L2 5sO;hRNVhlN>IUED1/`%<[ly-GxVJ ');
-define('NONCE_KEY',        'o-Jo;>G#-%~,[ki@REqXV%4^I.HDnc.3]P;e8];4pJt% $xe5K<aOb|a2*QKV4c-');
-define('AUTH_SALT',        '8-tQb3d|W8,;Y_#mfuFB.1&b%U2fnlLD|F&yH).tLRX=ANEdNap{78o|9tqv6JPt');
-define('SECURE_AUTH_SALT', 'RSa%^qd~T|@+!-;qgh,qK-GJ}zPpgxz#+@v6-I;BMwqT`TzGTtg_^n*ILxGOdbq4');
-define('LOGGED_IN_SALT',   ']+XV)YK.Q-EU1vR [BT!Y$!d(J_[AO37OP[Fg[/esFx;6cI-L[^O|cvtw9F[;_*Q');
-define('NONCE_SALT',       'iP{nTQBzy&f^hSbwBgyan.v9<+ErvAMi2ymLhz`Tl-fF?HXa(j<W`wA*8U3R#-|w');
+```
