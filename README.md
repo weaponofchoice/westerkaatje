@@ -6,6 +6,8 @@ This is a Wordpress framework, which can be used in a variety of ways. It contai
 
 Although this framework is initially build for onepagers, of course it can easily be used to make larger websites.
 
+*Use what you want, delete what you don't need!*
+
 **Table of contents:**
 - Classnaming & writing sass
 - Database custom fields

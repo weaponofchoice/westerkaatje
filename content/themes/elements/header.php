@@ -24,6 +24,7 @@
 </head>
 
 <body class="is-loading">
+  <!-- Header -->
   <header>
     <a class="link-logo" href="<?php echo home_url(); ?>">
       <img src="<?php echo bloginfo( 'template_directory' ); ?>/img/logo.svg">
@@ -32,7 +33,6 @@
     <?php include( 'includes/nav.php' ); ?>
     
     <!-- <a class="trigger trigger-menu"><i></i></a> -->
-    
   </header>
   
   <?php
@@ -45,6 +45,7 @@
         while( have_rows('page') ): the_row();
         
           if( get_row_layout() == 'hero' ):
+            echo '<!-- Hero -->';
             include_once( locate_template('content/hero.php') );
           endif;
         
@@ -55,4 +56,5 @@
   endif;
   ?>
   
+  <!-- Main content -->
   <main role="main">
