@@ -6,6 +6,15 @@ This is a Wordpress framework, which can be used in a variety of ways. It contai
 
 Although this framework is initially build for onepagers, of course it can easily be used to make larger websites.
 
+**Table of contents:**
+1. Classnaming & writing sass
+  1. Classnames
+  2. Sass guidelines
+2. Database custom fields
+3. Project setup w/ Wordpress Elements
+4. .htaccess
+5. Config file
+
 Wordpress Elements initially assumes a setup with these dependencies:
 - You have multiple servers(local, development, production)
 - You have an Advanced Custom Fields(ACF) license key
@@ -136,7 +145,6 @@ block_section_element_subelementVariation
 - 'settings' > 'permalinks' > check 'post name' and save
 - import acf.json file
 
-
 ## .htaccess
 ```
 # BEGIN WordPress
@@ -148,7 +156,6 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
 </IfModule>
-
 # END WordPress
 
 ## EXPIRES CACHING ##
@@ -168,7 +175,6 @@ ExpiresDefault "access 1 month"
 </IfModule>
 ## EXPIRES CACHING ##
 ```
-
 
 ## config file
 ```
