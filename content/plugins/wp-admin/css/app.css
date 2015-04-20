@@ -91,6 +91,20 @@ a {
 img.help_tip {
   margin: 0 0 0 5px !important; }
 
+.button {
+  height: 30px !important;
+  line-height: 30px !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: #e0e0e0 !important;
+  border-radius: 2px !important; }
+  .button:hover {
+    background: #c0c0c0 !important; }
+  .button.button-primary {
+    background: #4BA0D9 !important; }
+    .button.button-primary:hover {
+      background: #3F89B2 !important; }
+
 #wpadminbar {
   background: #242B37; }
 
