@@ -1,4 +1,4 @@
-=== WP Basic Admin Theme ===
+=== Tamed Admin Theme ===
 Contributors: lucawater
 Tags: theme, basic, clean, minimalistic, wordpress. admin
 Requires at least: 3.0.1
@@ -16,7 +16,7 @@ This is a simple plugin, transforming your Wordpress backend into a more calm, c
 
 This plugin doesn't need much installation or configuration.
 
-1. Upload the 'wp-admin' directory to the `/wp-content/plugins/` directory
+1. Upload the 'tamed-admin-theme' directory to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 
 == Frequently Asked Questions ==
@@ -27,9 +27,9 @@ Nope, it does not. It is just a way to give a nice touch to the backend.
 
 == Screenshots ==
 
-1.
-2.
-3.
+1. Pages
+2. Dashboard
+3. Posts
 
 == Changelog ==
 

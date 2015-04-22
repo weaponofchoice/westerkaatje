@@ -21,7 +21,7 @@ if( have_rows('page') ): $i_anchor = 1; $i_par = 0;
       include( locate_template('content/parallax.php') );
     endif;
     
-    endwhile;
+  endwhile;
 endif;
 
 get_footer();

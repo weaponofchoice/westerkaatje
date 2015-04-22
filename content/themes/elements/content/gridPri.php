@@ -12,7 +12,7 @@ $gridPri_h_text = preg_replace( '/<p>/', '<p class="s-4 columns is_aligned-' . $
 $gridPri_c_images = get_sub_field( 'gridPri_c_images' );
 
 // Output
-echo '<section class="section section_grid section_gridPri"' . (( $gridPri_o_menu == true ) ? 'id="anchor-' . $i_anchor : "") . '">';
+echo '<section class="section section_grid section_gridPri' . (( $gridPri_o_menu == true ) ? ' has_anchor" id="anchor-' . $i_anchor : "") . '">';
   
   // Grid header
   if( $gridPri_h_title || $gridPri_h_text ): 
