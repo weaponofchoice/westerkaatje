@@ -1,40 +1,40 @@
 <?php
 // Options
-$slider_menu = get_sub_field( 'slider_o_menu' );
+$slider_o_menu = get_sub_field( 'slider_o_menu' );
 
-$text_pos = get_sub_field( 'slider_o_h_pos' );
-$text_align = get_sub_field( 'slider_o_h_align' );
+$slider_o_h_pos = get_sub_field( 'slider_o_h_pos' );
+$slider_o_h_align = get_sub_field( 'slider_o_h_align' );
 
 // Content
-$header_title = get_sub_field( 'slider_h_title' );
-$header_text = preg_replace( '/<p>/', '<p class="s-4 columns is_aligned-' . $text_align . '">', get_sub_field( 'slider_h_text' ) );
-$content_images = get_sub_field( 'slider_c_images' );
+$slider_h_title = get_sub_field( 'slider_h_title' );
+$slider_h_text = preg_replace( '/<p>/', '<p class="s-4 columns is_aligned-' . $slider_o_h_align . '">', get_sub_field( 'slider_h_text' ) );
+$slider_c_images = get_sub_field( 'slider_c_images' );
 
 // Output
-echo '<section class="section section_slider"' . (( $slider_menu == true ) ? 'id="anchor-' . $i_anchor : "") . '">';
+echo '<section class="section section_slider' . (( $slider_o_menu == true ) ? ' has_anchor" id="anchor-' . $i_anchor : "") . '">';
   
   // Gallery header
-  if( $header_title || $header_text ): 
+  if( $slider_h_title || $slider_h_text ): 
     echo '<div class="section_header row">';
-      echo '<h2 class="s-4 columns is_aligned-' . $text_align . '">' . $header_title . '</h2>';
-      echo $header_text;
+      echo '<h2 class="s-4 columns is_aligned-' . $slider_o_h_align . '">' . $slider_h_title . '</h2>';
+      echo $slider_h_text;
     echo '</div>';
   endif;
   
   // Gallery content
-  if( $content_images ):
+  if( $slider_c_images ):
     echo '<div class="section_content row">';
       
       // The images
       echo '<ul class="slider-images s-4 columns">';
-        foreach( $content_images as $image ):
+        foreach( $slider_c_images as $image ):
           echo '<li><img src="' . $image['sizes']['large'] . '" width="' . $image['width'] . '" height="' . $image['height'] . '"></li>';
         endforeach;
       echo '</ul>';
       
       // The bullets
       echo '<ul class="slider-bullets">';
-        foreach( $content_images as $image ):
+        foreach( $slider_c_images as $image ):
           echo '<li><i></i></li>';
         endforeach;
       echo '</ul>';

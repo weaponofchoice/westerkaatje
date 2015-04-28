@@ -1463,6 +1463,8 @@ nav ul {
   nav ul li {
     display: inline-block;
     padding-right: 1em; }
+    nav ul li a {
+      text-decoration: none; }
 
 .slider {
   position: relative; }
