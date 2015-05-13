@@ -11,7 +11,7 @@ $slider_h_text = preg_replace( '/<p>/', '<p class="s-4 columns is_aligned-' . $s
 $slider_c_images = get_sub_field( 'slider_c_images' );
 
 // Output
-echo '<section class="section section_slider' . (( $slider_o_menu == true ) ? ' has_anchor" id="anchor-' . $i_anchor : "") . '">';
+echo '<section class="section_slider' . (( $slider_o_menu == true ) ? ' has_anchor" id="anchor-' . $i_anchor : "") . '">';
   
   // Gallery header
   if( $slider_h_title || $slider_h_text ): 
@@ -23,7 +23,7 @@ echo '<section class="section section_slider' . (( $slider_o_menu == true ) ? ' 
   
   // Gallery content
   if( $slider_c_images ):
-    echo '<div class="section_content row">';
+    echo '<div class="section_body row">';
       
       // The images
       echo '<ul class="slider-images s-4 columns">';

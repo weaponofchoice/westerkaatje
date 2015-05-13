@@ -1,4 +1,4 @@
-.section{
+section{
   height: auto;
   overflow: hidden;
   padding-top: $section-spacing;
@@ -6,7 +6,7 @@
   background: $white;
   
   .section_header,
-  .section_content{
+  .section_body{
     clear: both;
   }
   
@@ -16,11 +16,11 @@
 }
 
 // First and last sections get extra padding
-main .section:first-child{
+main section:first-child{
   padding-top: $section-spacing * 2;
 }
 
-main .section:last-child{
+main section:last-child{
   padding-bottom: $section-spacing * 2;
 }
 

@@ -36,9 +36,9 @@
   }
 }
 
-.section,
+section,
 .section_header,
-.section_content,
+.section_body,
 .section_footer{
   @include section_padding;
 }

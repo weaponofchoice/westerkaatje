@@ -10,7 +10,7 @@ $hero_c_title = get_sub_field( 'hero_c_title' );
 $hero_c_text = preg_replace( '/<p>/', '<p class="' . $text_class . '">', get_sub_field( 'hero_c_text' ) );
 
 // Output
-echo '<section class="section section_hero has_no-pad">';
+echo '<section class="section_hero has_no-pad">';
   
   // Hero background image
   if( $hero_banner ): 
@@ -21,7 +21,7 @@ echo '<section class="section section_hero has_no-pad">';
   
   // Hero content container
   if( $hero_c_image || $hero_c_title || $hero_c_text ):
-    echo '<div class="section_content">';
+    echo '<div class="section_body">';
       
       // Logo
       if( $hero_c_image ):

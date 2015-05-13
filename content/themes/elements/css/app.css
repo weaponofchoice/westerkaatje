@@ -1594,22 +1594,22 @@ nav ul {
   -o-transition: 0.3s;
   transition: 0.3s; }
 
-.section {
+section {
   height: auto;
   overflow: hidden;
   padding-top: 3.75rem;
   padding-bottom: 3.75rem;
   background: white; }
-  .section .section_header,
-  .section .section_content {
+  section .section_header,
+  section .section_body {
     clear: both; }
-  .section .section_header {
+  section .section_header {
     margin-bottom: 1.875rem; }
 
-main .section:first-child {
+main section:first-child {
   padding-top: 7.5rem; }
 
-main .section:last-child {
+main section:last-child {
   padding-bottom: 7.5rem; }
 
 .section_header {
@@ -1623,7 +1623,7 @@ main .section:last-child {
   .section_hero .section_hero-banner {
     position: fixed;
     overflow: hidden; }
-  .section_hero .section_content {
+  .section_hero .section_body {
     top: 50%;
     left: 50%;
     margin: auto;
@@ -1673,15 +1673,15 @@ body.is-mobile .section-hero .section-hero-banner {
 
 .section_text {
   text-align: center; }
-  .section_text .section_content {
+  .section_text .section_body {
     max-width: 600px;
     margin: auto; }
-    .section_text .section_content h2,
-    .section_text .section_content p,
-    .section_text .section_content a {
+    .section_text .section_body h2,
+    .section_text .section_body p,
+    .section_text .section_body a {
       margin-bottom: 1em; }
 
-.section_image .section_content figure {
+.section_image .section_body figure {
   display: inline-block;
   text-align: left; }
 
@@ -1739,7 +1739,7 @@ body.is-mobile .section-hero .section-hero-banner {
 @media screen and (min-width: 1400px) {
   .section_grid ul li {
     width: 25%; } }
-.section_parallax .section_content,
+.section_parallax .section_body,
 .bcg {
   height: 0;
   padding-bottom: 50% !important; }
@@ -1948,56 +1948,56 @@ body.is-mobile .section-hero .section-hero-banner {
   display: block;
   margin: auto; }
 
-.section.has_no-pad,
+section.has_no-pad,
 .section_header.has_no-pad,
-.section_content.has_no-pad,
+.section_body.has_no-pad,
 .section_footer.has_no-pad {
   padding-top: 0;
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0; }
-.section.has_no-padTop,
+section.has_no-padTop,
 .section_header.has_no-padTop,
-.section_content.has_no-padTop,
+.section_body.has_no-padTop,
 .section_footer.has_no-padTop {
   padding-top: 0; }
-.section.has_no-padBottom,
+section.has_no-padBottom,
 .section_header.has_no-padBottom,
-.section_content.has_no-padBottom,
+.section_body.has_no-padBottom,
 .section_footer.has_no-padBottom {
   padding-bottom: 0; }
-.section.has_no-padLeft,
+section.has_no-padLeft,
 .section_header.has_no-padLeft,
-.section_content.has_no-padLeft,
+.section_body.has_no-padLeft,
 .section_footer.has_no-padLeft {
   padding-left: 0; }
-.section.has_no-padRight,
+section.has_no-padRight,
 .section_header.has_no-padRight,
-.section_content.has_no-padRight,
+.section_body.has_no-padRight,
 .section_footer.has_no-padRight {
   padding-right: 0; }
-.section.has_no-padSides,
+section.has_no-padSides,
 .section_header.has_no-padSides,
-.section_content.has_no-padSides,
+.section_body.has_no-padSides,
 .section_footer.has_no-padSides {
   padding-left: 0;
   padding-right: 0; }
-.section.has_extra-padTop,
+section.has_extra-padTop,
 .section_header.has_extra-padTop,
-.section_content.has_extra-padTop,
+.section_body.has_extra-padTop,
 .section_footer.has_extra-padTop {
   padding-top: 7.5rem; }
-.section.has_extra-padBottom,
+section.has_extra-padBottom,
 .section_header.has_extra-padBottom,
-.section_content.has_extra-padBottom,
+.section_body.has_extra-padBottom,
 .section_footer.has_extra-padBottom {
   padding-bottom: 7.5rem; }
 
-.section_image .section_content.is_positioned-left {
+.section_image .section_body.is_positioned-left {
   text-align: left; }
-.section_image .section_content.is_positioned-center {
+.section_image .section_body.is_positioned-center {
   text-align: center; }
-.section_image .section_content.is_positioned-right {
+.section_image .section_body.is_positioned-right {
   text-align: right; }
 
 h1.is_italic, h2.is_italic, p.is_italic, a.is_italic {

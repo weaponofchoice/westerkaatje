@@ -62,11 +62,11 @@ $ ->
   ###
     Fade effect
   ###
-  hero_content = $('.section_hero .section_content')
+  hero_content = $('.section_hero .section_body')
   hero_content.addClass "is-visible-0.7s"
   
   waypoint = new Waypoint(
-    element: $('.section_hero .section_content')
+    element: $('.section_hero .section_body')
     handler: (direction) ->
       hero_content.toggleClass "is-visible-0.7s"
       hero_content.toggleClass "is-hidden-0.7s"
