@@ -22,9 +22,12 @@ h1{
 }
 
 h2{
-  @extend h1;
+  @extend %base;
+  
+  padding-bottom: 10px; // Compensate arch
   
   font-size: 15px;
+  letter-spacing: 2px;
   text-transform: uppercase;
 }
 

@@ -1337,7 +1337,7 @@ strong {
   font-style: normal;
   font-weight: bold; }
 
-h1, h2 {
+h1 {
   font-family: gill-bold;
   font-style: normal;
   font-weight: bold;
@@ -1345,7 +1345,9 @@ h1, h2 {
   text-transform: uppercase; }
 
 h2 {
+  padding-bottom: 10px;
   font-size: 15px;
+  letter-spacing: 2px;
   text-transform: uppercase; }
 
 a {
@@ -1555,7 +1557,7 @@ main {
   .section-text .section-body {
     max-width: 650px;
     margin: auto; }
-    .section-text .section-body h1, .section-text .section-body h2,
+    .section-text .section-body h1,
     .section-text .section-body p,
     .section-text .section-body a {
       margin-bottom: 1em; }
