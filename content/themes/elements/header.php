@@ -8,7 +8,7 @@
 <!--[if IE 9]>    <html class="no-js lt-ie10" lang="en"> <![endif]-->
 <!--[if gt IE 9]><!--> <html <?php language_attributes(); ?>> <!--<![endif]-->
 <head>
-  <title>YOUR SITE</title>
+  <title>Westerkaatje</title>
   
   <!-- META TAGS -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -34,27 +34,6 @@
     
     <!-- <a class="trigger trigger-menu"><i></i></a> -->
   </header>
-  
-  <?php
-  // Hero section must be placed before main
-  if( have_posts() ):
-    while( have_posts() ): the_post();
-    
-      // Loop into ACF groups
-      if( have_rows('page') ):
-        while( have_rows('page') ): the_row();
-        
-          if( get_row_layout() == 'hero' ):
-            echo '<!-- Hero -->';
-            include_once( locate_template('content/hero.php') );
-          endif;
-        
-        endwhile;
-      endif;
-        
-    endwhile;
-  endif;
-  ?>
   
   <!-- Main content -->
   <main role="main">
