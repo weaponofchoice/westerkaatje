@@ -1472,7 +1472,8 @@ section {
   overflow: hidden;
   padding-top: 3.75rem;
   padding-bottom: 3.75rem;
-  background: white; }
+  background-color: white;
+  text-align: center; }
   section .section-header,
   section .section-body {
     clear: both; }
@@ -1490,7 +1491,6 @@ main {
   width: calc( 50% + 25px );
   height: 720px;
   float: left;
-  text-align: center;
   background-color: #f2f2f2; }
   .section-block:nth-child(odd) {
     margin-left: -25px; }
@@ -1539,14 +1539,14 @@ main {
 
   .section-block.image {
     height: 400px; } }
-.section_text {
-  text-align: center; }
-  .section_text .section_body {
-    max-width: 600px;
+.section-text {
+  clear: both; }
+  .section-text .section-body {
+    max-width: 650px;
     margin: auto; }
-    .section_text .section_body h2,
-    .section_text .section_body p,
-    .section_text .section_body a {
+    .section-text .section-body h1, .section-text .section-body h2,
+    .section-text .section-body p,
+    .section-text .section-body a {
       margin-bottom: 1em; }
 
 .section_grid ul {

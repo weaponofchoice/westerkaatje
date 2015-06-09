@@ -3,7 +3,9 @@ section{
   overflow: hidden;
   padding-top: $section-spacing;
   padding-bottom: $section-spacing;
-  background: $white;
+  
+  background-color: $white;
+  text-align: center;
   
   .section-header,
   .section-body{
