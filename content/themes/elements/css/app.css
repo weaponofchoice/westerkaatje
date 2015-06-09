@@ -1,4 +1,3 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
 [class*="grid-"] {
   display: block;
   padding: 0;
@@ -1319,27 +1318,39 @@ ul {
 .margin-b100 {
   margin-bottom: 6.25rem !important; }
 
+@font-face {
+  font-family: gill;
+  src: url("../fonts/gill.ttf"); }
+@font-face {
+  font-family: gill-bold;
+  src: url("../fonts/gill-bold.ttf"); }
 h1, h2, p, a {
-  font-family: 'Open Sans', sans-serif;
+  font-family: gill;
   font-style: normal;
   font-size: 16px;
   font-weight: normal;
-  text-rendering: geometricPrecision; }
-  h1.is_bold, h2.is_bold, p.is_bold, a.is_bold {
-    font-weight: 700; }
+  color: black;
+  -webkit-font-rendering: antialiased; }
+
+strong {
+  font-family: gill-bold;
+  font-style: normal;
+  font-weight: bold; }
 
 h1, h2 {
-  font-size: 3em; }
+  font-family: gill-bold;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  text-transform: uppercase; }
 
 h2 {
-  font-size: 2em; }
+  font-size: 15px;
+  text-transform: uppercase; }
 
 a {
   color: black;
-  text-decoration: underline;
   cursor: pointer; }
-  a.link-h1, a.link-h2, a.link-h3, a.link-p {
-    text-decoration: none; }
 
 html,
 body {

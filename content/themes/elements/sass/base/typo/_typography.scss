@@ -1,18 +1,31 @@
 %base{
-  @include opensans;
+  @include gill;
+  
   font-size: 16px;
   font-weight: normal;
-  text-rendering: geometricPrecision;
+  
+  color: $black;
+  
+  -webkit-font-rendering: antialiased;
+}
+
+strong{
+  @include gill-bold;
 }
 
 h1{
   @extend %base;
-  font-size: 3em;
+  @include gill-bold;
+  
+  font-size: 22px;
+  text-transform: uppercase;
 }
 
 h2{
   @extend h1;
-  font-size: 2em;
+  
+  font-size: 15px;
+  text-transform: uppercase;
 }
 
 p{
@@ -22,14 +35,6 @@ p{
 a{
   @extend %base;
   
-  color: black;
-  text-decoration: underline;
+  color: $black;
   cursor: pointer;
-  
-  &.link-h1,
-  &.link-h2,
-  &.link-h3,
-  &.link-p{
-    text-decoration: none;
-  }
 }

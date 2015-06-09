@@ -1,10 +1,20 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+@font-face{
+  font-family: gill;
+  src: url('../fonts/gill.ttf');
+}
 
-@mixin opensans{
-  font-family: 'Open Sans', sans-serif;
+@font-face{
+  font-family: gill-bold;
+  src: url('../fonts/gill-bold.ttf');
+}
+
+@mixin gill{
+  font-family: gill;
   font-style: normal;
-  
-  &.is_bold{
-    font-weight: 700;
-  }
+}
+
+@mixin gill-bold{
+  font-family: gill-bold;
+  font-style: normal;
+  font-weight: bold;
 }
