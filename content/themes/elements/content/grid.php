@@ -2,8 +2,8 @@
 // Content
 $images = get_sub_field( 'grid_c_images' );
 ?>
-<section class="section-grid">
-  <div class="section-body">
+<section class="section-grid row">
+  <div class="section-body row">
     <ul class="m-grid-4">
       <?php
       foreach( $images as $image ):
