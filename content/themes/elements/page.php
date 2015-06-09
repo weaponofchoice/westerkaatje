@@ -7,8 +7,8 @@ if( have_rows('page') ):
     
     if( get_row_layout() == 'text' ):
       include( locate_template('content/text.php') );
-    elseif( get_row_layout() == 'image' ):
-      include( locate_template('content/image.php') );
+    elseif( get_row_layout() == 'block_text' ):
+      include( locate_template('content/block_text.php') );
     elseif( get_row_layout() == 'grid_primary' ):
       include( locate_template('content/gridPri.php') );
     elseif( get_row_layout() == 'grid_secondary' ):
