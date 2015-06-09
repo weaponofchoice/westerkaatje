@@ -1341,8 +1341,7 @@ h1, .section-block.image .section-body p {
   font-family: gill-bold;
   font-style: normal;
   font-weight: bold;
-  font-size: 22px;
-  text-transform: uppercase; }
+  font-size: 22px; }
 
 h2 {
   padding-bottom: 10px;
@@ -1860,6 +1859,18 @@ section.has_extra-padBottom,
 .section_body.has_extra-padBottom,
 .section_footer.has_extra-padBottom {
   padding-bottom: 7.5rem; }
+section.has-bg,
+.section_header.has-bg,
+.section_body.has-bg,
+.section_footer.has-bg {
+  padding-top: 0;
+  padding-bottom: 0; }
+  section.has-bg .section-body,
+  .section_header.has-bg .section-body,
+  .section_body.has-bg .section-body,
+  .section_footer.has-bg .section-body {
+    padding: 3.75rem 1.875rem;
+    background-color: #d9ccbb; }
 
 h1.is_italic, .section-block.image .section-body p.is_italic, h2.is_italic, p.is_italic, a.is_italic {
   font-style: italic; }
