@@ -17,6 +17,10 @@ main{
   &:nth-child(even){
     margin-right: -25px;
   }
+  
+  .section-body{
+    padding: 0 $column-gutter;
+  }
 }
 
 // Align block contents
@@ -36,11 +40,25 @@ main{
     margin-left: -25px;
     
     background-size: cover;
+    
+    p{
+      @extend h1;
+      
+      max-width: 350px;
+      
+      color: $white;
+    }
   }
 }
 
 // Text block
 .section-block.text{
+  .section-body{
+    > *{
+      margin-bottom: 1em;
+    }
+  }
+  
   &:nth-child(odd){
     background-color: $brown-light;
   }
