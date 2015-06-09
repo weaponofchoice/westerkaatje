@@ -1479,15 +1479,66 @@ section {
   section .section-header {
     margin-bottom: 1.875rem; }
 
-main section:first-child {
-  padding-top: 7.5rem; }
-
-main section:last-child {
-  padding-bottom: 7.5rem; }
-
 .section-header {
   max-width: 600px; }
 
+main {
+  max-width: 1440px;
+  margin: auto; }
+
+.section-block {
+  width: calc( 50% + 25px );
+  height: 720px;
+  float: left;
+  text-align: center;
+  background-color: #f2f2f2; }
+  .section-block:nth-child(odd) {
+    margin-left: -25px; }
+  .section-block:nth-child(even) {
+    margin-right: -25px; }
+
+.section-block.image .section-body,
+.section-block.text {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flex;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center; }
+
+.section-block.image .section-body {
+  width: calc( 100% + 50px );
+  height: calc( 100% + 120px );
+  margin-top: -60px;
+  margin-left: -25px;
+  background-size: cover; }
+
+.section-block.text:nth-child(odd) {
+  background-color: #f0ebe4; }
+.section-block.text:nth-child(even) {
+  background-color: #d9ccbb; }
+
+@media only screen and (max-width: 56.25em) {
+  .section-block {
+    width: calc(100% + 50px);
+    height: auto;
+    margin-left: -25px;
+    margin-right: 0; }
+
+  .section-block.image {
+    height: 400px; } }
 .section_text {
   text-align: center; }
   .section_text .section_body {

@@ -2,8 +2,8 @@
 // Content
 $text = get_sub_field( 'blockText_c_text' );
 ?>
-<section class="section-block">
-  <div class="section-body text">
+<section class="section-block text">
+  <div class="section-body">
     <?php echo $text; ?>
     
     <?php
