@@ -11,12 +11,8 @@ if( have_rows('page') ):
       include( locate_template('content/blockText.php') );
     elseif( get_row_layout() == 'blockImage' ):
       include( locate_template('content/blockImage.php') );
-    elseif( get_row_layout() == 'grid_secondary' ):
-      include( locate_template('content/gridSec.php') );
-    elseif( get_row_layout() == 'slider' ):
-      include( locate_template('content/slider.php') );
-    elseif( get_row_layout() == 'parallax' ):
-      include( locate_template('content/parallax.php') );
+    elseif( get_row_layout() == 'grid' ):
+      include( locate_template('content/grid.php') );
     endif;
     
   endwhile;
