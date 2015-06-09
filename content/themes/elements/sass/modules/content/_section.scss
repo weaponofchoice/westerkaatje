@@ -5,12 +5,12 @@ section{
   padding-bottom: $section-spacing;
   background: $white;
   
-  .section_header,
-  .section_body{
+  .section-header,
+  .section-body{
     clear: both;
   }
   
-  .section_header{
+  .section-header{
     margin-bottom: $section-spacing / 2;
   }
 }
@@ -24,10 +24,6 @@ main section:last-child{
   padding-bottom: $section-spacing * 2;
 }
 
-.section_header{
+.section-header{
   max-width: 600px;
-  
-  h2{
-    margin-bottom: $section-spacing / 4;
-  }
 }
