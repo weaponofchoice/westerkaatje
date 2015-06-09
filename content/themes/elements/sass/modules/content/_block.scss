@@ -43,11 +43,11 @@ main{
 // Text block
 .section-block.text{
   &:nth-child(odd){
-    background-color: rgb(240,235,228);
+    background-color: $brown-light;
   }
   
   &:nth-child(even){
-    background-color: rgb(217,204,187);
+    background-color: $brown;
   }
 }
 
