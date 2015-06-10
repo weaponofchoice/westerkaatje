@@ -2,7 +2,7 @@
   
   <!-- Footer -->
   <footer>
-    
+    <p class="small">©2010-2015 Westerkaatje</p>
   </footer>
   
   <!-- Scripts -->

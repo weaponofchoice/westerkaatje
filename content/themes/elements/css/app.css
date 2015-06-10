@@ -1366,23 +1366,23 @@ body {
   min-height: 100%;
   background: white; }
 
-.subheader {
+.subheader,
+footer {
   padding-left: 2.5rem;
   padding-right: 2.5rem; }
 
 main,
-footer,
 section {
   padding-left: 1.5625rem;
   padding-right: 1.5625rem; }
 
 @media only screen and (max-width: 43.75em) {
-  .subheader {
+  .subheader,
+  footer {
     padding-left: 1.25rem;
     padding-right: 1.25rem; }
 
-  main,
-  footer {
+  main {
     padding-left: 0.3125rem;
     padding-right: 0.3125rem; } }
 main {
@@ -1425,14 +1425,14 @@ header {
 
 footer {
   z-index: 1100;
-  padding: 50px;
-  background: black;
-  text-align: center; }
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #545042; }
+  footer * {
+    color: white; }
   footer > img {
     max-width: 250px;
     margin-bottom: 50px; }
-  footer p {
-    margin-bottom: 1em; }
   footer ul li {
     width: 35px;
     padding: 0 .5em;
@@ -1555,9 +1555,9 @@ main {
   height: 720px;
   float: left;
   background-color: #f2f2f2; }
-  .section-block:nth-child(odd) {
+  .section-block.left {
     margin-left: -25px; }
-  .section-block:nth-child(even) {
+  .section-block.right {
     margin-right: -25px; }
   .section-block .section-body {
     padding: 0 1.875rem; }
