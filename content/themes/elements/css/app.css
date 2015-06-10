@@ -1535,9 +1535,9 @@ main {
 
 .section-block.text .section-body > * {
   margin-bottom: 1em; }
-.section-block.text:nth-child(odd) {
+.section-block.text.odd {
   background-color: #f0ebe4; }
-.section-block.text:nth-child(even) {
+.section-block.text.even {
   background-color: #d9ccbb; }
 
 @media only screen and (max-width: 56.25em) {

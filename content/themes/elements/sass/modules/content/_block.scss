@@ -59,11 +59,11 @@ main{
     }
   }
   
-  &:nth-child(odd){
+  &.odd{
     background-color: $brown-light;
   }
   
-  &:nth-child(even){
+  &.even{
     background-color: $brown;
   }
 }
