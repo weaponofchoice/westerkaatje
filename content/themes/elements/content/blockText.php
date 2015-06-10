@@ -13,7 +13,7 @@ $text = get_sub_field( 'blockText_c_text' );
         $button_link = get_sub_field( 'link' );
         $button_text = get_sub_field( 'text' );
         
-        echo '<a href="' . $button_link . '">' . $button_text . '</a>';
+        echo '<a class="button" href="' . $button_link . '">' . $button_text . '</a>';
         
       endwhile;
     endif;
