@@ -1324,7 +1324,7 @@ ul {
 @font-face {
   font-family: gill-bold;
   src: url("../fonts/gill-bold.ttf"); }
-h1, .section-block.image .section-body p, h2, p, a {
+h1, .section-block.image .section-body p, h2, h3, p, a {
   font-family: gill;
   font-style: normal;
   font-size: 16px;
@@ -1348,6 +1348,15 @@ h2 {
   font-size: 15px;
   letter-spacing: 2px;
   text-transform: uppercase; }
+
+h3 {
+  font-family: 'Times new roman';
+  font-size: 2.5rem;
+  font-weight: 100;
+  text-transform: uppercase; }
+
+p.small {
+  font-size: 0.6875rem; }
 
 a {
   color: black;
@@ -1925,27 +1934,27 @@ section.has-bg,
     padding: 3.75rem 1.875rem;
     background-color: #d9ccbb; }
 
-h1.is_italic, .section-block.image .section-body p.is_italic, h2.is_italic, p.is_italic, a.is_italic {
+h1.is_italic, .section-block.image .section-body p.is_italic, h2.is_italic, h3.is_italic, p.is_italic, a.is_italic {
   font-style: italic; }
-h1.is_underlined, .section-block.image .section-body p.is_underlined, h2.is_underlined, p.is_underlined, a.is_underlined {
+h1.is_underlined, .section-block.image .section-body p.is_underlined, h2.is_underlined, h3.is_underlined, p.is_underlined, a.is_underlined {
   text-decoration: underline; }
-h1.is_capitalized, .section-block.image .section-body p.is_capitalized, h2.is_capitalized, p.is_capitalized, a.is_capitalized {
+h1.is_capitalized, .section-block.image .section-body p.is_capitalized, h2.is_capitalized, h3.is_capitalized, p.is_capitalized, a.is_capitalized {
   text-transform: capitalize; }
-h1.is_uppercase, .section-block.image .section-body p.is_uppercase, h2.is_uppercase, p.is_uppercase, a.is_uppercase {
+h1.is_uppercase, .section-block.image .section-body p.is_uppercase, h2.is_uppercase, h3.is_uppercase, p.is_uppercase, a.is_uppercase {
   text-transform: uppercase; }
-h1.is_lowercase, .section-block.image .section-body p.is_lowercase, h2.is_lowercase, p.is_lowercase, a.is_lowercase {
+h1.is_lowercase, .section-block.image .section-body p.is_lowercase, h2.is_lowercase, h3.is_lowercase, p.is_lowercase, a.is_lowercase {
   text-transform: lowercase; }
-h1.is_bold, .section-block.image .section-body p.is_bold, h2.is_bold, p.is_bold, a.is_bold {
+h1.is_bold, .section-block.image .section-body p.is_bold, h2.is_bold, h3.is_bold, p.is_bold, a.is_bold {
   font-weight: 700; }
-h1.is_aligned-center, .section-block.image .section-body p.is_aligned-center, h2.is_aligned-center, p.is_aligned-center, a.is_aligned-center {
+h1.is_aligned-center, .section-block.image .section-body p.is_aligned-center, h2.is_aligned-center, h3.is_aligned-center, p.is_aligned-center, a.is_aligned-center {
   text-align: center; }
-h1.is_aligned-left, .section-block.image .section-body p.is_aligned-left, h2.is_aligned-left, p.is_aligned-left, a.is_aligned-left {
+h1.is_aligned-left, .section-block.image .section-body p.is_aligned-left, h2.is_aligned-left, h3.is_aligned-left, p.is_aligned-left, a.is_aligned-left {
   text-align: left; }
-h1.is_aligned-right, .section-block.image .section-body p.is_aligned-right, h2.is_aligned-right, p.is_aligned-right, a.is_aligned-right {
+h1.is_aligned-right, .section-block.image .section-body p.is_aligned-right, h2.is_aligned-right, h3.is_aligned-right, p.is_aligned-right, a.is_aligned-right {
   text-align: right; }
-h1.is_black, .section-block.image .section-body p.is_black, h2.is_black, p.is_black, a.is_black {
+h1.is_black, .section-block.image .section-body p.is_black, h2.is_black, h3.is_black, p.is_black, a.is_black {
   color: black; }
-h1.is_white, .section-block.image .section-body p.is_white, h2.is_white, p.is_white, a.is_white {
+h1.is_white, .section-block.image .section-body p.is_white, h2.is_white, h3.is_white, p.is_white, a.is_white {
   color: white; }
 
 p.is_small {

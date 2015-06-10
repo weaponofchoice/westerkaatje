@@ -30,8 +30,21 @@ h2{
   text-transform: uppercase;
 }
 
+h3{
+  @extend %base;
+  
+  font-family: 'Times new roman';
+  font-size: rem-calc(40);
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
 p{
   @extend %base;
+  
+  &.small{
+    font-size: rem-calc(11);
+  }
 }
 
 a{
