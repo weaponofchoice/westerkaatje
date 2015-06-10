@@ -1359,7 +1359,7 @@ body {
   min-height: 100%;
   background: white; }
 
-header {
+.subheader {
   padding-left: 2.5rem;
   padding-right: 2.5rem; }
 
@@ -1370,7 +1370,7 @@ section {
   padding-right: 1.5625rem; }
 
 @media only screen and (max-width: 43.75em) {
-  header {
+  .subheader {
     padding-left: 1.25rem;
     padding-right: 1.25rem; }
 
@@ -1387,32 +1387,13 @@ main {
   z-index: 900; }
 
 header {
-  display: -webkit-box;
-  /* OLD - iOS 6-, Safari 3.1-6 */
-  display: -moz-box;
-  /* OLD - Firefox 19- (buggy but mostly works) */
-  display: -ms-flex;
-  /* TWEENER - IE 10 */
-  display: -webkit-flex;
-  /* NEW - Chrome */
-  display: flex;
-  /* NEW, Spec - Opera 12.1, Firefox 20+ */
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  -webkit-justify-content: space-between;
-  -moz-justify-content: space-between;
-  justify-content: space-between;
-  left: 0;
-  position: fixed;
   z-index: 1100;
-  width: 100%;
-  padding-top: 15px;
-  padding-bottom: 15px; }
-  header .link-logo {
-    width: 50px; }
+  width: 100%; }
+  header .subheader {
+    padding: 10px 2.5rem;
+    background-color: #d9ccbb; }
+    header .subheader img {
+      width: 300px; }
 
 footer {
   z-index: 1100;
@@ -1472,12 +1453,22 @@ a.trigger-menu:focus i:before {
   -webkit-animation: activebefore .4s linear; }
 
 nav ul {
-  display: inline; }
+  display: inline;
+  font-size: 0; }
   nav ul li {
+    width: calc(100% / 3);
+    max-width: 350px;
     display: inline-block;
-    padding-right: 1em; }
+    text-align: center; }
     nav ul li a {
+      display: block;
+      padding: 10px;
       text-decoration: none; }
+
+nav ul li.current-menu-item a,
+nav ul li a:hover,
+nav ul li a:focus {
+  background-color: #d9ccbb; }
 
 section {
   height: auto;

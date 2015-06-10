@@ -26,13 +26,11 @@
 <body class="is-loading">
   <!-- Header -->
   <header>
-    <a class="link-logo" href="<?php echo home_url(); ?>">
-      <img src="<?php echo bloginfo( 'template_directory' ); ?>/img/logo.svg">
-    </a>
-    
     <?php include( 'includes/nav.php' ); ?>
     
-    <!-- <a class="trigger trigger-menu"><i></i></a> -->
+    <div class="subheader">
+      <img src="<?php echo get_template_directory_uri(); ?>/img/logos/logo.svg">
+    </div>
   </header>
   
   <!-- Main content -->
