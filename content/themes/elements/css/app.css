@@ -1390,10 +1390,31 @@ header {
   z-index: 1100;
   width: 100%; }
   header .subheader {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flex;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: flex;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    -webkit-align-items: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    justify-content: space-between;
     padding: 10px 2.5rem;
     background-color: #d9ccbb; }
     header .subheader img {
       width: 300px; }
+    header .subheader p {
+      font-size: 28px;
+      color: white; }
 
 footer {
   z-index: 1100;

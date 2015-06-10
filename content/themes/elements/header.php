@@ -30,6 +30,12 @@
     
     <div class="subheader">
       <img src="<?php echo get_template_directory_uri(); ?>/img/logos/logo.svg">
+      
+      <?php
+      $subtitle = get_field( 'subtitle' );
+      
+      echo '<p>' . $subtitle . '</p>';
+      ?>
     </div>
   </header>
   
