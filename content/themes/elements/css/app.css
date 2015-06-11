@@ -1380,8 +1380,7 @@ footer {
   padding-left: 2.5rem;
   padding-right: 2.5rem; }
 
-main,
-section {
+main {
   padding-left: 1.5625rem;
   padding-right: 1.5625rem; }
 
@@ -1578,6 +1577,8 @@ section {
   overflow: hidden;
   padding-top: 5rem;
   padding-bottom: 5rem;
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
   background-color: white;
   text-align: center; }
   section .section-header,
@@ -2051,7 +2052,7 @@ body.is-mobile.is-loading > * {
   transition: 0s; }
 
 .is-fullwidth {
-  width: calc(100% + (2.5rem * 2));
+  width: calc( 100% + (2.5rem * 2) );
   margin-left: -2.5rem; }
 
 @media only screen and (max-width: 43.75em) {

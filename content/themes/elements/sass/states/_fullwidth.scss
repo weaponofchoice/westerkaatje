@@ -1,5 +1,5 @@
 .is-fullwidth{
-  width: calc(100% + (#{$side-margin} * 2));
+  width: calc( 100% + (#{$side-margin} * 2) );
   margin-left: -$side-margin;
 }
 
