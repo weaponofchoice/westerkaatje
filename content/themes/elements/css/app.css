@@ -1403,9 +1403,9 @@ main {
   z-index: 900; }
 
 main section:first-child {
-  padding-top: 7.5rem; }
+  padding-top: 10rem; }
   main section:first-child.section-block {
-    padding-top: 3.75rem; }
+    padding-top: 5rem; }
 
 header {
   z-index: 1100;
@@ -1535,6 +1535,12 @@ nav ul li a:hover,
 nav ul li a:focus {
   background-color: #d9ccbb; }
 
+@media only screen and (max-width: 43.75em) {
+  nav ul li {
+    width: 100%;
+    max-width: none;
+    display: block;
+    border-bottom: thin solid #d9ccbb; } }
 .button {
   display: block;
   padding: 30px 50px;
@@ -1570,15 +1576,15 @@ nav ul li a:focus {
 section {
   height: auto;
   overflow: hidden;
-  padding-top: 3.75rem;
-  padding-bottom: 3.75rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
   background-color: white;
   text-align: center; }
   section .section-header,
   section .section-body {
     clear: both; }
   section .section-header {
-    margin-bottom: 1.875rem; }
+    margin-bottom: 2.5rem; }
 
 .section-header {
   max-width: 600px; }
@@ -1943,12 +1949,12 @@ section.has_extra-padTop,
 .section_header.has_extra-padTop,
 .section_body.has_extra-padTop,
 .section_footer.has_extra-padTop {
-  padding-top: 7.5rem; }
+  padding-top: 10rem; }
 section.has_extra-padBottom,
 .section_header.has_extra-padBottom,
 .section_body.has_extra-padBottom,
 .section_footer.has_extra-padBottom {
-  padding-bottom: 7.5rem; }
+  padding-bottom: 10rem; }
 section.has-bg,
 .section_header.has-bg,
 .section_body.has-bg,
@@ -1959,7 +1965,7 @@ section.has-bg,
   .section_header.has-bg .section-body,
   .section_body.has-bg .section-body,
   .section_footer.has-bg .section-body {
-    padding: 3.75rem 1.875rem;
+    padding: 2.5rem 1.875rem;
     background-color: #d9ccbb; }
 
 h1.is_italic, .section-block.image .section-body p.is_italic, h2.is_italic, h3.is_italic, p.is_italic, a.is_italic {

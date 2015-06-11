@@ -40,7 +40,7 @@
     padding-bottom: 0;
     
     .section-body{
-      padding: $section-spacing $column-gutter;
+      padding: ($section-spacing / 2) $column-gutter;
       
       background-color: $brown;
     }
