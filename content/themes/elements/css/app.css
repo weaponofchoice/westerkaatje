@@ -1740,6 +1740,7 @@ main {
   color: #545042; }
 .section-form .section-header {
   max-width: none;
+  padding-bottom: 0 !important;
   text-align: center; }
   .section-form .section-header > * {
     max-width: 650px;
