@@ -1,48 +1,50 @@
 %base{
   // Styles
-  &.is_italic{
+  &.is-italic{
     font-style: italic;
   }
   
-  &.is_underlined{
+  &.is-underlined{
     text-decoration: underline;
   }
   
-  &.is_capitalized{
+  &.is-capitalized{
     text-transform: capitalize;
   }
   
-  &.is_uppercase{
+  &.is-uppercase{
     text-transform: uppercase;
   }
   
-  &.is_lowercase{
+  &.is-lowercase{
     text-transform: lowercase;
   }
   
-  &.is_bold{
+  &.is-bold{
+    @include gill-bold;
+    
     font-weight: 700;
   }
   
   // Alignment
-  &.is_aligned-center{
+  &.is-aligned-center{
     text-align: center;
   }
   
-  &.is_aligned-left{
+  &.is-aligned-left{
     text-align: left;
   }
   
-  &.is_aligned-right{
+  &.is-aligned-right{
     text-align: right;
   }
   
   // Colors
-  &.is_black{
+  &.is-black{
     color: $black;
   }
   
-  &.is_white{
+  &.is-white{
     color: $white;
   }
 }

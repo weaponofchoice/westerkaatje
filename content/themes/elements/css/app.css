@@ -1738,6 +1738,15 @@ main {
     width: 25%; } }
 .section-form * {
   color: #545042; }
+.section-form .section-header {
+  max-width: none;
+  text-align: center; }
+  .section-form .section-header > * {
+    max-width: 650px;
+    margin: auto; }
+  .section-form .section-header p.is-bold, .section-form .section-header input.is-bold[type="text"],
+  .section-form .section-header input.is-bold[type="email"], .section-form .section-header div.is-bold.wpcf7-response-output {
+    margin-bottom: 2em; }
 .section-form .section-body form {
   max-width: 650px;
   margin: auto; }
@@ -2038,55 +2047,63 @@ section.has-bg,
   padding-top: 0;
   padding-bottom: 0; }
   section.has-bg .section-body,
+  section.has-bg .section-header,
   .section_header.has-bg .section-body,
+  .section_header.has-bg .section-header,
   .section_body.has-bg .section-body,
-  .section_footer.has-bg .section-body {
+  .section_body.has-bg .section-header,
+  .section_footer.has-bg .section-body,
+  .section_footer.has-bg .section-header {
     padding: 2.5rem 1.875rem;
+    margin-bottom: 0;
     background-color: #d9ccbb; }
 
-h1.is_italic, .section-block.image .section-body p.is_italic, .section-block.image .section-body input.is_italic[type="text"],
-.section-block.image .section-body input.is_italic[type="email"], .section-block.image .section-body div.is_italic.wpcf7-response-output, h2.is_italic, h3.is_italic, p.is_italic, input.is_italic[type="text"],
-input.is_italic[type="email"], div.is_italic.wpcf7-response-output, a.is_italic {
+h1.is-italic, .section-block.image .section-body p.is-italic, .section-block.image .section-body input.is-italic[type="text"],
+.section-block.image .section-body input.is-italic[type="email"], .section-block.image .section-body div.is-italic.wpcf7-response-output, h2.is-italic, h3.is-italic, p.is-italic, input.is-italic[type="text"],
+input.is-italic[type="email"], div.is-italic.wpcf7-response-output, a.is-italic {
   font-style: italic; }
-h1.is_underlined, .section-block.image .section-body p.is_underlined, .section-block.image .section-body input.is_underlined[type="text"],
-.section-block.image .section-body input.is_underlined[type="email"], .section-block.image .section-body div.is_underlined.wpcf7-response-output, h2.is_underlined, h3.is_underlined, p.is_underlined, input.is_underlined[type="text"],
-input.is_underlined[type="email"], div.is_underlined.wpcf7-response-output, a.is_underlined {
+h1.is-underlined, .section-block.image .section-body p.is-underlined, .section-block.image .section-body input.is-underlined[type="text"],
+.section-block.image .section-body input.is-underlined[type="email"], .section-block.image .section-body div.is-underlined.wpcf7-response-output, h2.is-underlined, h3.is-underlined, p.is-underlined, input.is-underlined[type="text"],
+input.is-underlined[type="email"], div.is-underlined.wpcf7-response-output, a.is-underlined {
   text-decoration: underline; }
-h1.is_capitalized, .section-block.image .section-body p.is_capitalized, .section-block.image .section-body input.is_capitalized[type="text"],
-.section-block.image .section-body input.is_capitalized[type="email"], .section-block.image .section-body div.is_capitalized.wpcf7-response-output, h2.is_capitalized, h3.is_capitalized, p.is_capitalized, input.is_capitalized[type="text"],
-input.is_capitalized[type="email"], div.is_capitalized.wpcf7-response-output, a.is_capitalized {
+h1.is-capitalized, .section-block.image .section-body p.is-capitalized, .section-block.image .section-body input.is-capitalized[type="text"],
+.section-block.image .section-body input.is-capitalized[type="email"], .section-block.image .section-body div.is-capitalized.wpcf7-response-output, h2.is-capitalized, h3.is-capitalized, p.is-capitalized, input.is-capitalized[type="text"],
+input.is-capitalized[type="email"], div.is-capitalized.wpcf7-response-output, a.is-capitalized {
   text-transform: capitalize; }
-h1.is_uppercase, .section-block.image .section-body p.is_uppercase, .section-block.image .section-body input.is_uppercase[type="text"],
-.section-block.image .section-body input.is_uppercase[type="email"], .section-block.image .section-body div.is_uppercase.wpcf7-response-output, h2.is_uppercase, h3.is_uppercase, p.is_uppercase, input.is_uppercase[type="text"],
-input.is_uppercase[type="email"], div.is_uppercase.wpcf7-response-output, a.is_uppercase {
+h1.is-uppercase, .section-block.image .section-body p.is-uppercase, .section-block.image .section-body input.is-uppercase[type="text"],
+.section-block.image .section-body input.is-uppercase[type="email"], .section-block.image .section-body div.is-uppercase.wpcf7-response-output, h2.is-uppercase, h3.is-uppercase, p.is-uppercase, input.is-uppercase[type="text"],
+input.is-uppercase[type="email"], div.is-uppercase.wpcf7-response-output, a.is-uppercase {
   text-transform: uppercase; }
-h1.is_lowercase, .section-block.image .section-body p.is_lowercase, .section-block.image .section-body input.is_lowercase[type="text"],
-.section-block.image .section-body input.is_lowercase[type="email"], .section-block.image .section-body div.is_lowercase.wpcf7-response-output, h2.is_lowercase, h3.is_lowercase, p.is_lowercase, input.is_lowercase[type="text"],
-input.is_lowercase[type="email"], div.is_lowercase.wpcf7-response-output, a.is_lowercase {
+h1.is-lowercase, .section-block.image .section-body p.is-lowercase, .section-block.image .section-body input.is-lowercase[type="text"],
+.section-block.image .section-body input.is-lowercase[type="email"], .section-block.image .section-body div.is-lowercase.wpcf7-response-output, h2.is-lowercase, h3.is-lowercase, p.is-lowercase, input.is-lowercase[type="text"],
+input.is-lowercase[type="email"], div.is-lowercase.wpcf7-response-output, a.is-lowercase {
   text-transform: lowercase; }
-h1.is_bold, .section-block.image .section-body p.is_bold, .section-block.image .section-body input.is_bold[type="text"],
-.section-block.image .section-body input.is_bold[type="email"], .section-block.image .section-body div.is_bold.wpcf7-response-output, h2.is_bold, h3.is_bold, p.is_bold, input.is_bold[type="text"],
-input.is_bold[type="email"], div.is_bold.wpcf7-response-output, a.is_bold {
+h1.is-bold, .section-block.image .section-body p.is-bold, .section-block.image .section-body input.is-bold[type="text"],
+.section-block.image .section-body input.is-bold[type="email"], .section-block.image .section-body div.is-bold.wpcf7-response-output, h2.is-bold, h3.is-bold, p.is-bold, input.is-bold[type="text"],
+input.is-bold[type="email"], div.is-bold.wpcf7-response-output, a.is-bold {
+  font-family: gill-bold;
+  font-style: normal;
+  font-weight: bold;
   font-weight: 700; }
-h1.is_aligned-center, .section-block.image .section-body p.is_aligned-center, .section-block.image .section-body input.is_aligned-center[type="text"],
-.section-block.image .section-body input.is_aligned-center[type="email"], .section-block.image .section-body div.is_aligned-center.wpcf7-response-output, h2.is_aligned-center, h3.is_aligned-center, p.is_aligned-center, input.is_aligned-center[type="text"],
-input.is_aligned-center[type="email"], div.is_aligned-center.wpcf7-response-output, a.is_aligned-center {
+h1.is-aligned-center, .section-block.image .section-body p.is-aligned-center, .section-block.image .section-body input.is-aligned-center[type="text"],
+.section-block.image .section-body input.is-aligned-center[type="email"], .section-block.image .section-body div.is-aligned-center.wpcf7-response-output, h2.is-aligned-center, h3.is-aligned-center, p.is-aligned-center, input.is-aligned-center[type="text"],
+input.is-aligned-center[type="email"], div.is-aligned-center.wpcf7-response-output, a.is-aligned-center {
   text-align: center; }
-h1.is_aligned-left, .section-block.image .section-body p.is_aligned-left, .section-block.image .section-body input.is_aligned-left[type="text"],
-.section-block.image .section-body input.is_aligned-left[type="email"], .section-block.image .section-body div.is_aligned-left.wpcf7-response-output, h2.is_aligned-left, h3.is_aligned-left, p.is_aligned-left, input.is_aligned-left[type="text"],
-input.is_aligned-left[type="email"], div.is_aligned-left.wpcf7-response-output, a.is_aligned-left {
+h1.is-aligned-left, .section-block.image .section-body p.is-aligned-left, .section-block.image .section-body input.is-aligned-left[type="text"],
+.section-block.image .section-body input.is-aligned-left[type="email"], .section-block.image .section-body div.is-aligned-left.wpcf7-response-output, h2.is-aligned-left, h3.is-aligned-left, p.is-aligned-left, input.is-aligned-left[type="text"],
+input.is-aligned-left[type="email"], div.is-aligned-left.wpcf7-response-output, a.is-aligned-left {
   text-align: left; }
-h1.is_aligned-right, .section-block.image .section-body p.is_aligned-right, .section-block.image .section-body input.is_aligned-right[type="text"],
-.section-block.image .section-body input.is_aligned-right[type="email"], .section-block.image .section-body div.is_aligned-right.wpcf7-response-output, h2.is_aligned-right, h3.is_aligned-right, p.is_aligned-right, input.is_aligned-right[type="text"],
-input.is_aligned-right[type="email"], div.is_aligned-right.wpcf7-response-output, a.is_aligned-right {
+h1.is-aligned-right, .section-block.image .section-body p.is-aligned-right, .section-block.image .section-body input.is-aligned-right[type="text"],
+.section-block.image .section-body input.is-aligned-right[type="email"], .section-block.image .section-body div.is-aligned-right.wpcf7-response-output, h2.is-aligned-right, h3.is-aligned-right, p.is-aligned-right, input.is-aligned-right[type="text"],
+input.is-aligned-right[type="email"], div.is-aligned-right.wpcf7-response-output, a.is-aligned-right {
   text-align: right; }
-h1.is_black, .section-block.image .section-body p.is_black, .section-block.image .section-body input.is_black[type="text"],
-.section-block.image .section-body input.is_black[type="email"], .section-block.image .section-body div.is_black.wpcf7-response-output, h2.is_black, h3.is_black, p.is_black, input.is_black[type="text"],
-input.is_black[type="email"], div.is_black.wpcf7-response-output, a.is_black {
+h1.is-black, .section-block.image .section-body p.is-black, .section-block.image .section-body input.is-black[type="text"],
+.section-block.image .section-body input.is-black[type="email"], .section-block.image .section-body div.is-black.wpcf7-response-output, h2.is-black, h3.is-black, p.is-black, input.is-black[type="text"],
+input.is-black[type="email"], div.is-black.wpcf7-response-output, a.is-black {
   color: black; }
-h1.is_white, .section-block.image .section-body p.is_white, .section-block.image .section-body input.is_white[type="text"],
-.section-block.image .section-body input.is_white[type="email"], .section-block.image .section-body div.is_white.wpcf7-response-output, h2.is_white, h3.is_white, p.is_white, input.is_white[type="text"],
-input.is_white[type="email"], div.is_white.wpcf7-response-output, a.is_white {
+h1.is-white, .section-block.image .section-body p.is-white, .section-block.image .section-body input.is-white[type="text"],
+.section-block.image .section-body input.is-white[type="email"], .section-block.image .section-body div.is-white.wpcf7-response-output, h2.is-white, h3.is-white, p.is-white, input.is-white[type="text"],
+input.is-white[type="email"], div.is-white.wpcf7-response-output, a.is-white {
   color: white; }
 
 p.is_small, input.is_small[type="text"],
