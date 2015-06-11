@@ -1,8 +1,11 @@
 footer{
+  @include flex;
+  @include align-items( center );
+  @include justify-content( space-between );
+  
   z-index: $zIndex-footer;
   
-  padding-top: 10px;
-  padding-bottom: 10px;
+  height: 60px;
   
   background-color: $brown-dark;
   
@@ -17,10 +20,22 @@ footer{
   
   ul{
     li{
-      width: 35px;
       padding: 0 .5em;
       display: inline-block;
+      
+      img{
+        width: 25px;
+        vertical-align: middle;
+      }
+      
+      // Newsletter link
+      &:last-child{
+        margin-left: 1.5em;
+        
+        span{
+          margin-left: .5em;
+        }
+      }
     }
   }
-  
 }

@@ -18,6 +18,8 @@
         
       endwhile;
       
+      echo '<li><a href="http://google.com" target="_blank"><img src="' . get_template_directory_uri() . '/img/icon-email.svg"><span> Aanmelden nieuwsbrief</span></a></li>';
+      
       echo '</ul>';
       
     endif;
