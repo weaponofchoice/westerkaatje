@@ -1,0 +1,16 @@
+.section-form{
+  *{
+    color: $brown-dark;
+  }
+  
+  .section-body{
+    form{
+      max-width: 650px;
+      margin: auto;
+      
+      input[type="submit"]{
+        border: thin solid $brown-dark;
+      }
+    }
+  }
+}

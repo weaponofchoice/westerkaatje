@@ -1,7 +1,12 @@
 .button{
+  @extend a.button;
+  
   display: block;
   padding: 30px 50px;
   
+  cursor: pointer;
+  outline: none;
+  background-color: transparent;
   border: thin solid $black;
   
   &:after{
@@ -30,4 +35,8 @@
       height: calc(100% + 12px);
     }
   }
+}
+
+.button.button-small{
+  padding: 15px 50px;
 }
