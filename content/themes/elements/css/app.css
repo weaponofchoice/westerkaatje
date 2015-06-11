@@ -1402,6 +1402,11 @@ main {
   background: white;
   z-index: 900; }
 
+main section:first-child {
+  padding-top: 7.5rem; }
+  main section:first-child.section-block {
+    padding-top: 3.75rem; }
+
 header {
   z-index: 1100;
   width: 100%; }
