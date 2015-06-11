@@ -1628,8 +1628,8 @@ main {
 
 .section-block.image .section-body {
   width: calc( 100% + 50px );
-  height: calc( 100% + 120px );
-  margin-top: -60px;
+  height: calc( 100% + (5rem * 2) );
+  margin-top: -5rem;
   margin-left: -25px;
   background-size: cover; }
   .section-block.image .section-body p {
