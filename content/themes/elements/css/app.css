@@ -1904,7 +1904,11 @@ div.wpcf7-response-output {
     text-align: left; }
   form .form-row span {
     width: 100%;
-    margin-left: 0; } }
+    margin-left: 0; }
+  form .form-row.form-submit input[type="submit"] {
+    display: block;
+    margin: auto;
+    margin-top: 30px; } }
 /*
  * Show and Hide class functions
  */
