@@ -39,3 +39,17 @@ footer{
     }
   }
 }
+
+@media #{$small-only}{
+  footer{
+    ul{
+      li:last-child{
+        margin-left: 0;
+        
+        span{
+          display: none;
+        }
+      }
+    }
+  }
+}
