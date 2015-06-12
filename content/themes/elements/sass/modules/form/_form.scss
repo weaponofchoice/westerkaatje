@@ -24,7 +24,7 @@ form{
     
     input[type="submit"]{
       @extend .button;
-      @extend .button-small;
+      @extend .button-sec;
       
       display: inline-block;
       margin-top: 15px;

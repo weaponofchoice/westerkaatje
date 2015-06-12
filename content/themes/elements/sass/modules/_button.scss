@@ -37,6 +37,14 @@
   }
 }
 
-.button.button-small{
+.button.button-sec{
+  @include transition( .3s );
+  
   padding: 15px 50px;
+  
+  &:hover,
+  &:focus{
+    color: $white;
+    background-color: $brown-dark;
+  }
 }
