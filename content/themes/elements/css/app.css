@@ -1689,10 +1689,6 @@ section {
 .section-header {
   max-width: 600px; }
 
-main {
-  max-width: 1440px;
-  margin: auto; }
-
 .section-block {
   width: calc( 50% + 25px );
   height: 720px;
