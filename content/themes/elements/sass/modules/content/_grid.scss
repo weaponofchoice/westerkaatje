@@ -1,20 +1,5 @@
-.section_grid{
-  ul{
-    width: 100%;
-    
-    li{
-      margin-bottom: 50px;
-      
-      > *{
-        margin-bottom: 15px;
-      }
-      
-      img{
-        min-width: 100%;
-        display: block;
-      }
-    }
-  }
+.section-grid{
+  padding: 0;
 }
 
 // Removing margin-bottom for last row

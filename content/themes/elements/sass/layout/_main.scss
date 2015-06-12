@@ -6,13 +6,3 @@ main{
   background: $white;
   z-index: $zIndex-main;
 }
-
-main section{
-  &:first-child{
-    padding-top: $section-spacing * 2;
-    
-    &.section-block{
-      padding-top: $section-spacing;
-    }
-  }
-}

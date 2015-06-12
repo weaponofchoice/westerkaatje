@@ -1403,11 +1403,6 @@ main {
   background: white;
   z-index: 900; }
 
-main section:first-child {
-  padding-top: 10rem; }
-  main section:first-child.section-block {
-    padding-top: 5rem; }
-
 header {
   z-index: 1100;
   width: 100%; }
@@ -1764,25 +1759,22 @@ section {
   .section-text .section-body {
     max-width: 650px;
     margin: auto; }
-    .section-text .section-body h1, .section-text .section-block.image .section-body p, .section-block.image .section-text .section-body p, .section-text .section-block.image .section-body input[type="text"], .section-block.image .section-text .section-body input[type="text"],
-    .section-text .section-block.image .section-body input[type="email"],
-    .section-block.image .section-text .section-body input[type="email"], .section-text .section-block.image .section-body div.wpcf7-response-output, .section-block.image .section-text .section-body div.wpcf7-response-output,
-    .section-text .section-body p,
-    .section-text .section-body input[type="text"],
-    .section-text .section-body input[type="email"],
-    .section-text .section-body div.wpcf7-response-output,
+    .section-text .section-body p, .section-text .section-body input[type="text"],
+    .section-text .section-body input[type="email"], .section-text .section-body div.wpcf7-response-output,
     .section-text .section-body a {
       margin-bottom: 1em; }
+      .section-text .section-body p:last-child, .section-text .section-body input[type="text"]:last-child,
+      .section-text .section-body input[type="email"]:last-child, .section-text .section-body div.wpcf7-response-output:last-child,
+      .section-text .section-body a:last-child {
+        margin-bottom: 0; }
+      .section-text .section-body p:first-of-type, .section-text .section-body input[type="text"]:first-of-type,
+      .section-text .section-body input[type="email"]:first-of-type, .section-text .section-body div.wpcf7-response-output:first-of-type,
+      .section-text .section-body a:first-of-type {
+        margin-top: 1em;
+        margin-bottom: 1em; }
 
-.section_grid ul {
-  width: 100%; }
-  .section_grid ul li {
-    margin-bottom: 50px; }
-    .section_grid ul li > * {
-      margin-bottom: 15px; }
-    .section_grid ul li img {
-      min-width: 100%;
-      display: block; }
+.section-grid {
+  padding: 0; }
 
 @media only screen and (min-width: 56.3125em) {
   .l-grid-4 li:nth-last-child(-n + 4) {
