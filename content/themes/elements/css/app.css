@@ -1855,7 +1855,8 @@ input[type="email"] {
   outline: none;
   border: none;
   border-radius: 0;
-  -webkit-appearance: none; }
+  -webkit-appearance: none;
+  -webkit-border-radius: 0; }
 
 form .form-row {
   width: 100%;
@@ -1896,6 +1897,14 @@ div.wpcf7-response-output {
   color: white !important;
   background-color: #545042 !important; }
 
+@media only screen and (max-width: 43.75em) {
+  form .form-row label {
+    width: 100%;
+    margin-bottom: 5px;
+    text-align: left; }
+  form .form-row span {
+    width: 100%;
+    margin-left: 0; } }
 /*
  * Show and Hide class functions
  */
@@ -2268,4 +2277,5 @@ body.is-mobile.is-loading > * {
 
 @media only screen and (max-width: 43.75em) {
   .is-fullwidth {
+    width: calc( 100% + (1.25rem * 2) );
     margin-left: -1.25rem; } }

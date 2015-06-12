@@ -61,3 +61,21 @@ div.wpcf7-response-output{
   color: $white !important;
   background-color: $brown-dark !important;
 }
+
+@media #{$small-only}{
+  form{
+    .form-row{
+      label{
+        width: 100%;
+        margin-bottom: 5px;
+        
+        text-align: left;
+      }
+      
+      span{
+        width: 100%;
+        margin-left: 0;
+      }
+    }
+  }
+}

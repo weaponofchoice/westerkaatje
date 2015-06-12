@@ -5,6 +5,7 @@
 
 @media #{$small-only}{
   .is-fullwidth{
+    width: calc( 100% + (#{$side-margin-small} * 2) );
     margin-left: -$side-margin-small;
   }
 }
