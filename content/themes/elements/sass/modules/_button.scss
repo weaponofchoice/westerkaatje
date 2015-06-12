@@ -9,6 +9,9 @@
   background-color: transparent;
   border: thin solid $black;
   
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  
   &:after{
     @include hide( .2s );
     

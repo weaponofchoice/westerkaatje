@@ -1560,7 +1560,9 @@ nav ul li a:focus {
   cursor: pointer;
   outline: none;
   background-color: transparent;
-  border: thin solid black; }
+  border: thin solid black;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0; }
   .button:after, form .form-row.form-submit input[type="submit"]:after {
     opacity: 0;
     visibility: hidden;
