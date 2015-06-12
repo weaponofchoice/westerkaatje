@@ -29,3 +29,17 @@ nav ul{
     background-color: $brown;
   }
 }
+
+@media #{$small-only}{
+  nav{
+    ul{
+      li{
+        width: 100%;
+        max-width: none;
+        display: block;
+        
+        border-bottom: thin solid $brown;
+      }
+    }
+  }
+}

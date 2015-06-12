@@ -1,8 +1,16 @@
 .button{
+  @extend a.button;
+  
   display: block;
   padding: 30px 50px;
   
+  cursor: pointer;
+  outline: none;
+  background-color: transparent;
   border: thin solid $black;
+  
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
   
   &:after{
     @include hide( .2s );
@@ -29,5 +37,17 @@
       width: calc(100% - 12px);
       height: calc(100% + 12px);
     }
+  }
+}
+
+.button.button-sec{
+  @include transition( .3s );
+  
+  padding: 15px 50px;
+  
+  &:hover,
+  &:focus{
+    color: $white;
+    background-color: $brown-dark;
   }
 }

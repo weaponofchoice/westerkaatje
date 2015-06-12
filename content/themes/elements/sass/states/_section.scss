@@ -39,8 +39,10 @@
     padding-top: 0;
     padding-bottom: 0;
     
-    .section-body{
-      padding: $section-spacing $column-gutter;
+    .section-body,
+    .section-header{
+      padding: ($section-spacing / 2) $column-gutter;
+      margin-bottom: 0;
       
       background-color: $brown;
     }

@@ -1,20 +1,23 @@
-@font-face{
-  font-family: gill;
-  src: url('../fonts/gill.ttf');
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/2e678c");
+  
+@font-face {
+  font-family: 'GillSansMTStd-Light';
+  src: url('../webfonts/2E678C_0_0.eot');
+  src: url('../webfonts/2E678C_0_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/2E678C_0_0.woff2') format('woff2'),url('../webfonts/2E678C_0_0.woff') format('woff'),url('../webfonts/2E678C_0_0.ttf') format('truetype');
 }
-
-@font-face{
-  font-family: gill-bold;
-  src: url('../fonts/gill-bold.ttf');
+  
+@font-face {
+  font-family: 'GillSansMTStd-Bold';
+  src: url('../webfonts/2E678C_1_0.eot');
+  src: url('../webfonts/2E678C_1_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/2E678C_1_0.woff2') format('woff2'),url('../webfonts/2E678C_1_0.woff') format('woff'),url('../webfonts/2E678C_1_0.ttf') format('truetype');
 }
 
 @mixin gill{
-  font-family: gill;
-  font-style: normal;
+  font-family: 'GillSansMTStd-Light';
+  letter-spacing: 1px;
 }
 
 @mixin gill-bold{
-  font-family: gill-bold;
-  font-style: normal;
-  font-weight: bold;
+  font-family: 'GillSansMTStd-Bold';
 }

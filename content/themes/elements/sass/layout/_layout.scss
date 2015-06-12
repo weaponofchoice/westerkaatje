@@ -10,8 +10,7 @@ footer{
   padding-right: $side-margin;
 }
 
-main,
-section{
+main{
   padding-left: $side-margin - ($column-gutter / 2);
   padding-right: $side-margin - ($column-gutter / 2);
 }
