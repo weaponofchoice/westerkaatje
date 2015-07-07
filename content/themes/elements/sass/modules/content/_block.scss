@@ -28,22 +28,43 @@
 
 // Image block
 .section-block.image{
-  .section-body{
-    width: calc( 100% + 50px );
-    height: calc( 100% + (#{$section-spacing} * 2) );
-    margin-top: -$section-spacing;
-    margin-left: -25px;
+  ul.slider-images{
+    top: 0;
+    left: 0;
+    position: absolute;
     
-    background-size: cover;
+    width: 100%;
+    height: 100%;
     
-    p{
-      @extend h1;
+    li{
+      width: 100%;
+      height: 100%;
       
-      max-width: 350px;
-      
-      color: $white;
+      background-repeat: none;
+      background-size: cover;
+      background-position: center center;
     }
   }
+  
+  p{
+    @extend h1;
+    @include transform( translateY(-50%) );
+    
+    top: 50%;
+    right: 0;
+    left: 0;
+    position: absolute;
+    
+    max-width: 350px;
+    margin: auto;
+    
+    color: $white;
+  }
+}
+
+// Image block with multiple images = slider
+.section-block.image.slider{
+  
 }
 
 // Text block
