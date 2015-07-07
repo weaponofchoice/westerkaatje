@@ -1854,6 +1854,16 @@ section {
   .section-form .section-body form input[type="submit"] {
     border: thin solid #545042; }
 
+.section-accordion .section-header,
+.section-accordion .section-body {
+  max-width: 650px;
+  margin: auto;
+  margin-bottom: 1em; }
+.section-accordion .section-header {
+  cursor: pointer; }
+.section-accordion .section-body {
+  overflow: hidden; }
+
 .slider {
   position: relative; }
 
@@ -2469,6 +2479,22 @@ body.is-mobile.is-loading > * {
   -ms-transition: 0s;
   -o-transition: 0s;
   transition: 0s; }
+
+.section-accordion .section-body {
+  transition-timing-function: ease-in-out;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+  max-height: 0; }
+.section-accordion .section-body.active {
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+  max-height: 1000px; }
 
 .is-fullwidth {
   width: calc( 100% + (2.5rem * 2) );

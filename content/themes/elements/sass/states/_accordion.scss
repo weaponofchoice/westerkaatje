@@ -1,0 +1,14 @@
+.section-accordion{
+  .section-body{
+    transition-timing-function: ease-in-out;
+    @include transition( 1s );
+
+    max-height: 0;
+  }
+
+  .section-body.active{
+    @include transition( 1s );
+
+    max-height: 1000px;
+  }
+}

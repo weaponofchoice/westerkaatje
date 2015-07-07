@@ -1,0 +1,16 @@
+.section-accordion{
+  .section-header,
+  .section-body{
+    max-width: 650px;
+    margin: auto;
+    margin-bottom: 1em;
+  }
+
+  .section-header{
+    cursor: pointer;
+  }
+
+  .section-body{
+    overflow: hidden;
+  }
+}
