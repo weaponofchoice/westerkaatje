@@ -28,23 +28,6 @@
 
 // Image block
 .section-block.image{
-  .section-body{
-    width: calc( 100% + 50px );
-    height: calc( 100% + (#{$section-spacing} * 2) );
-    margin-top: -$section-spacing;
-    margin-left: -25px;
-    
-    background-size: cover;
-    
-    p{
-      @extend h1;
-      
-      max-width: 350px;
-      
-      color: $white;
-    }
-  }
-  
   ul.slider-images{
     top: 0;
     left: 0;
@@ -61,6 +44,21 @@
       background-size: cover;
       background-position: center center;
     }
+  }
+  
+  p{
+    @extend h1;
+    @include transform( translateY(-50%) );
+    
+    top: 50%;
+    right: 0;
+    left: 0;
+    position: absolute;
+    
+    max-width: 350px;
+    margin: auto;
+    
+    color: $white;
   }
 }
 

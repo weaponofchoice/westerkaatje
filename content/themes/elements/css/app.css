@@ -1328,8 +1328,8 @@ ul {
   font-family: 'GillSansMTStd-Bold';
   src: url("../webfonts/2E678C_1_0.eot");
   src: url("../webfonts/2E678C_1_0.eot?#iefix") format("embedded-opentype"), url("../webfonts/2E678C_1_0.woff2") format("woff2"), url("../webfonts/2E678C_1_0.woff") format("woff"), url("../webfonts/2E678C_1_0.ttf") format("truetype"); }
-h1, .section-block.image .section-body p, .section-block.image .section-body input[type="text"],
-.section-block.image .section-body input[type="email"], .section-block.image .section-body div.wpcf7-response-output, h2, h3, p, input[type="text"],
+h1, .section-block.image p, .section-block.image input[type="text"],
+.section-block.image input[type="email"], .section-block.image div.wpcf7-response-output, h2, h3, p, input[type="text"],
 input[type="email"], div.wpcf7-response-output, a {
   font-family: 'GillSansMTStd-Light';
   letter-spacing: 1px;
@@ -1341,8 +1341,8 @@ input[type="email"], div.wpcf7-response-output, a {
 strong {
   font-family: 'GillSansMTStd-Bold'; }
 
-h1, .section-block.image .section-body p, .section-block.image .section-body input[type="text"],
-.section-block.image .section-body input[type="email"], .section-block.image .section-body div.wpcf7-response-output {
+h1, .section-block.image p, .section-block.image input[type="text"],
+.section-block.image input[type="email"], .section-block.image div.wpcf7-response-output {
   font-family: 'GillSansMTStd-Bold';
   font-size: 22px; }
 
@@ -1725,16 +1725,6 @@ section {
   -moz-justify-content: center;
   justify-content: center; }
 
-.section-block.image .section-body {
-  width: calc( 100% + 50px );
-  height: calc( 100% + (5rem * 2) );
-  margin-top: -5rem;
-  margin-left: -25px;
-  background-size: cover; }
-  .section-block.image .section-body p, .section-block.image .section-body input[type="text"],
-  .section-block.image .section-body input[type="email"], .section-block.image .section-body div.wpcf7-response-output {
-    max-width: 350px;
-    color: white; }
 .section-block.image ul.slider-images {
   top: 0;
   left: 0;
@@ -1747,6 +1737,20 @@ section {
     background-repeat: none;
     background-size: cover;
     background-position: center center; }
+.section-block.image p, .section-block.image input[type="text"],
+.section-block.image input[type="email"], .section-block.image div.wpcf7-response-output {
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  top: 50%;
+  right: 0;
+  left: 0;
+  position: absolute;
+  max-width: 350px;
+  margin: auto;
+  color: white; }
 
 .section-block.text .section-body > * {
   margin-bottom: 1em; }
@@ -2368,49 +2372,38 @@ section.has-bg,
     margin-bottom: 0;
     background-color: #d9ccbb; }
 
-h1.is-italic, .section-block.image .section-body p.is-italic, .section-block.image .section-body input.is-italic[type="text"],
-.section-block.image .section-body input.is-italic[type="email"], .section-block.image .section-body div.is-italic.wpcf7-response-output, h2.is-italic, h3.is-italic, p.is-italic, input.is-italic[type="text"],
+h1.is-italic, .section-block.image p.is-italic, h2.is-italic, h3.is-italic, p.is-italic, input.is-italic[type="text"],
 input.is-italic[type="email"], div.is-italic.wpcf7-response-output, a.is-italic {
   font-style: italic; }
-h1.is-underlined, .section-block.image .section-body p.is-underlined, .section-block.image .section-body input.is-underlined[type="text"],
-.section-block.image .section-body input.is-underlined[type="email"], .section-block.image .section-body div.is-underlined.wpcf7-response-output, h2.is-underlined, h3.is-underlined, p.is-underlined, input.is-underlined[type="text"],
+h1.is-underlined, .section-block.image p.is-underlined, h2.is-underlined, h3.is-underlined, p.is-underlined, input.is-underlined[type="text"],
 input.is-underlined[type="email"], div.is-underlined.wpcf7-response-output, a.is-underlined {
   text-decoration: underline; }
-h1.is-capitalized, .section-block.image .section-body p.is-capitalized, .section-block.image .section-body input.is-capitalized[type="text"],
-.section-block.image .section-body input.is-capitalized[type="email"], .section-block.image .section-body div.is-capitalized.wpcf7-response-output, h2.is-capitalized, h3.is-capitalized, p.is-capitalized, input.is-capitalized[type="text"],
+h1.is-capitalized, .section-block.image p.is-capitalized, h2.is-capitalized, h3.is-capitalized, p.is-capitalized, input.is-capitalized[type="text"],
 input.is-capitalized[type="email"], div.is-capitalized.wpcf7-response-output, a.is-capitalized {
   text-transform: capitalize; }
-h1.is-uppercase, .section-block.image .section-body p.is-uppercase, .section-block.image .section-body input.is-uppercase[type="text"],
-.section-block.image .section-body input.is-uppercase[type="email"], .section-block.image .section-body div.is-uppercase.wpcf7-response-output, h2.is-uppercase, h3.is-uppercase, p.is-uppercase, input.is-uppercase[type="text"],
+h1.is-uppercase, .section-block.image p.is-uppercase, h2.is-uppercase, h3.is-uppercase, p.is-uppercase, input.is-uppercase[type="text"],
 input.is-uppercase[type="email"], div.is-uppercase.wpcf7-response-output, a.is-uppercase {
   text-transform: uppercase; }
-h1.is-lowercase, .section-block.image .section-body p.is-lowercase, .section-block.image .section-body input.is-lowercase[type="text"],
-.section-block.image .section-body input.is-lowercase[type="email"], .section-block.image .section-body div.is-lowercase.wpcf7-response-output, h2.is-lowercase, h3.is-lowercase, p.is-lowercase, input.is-lowercase[type="text"],
+h1.is-lowercase, .section-block.image p.is-lowercase, h2.is-lowercase, h3.is-lowercase, p.is-lowercase, input.is-lowercase[type="text"],
 input.is-lowercase[type="email"], div.is-lowercase.wpcf7-response-output, a.is-lowercase {
   text-transform: lowercase; }
-h1.is-bold, .section-block.image .section-body p.is-bold, .section-block.image .section-body input.is-bold[type="text"],
-.section-block.image .section-body input.is-bold[type="email"], .section-block.image .section-body div.is-bold.wpcf7-response-output, h2.is-bold, h3.is-bold, p.is-bold, input.is-bold[type="text"],
+h1.is-bold, .section-block.image p.is-bold, h2.is-bold, h3.is-bold, p.is-bold, input.is-bold[type="text"],
 input.is-bold[type="email"], div.is-bold.wpcf7-response-output, a.is-bold {
   font-family: 'GillSansMTStd-Bold';
   font-weight: 700; }
-h1.is-aligned-center, .section-block.image .section-body p.is-aligned-center, .section-block.image .section-body input.is-aligned-center[type="text"],
-.section-block.image .section-body input.is-aligned-center[type="email"], .section-block.image .section-body div.is-aligned-center.wpcf7-response-output, h2.is-aligned-center, h3.is-aligned-center, p.is-aligned-center, input.is-aligned-center[type="text"],
+h1.is-aligned-center, .section-block.image p.is-aligned-center, h2.is-aligned-center, h3.is-aligned-center, p.is-aligned-center, input.is-aligned-center[type="text"],
 input.is-aligned-center[type="email"], div.is-aligned-center.wpcf7-response-output, a.is-aligned-center {
   text-align: center; }
-h1.is-aligned-left, .section-block.image .section-body p.is-aligned-left, .section-block.image .section-body input.is-aligned-left[type="text"],
-.section-block.image .section-body input.is-aligned-left[type="email"], .section-block.image .section-body div.is-aligned-left.wpcf7-response-output, h2.is-aligned-left, h3.is-aligned-left, p.is-aligned-left, input.is-aligned-left[type="text"],
+h1.is-aligned-left, .section-block.image p.is-aligned-left, h2.is-aligned-left, h3.is-aligned-left, p.is-aligned-left, input.is-aligned-left[type="text"],
 input.is-aligned-left[type="email"], div.is-aligned-left.wpcf7-response-output, a.is-aligned-left {
   text-align: left; }
-h1.is-aligned-right, .section-block.image .section-body p.is-aligned-right, .section-block.image .section-body input.is-aligned-right[type="text"],
-.section-block.image .section-body input.is-aligned-right[type="email"], .section-block.image .section-body div.is-aligned-right.wpcf7-response-output, h2.is-aligned-right, h3.is-aligned-right, p.is-aligned-right, input.is-aligned-right[type="text"],
+h1.is-aligned-right, .section-block.image p.is-aligned-right, h2.is-aligned-right, h3.is-aligned-right, p.is-aligned-right, input.is-aligned-right[type="text"],
 input.is-aligned-right[type="email"], div.is-aligned-right.wpcf7-response-output, a.is-aligned-right {
   text-align: right; }
-h1.is-black, .section-block.image .section-body p.is-black, .section-block.image .section-body input.is-black[type="text"],
-.section-block.image .section-body input.is-black[type="email"], .section-block.image .section-body div.is-black.wpcf7-response-output, h2.is-black, h3.is-black, p.is-black, input.is-black[type="text"],
+h1.is-black, .section-block.image p.is-black, h2.is-black, h3.is-black, p.is-black, input.is-black[type="text"],
 input.is-black[type="email"], div.is-black.wpcf7-response-output, a.is-black {
   color: black; }
-h1.is-white, .section-block.image .section-body p.is-white, .section-block.image .section-body input.is-white[type="text"],
-.section-block.image .section-body input.is-white[type="email"], .section-block.image .section-body div.is-white.wpcf7-response-output, h2.is-white, h3.is-white, p.is-white, input.is-white[type="text"],
+h1.is-white, .section-block.image p.is-white, h2.is-white, h3.is-white, p.is-white, input.is-white[type="text"],
 input.is-white[type="email"], div.is-white.wpcf7-response-output, a.is-white {
   color: white; }
 
