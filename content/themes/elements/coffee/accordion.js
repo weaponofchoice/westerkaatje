@@ -1,0 +1,1 @@
+(function(){$(function(){var c,o;return c=$(".section-accordion"),o=$(".section-accordion .section-header"),o.click(function(){var c,o;return c=$(this).closest(".section-accordion").children(".section-body"),c.toggleClass(""),o=$(this).parent(".section-accordion"),console.log(o)})})}).call(this);

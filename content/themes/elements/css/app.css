@@ -1861,6 +1861,23 @@ section {
   margin-bottom: 1em; }
 .section-accordion .section-header {
   cursor: pointer; }
+  .section-accordion .section-header:after {
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    content: '+';
+    top: 0;
+    right: 0;
+    position: absolute;
+    height: 100%;
+    pointer-events: none; }
 .section-accordion .section-body {
   overflow: hidden; }
 
@@ -2482,19 +2499,31 @@ body.is-mobile.is-loading > * {
 
 .section-accordion .section-body {
   transition-timing-function: ease-in-out;
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  -ms-transition: 1s;
-  -o-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
   max-height: 0; }
 .section-accordion .section-body.active {
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  -ms-transition: 1s;
-  -o-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
   max-height: 1000px; }
+
+.section-accordion.opened .section-header:after {
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  -moz-transform: scale(1.2) rotate(135deg);
+  -o-transform: scale(1.2) rotate(135deg);
+  -ms-transform: scale(1.2) rotate(135deg);
+  -webkit-transform: scale(1.2) rotate(135deg);
+  transform: scale(1.2) rotate(135deg); }
 
 .is-fullwidth {
   width: calc( 100% + (2.5rem * 2) );
