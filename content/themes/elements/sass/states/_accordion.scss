@@ -14,7 +14,7 @@
 }
 
 .section-accordion ul li.opened{
-   p i{
+   > p i{
     @include transition( .5s );
     @include transform( rotate(135deg) );
   }

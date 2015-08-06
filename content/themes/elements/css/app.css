@@ -1859,12 +1859,12 @@ section {
   max-width: 650px;
   margin: auto;
   margin-bottom: 1em; }
-.section-accordion ul li p, .section-accordion ul li input[type="text"],
-.section-accordion ul li input[type="email"], .section-accordion ul li div.wpcf7-response-output {
+.section-accordion ul li > p, .section-accordion ul li > input[type="text"],
+.section-accordion ul li > input[type="email"], .section-accordion ul li > div.wpcf7-response-output {
   cursor: pointer;
   margin-bottom: 20px; }
-  .section-accordion ul li p i, .section-accordion ul li input[type="text"] i,
-  .section-accordion ul li input[type="email"] i, .section-accordion ul li div.wpcf7-response-output i {
+  .section-accordion ul li > p i, .section-accordion ul li > input[type="text"] i,
+  .section-accordion ul li > input[type="email"] i, .section-accordion ul li > div.wpcf7-response-output i {
     -webkit-transition: 0.5s;
     -moz-transition: 0.5s;
     -ms-transition: 0.5s;
@@ -1875,9 +1875,9 @@ section {
     position: absolute;
     width: 1em;
     height: 1em; }
-    .section-accordion ul li p i:before, .section-accordion ul li input[type="text"] i:before,
-    .section-accordion ul li input[type="email"] i:before, .section-accordion ul li div.wpcf7-response-output i:before, .section-accordion ul li p i:after, .section-accordion ul li input[type="text"] i:after,
-    .section-accordion ul li input[type="email"] i:after, .section-accordion ul li div.wpcf7-response-output i:after {
+    .section-accordion ul li > p i:before, .section-accordion ul li > input[type="text"] i:before,
+    .section-accordion ul li > input[type="email"] i:before, .section-accordion ul li > div.wpcf7-response-output i:before, .section-accordion ul li > p i:after, .section-accordion ul li > input[type="text"] i:after,
+    .section-accordion ul li > input[type="email"] i:after, .section-accordion ul li > div.wpcf7-response-output i:after {
       content: "";
       top: 50%;
       left: 50%;
@@ -1886,8 +1886,8 @@ section {
       height: 13px;
       margin-top: -6px;
       background: black; }
-    .section-accordion ul li p i:after, .section-accordion ul li input[type="text"] i:after,
-    .section-accordion ul li input[type="email"] i:after, .section-accordion ul li div.wpcf7-response-output i:after {
+    .section-accordion ul li > p i:after, .section-accordion ul li > input[type="text"] i:after,
+    .section-accordion ul li > input[type="email"] i:after, .section-accordion ul li > div.wpcf7-response-output i:after {
       -moz-transform: rotate(90deg);
       -o-transform: rotate(90deg);
       -ms-transform: rotate(90deg);
@@ -2528,8 +2528,8 @@ body.is-mobile.is-loading > * {
   transition: 0.5s;
   max-height: 1000px; }
 
-.section-accordion ul li.opened p i, .section-accordion ul li.opened input[type="text"] i,
-.section-accordion ul li.opened input[type="email"] i, .section-accordion ul li.opened div.wpcf7-response-output i {
+.section-accordion ul li.opened > p i, .section-accordion ul li.opened > input[type="text"] i,
+.section-accordion ul li.opened > input[type="email"] i, .section-accordion ul li.opened > div.wpcf7-response-output i {
   -webkit-transition: 0.5s;
   -moz-transition: 0.5s;
   -ms-transition: 0.5s;

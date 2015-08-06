@@ -6,13 +6,13 @@
     margin-bottom: 1em;
   }
 
-  ul li p{
+  ul li > p{
     cursor: pointer;
     margin-bottom: 20px;
 
     i{
       @include transition( .5s );
-      
+
       top: 0;
       right: 0;
       position: absolute;
