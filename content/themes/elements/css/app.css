@@ -1905,7 +1905,7 @@ section {
 @media only screen and (max-width: 43.75em) {
   .section-accordion ul li > p, .section-accordion ul li > input[type="text"],
   .section-accordion ul li > input[type="email"], .section-accordion ul li > div.wpcf7-response-output {
-    padding-right: 1em; } }
+    padding-right: 1.5em; } }
 .slider {
   position: relative; }
 
