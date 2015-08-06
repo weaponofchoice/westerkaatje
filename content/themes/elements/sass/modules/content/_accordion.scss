@@ -8,7 +8,7 @@
 
   ul li > p{
     cursor: pointer;
-    margin-bottom: 20px;
+    margin-bottom: 1em;
 
     i{
       @include transition( .5s );
@@ -43,5 +43,9 @@
 
   ul li div{
     overflow: hidden;
+
+    p{
+      margin-bottom: 1em;
+    }
   }
 }

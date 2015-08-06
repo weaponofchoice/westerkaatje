@@ -1862,7 +1862,7 @@ section {
 .section-accordion ul li > p, .section-accordion ul li > input[type="text"],
 .section-accordion ul li > input[type="email"], .section-accordion ul li > div.wpcf7-response-output {
   cursor: pointer;
-  margin-bottom: 20px; }
+  margin-bottom: 1em; }
   .section-accordion ul li > p i, .section-accordion ul li > input[type="text"] i,
   .section-accordion ul li > input[type="email"] i, .section-accordion ul li > div.wpcf7-response-output i {
     -webkit-transition: 0.5s;
@@ -1895,6 +1895,9 @@ section {
       transform: rotate(90deg); }
 .section-accordion ul li div {
   overflow: hidden; }
+  .section-accordion ul li div p, .section-accordion ul li div input[type="text"],
+  .section-accordion ul li div input[type="email"], .section-accordion ul li div div.wpcf7-response-output {
+    margin-bottom: 1em; }
 
 .slider {
   position: relative; }
