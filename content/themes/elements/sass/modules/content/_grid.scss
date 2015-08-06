@@ -1,5 +1,5 @@
-.section-grid{
-  padding: 0;
+.section-grid ul li{
+  margin-bottom: $column-gutter;
 }
 
 // Removing margin-bottom for last row
@@ -27,22 +27,18 @@
   }
 }
 
-.section_grid ul.isotope_masonry{
+.section-grid ul.isotope_masonry{
   li:nth-child(n){
     margin-bottom: $column-gutter;
-    
+
     img{
       margin-bottom: 0;
     }
   }
 }
 
-@media screen and (min-width: 1400px){
-  .section_grid{
-    ul{
-      li{
-        width: 25%;
-      }
-    }
+@media #{$small-only}{
+  .section-grid ul li{
+    margin-bottom: $column-gutter / 2;
   }
 }
