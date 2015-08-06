@@ -1763,10 +1763,13 @@ section {
   margin: auto;
   color: white; }
 
-.section-block.text .section-body > * {
-  margin-bottom: 1em; }
-.section-block.text .section-body a {
-  margin-top: 3em; }
+.section-block.text .section-body {
+  max-width: 450px;
+  margin: auto; }
+  .section-block.text .section-body > * {
+    margin-bottom: 1em; }
+  .section-block.text .section-body a {
+    margin-top: 3em; }
 .section-block.text.odd {
   background-color: #f0ebe4; }
 .section-block.text.even {
