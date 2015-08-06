@@ -1706,6 +1706,7 @@ section {
   width: calc( 50% + 25px );
   height: 720px;
   float: left;
+  text-align: center;
   background-color: #f2f2f2; }
   .section-block.left {
     margin-left: -25px; }
