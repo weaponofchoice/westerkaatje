@@ -1799,6 +1799,13 @@ section {
         margin-top: 1em;
         margin-bottom: 1em; }
 
+@media only screen and (max-width: 43.75em) {
+  .section-text.has-bg {
+    width: calc( 100% + (1.25rem * 2) );
+    margin-left: -1.25rem; }
+    .section-text.has-bg .section-body {
+      padding-left: 20px;
+      padding-right: 20px; } }
 .section-grid ul li {
   margin-bottom: 1.875rem; }
 

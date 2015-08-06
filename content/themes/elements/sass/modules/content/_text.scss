@@ -1,22 +1,33 @@
 .section-text{
   clear: both;
-  
+
   .section-body{
     max-width: 650px;
     margin: auto;
-    
+
     p,
     a{
       margin-bottom: 1em;
-      
+
       &:last-child{
         margin-bottom: 0;
       }
-      
+
       &:first-of-type{
         margin-top: 1em;
         margin-bottom: 1em;
       }
+    }
+  }
+}
+@media #{$small-only}{
+  .section-text.has-bg{
+    width: calc( 100% + (#{$side-margin-small} * 2) );
+    margin-left: -$side-margin-small;
+
+    .section-body{
+      padding-left: 20px;
+      padding-right: 20px;
     }
   }
 }
