@@ -1902,6 +1902,10 @@ section {
   .section-accordion ul li div input[type="email"], .section-accordion ul li div div.wpcf7-response-output {
     margin-bottom: 1em; }
 
+@media only screen and (max-width: 43.75em) {
+  .section-accordion ul li > p, .section-accordion ul li > input[type="text"],
+  .section-accordion ul li > input[type="email"], .section-accordion ul li > div.wpcf7-response-output {
+    padding-right: 1em; } }
 .slider {
   position: relative; }
 

@@ -49,3 +49,11 @@
     }
   }
 }
+
+@media #{$small-only}{
+  .section-accordion{
+    ul li > p{
+      padding-right: 1em;
+    }
+  }
+}
