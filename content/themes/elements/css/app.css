@@ -1437,7 +1437,14 @@ header {
 @media only screen and (max-width: 43.75em) {
   header .subheader {
     -webkit-flex-direction: column;
-    flex-direction: column; } }
+    flex-direction: column;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    header .subheader p, header .subheader input[type="text"],
+    header .subheader input[type="email"], header .subheader div.wpcf7-response-output {
+      font-size: 20px;
+      text-align: center; } }
 footer {
   display: -webkit-box;
   /* OLD - iOS 6-, Safari 3.1-6 */
