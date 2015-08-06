@@ -6,26 +6,42 @@
     margin-bottom: 1em;
   }
 
-  .section-header{
+  ul li p{
     cursor: pointer;
+    margin-bottom: 20px;
 
-    &:after{
+    i{
       @include transition( .5s );
-      @include transform( scale(1.2) );
-
-      content: '+';
-
+      
       top: 0;
       right: 0;
       position: absolute;
 
-      height: 100%;
+      width: 1em;
+      height: 1em;
 
-      pointer-events: none;
+      &:before,
+      &:after{
+        content: "";
+
+        top: 50%;
+        left: 50%;
+        position: absolute;
+
+        width: 1px;
+        height: 13px;
+        margin-top: -6px;
+
+        background: $black;
+      }
+
+      &:after{
+        @include transform( rotate(90deg) );
+      }
     }
   }
 
-  .section-body{
+  ul li div{
     overflow: hidden;
   }
 }

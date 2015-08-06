@@ -1,21 +1,21 @@
 .section-accordion{
-  .section-body{
+  ul li div{
     transition-timing-function: ease-in-out;
     @include transition( .5s );
 
     max-height: 0;
   }
 
-  .section-body.active{
+  ul li div.active{
     @include transition( .5s );
 
     max-height: 1000px;
   }
 }
 
-.section-accordion.opened{
-  .section-header:after{
+.section-accordion ul li.opened{
+   p i{
     @include transition( .5s );
-    @include transform( scale(1.2) rotate(135deg) );
+    @include transform( rotate(135deg) );
   }
 }

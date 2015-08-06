@@ -1,9 +1,9 @@
 $ ->
-  $acc = $('.section-accordion')
-  $acc_head = $('.section-accordion .section-header')
+  $object = $('.section-accordion ul li')
+  $trigger = $('.section-accordion ul li p')
 
-  $acc_head.click ->
-    $acc_desc = $(this).closest(".section-accordion").children(".section-body")
+  $trigger.click ->
+    $target = $(this).closest("li").children("div")
 
-    $acc_desc.toggleClass "active"
-    $(this).parent(".section-accordion").toggleClass "opened"
+    $target.toggleClass "active"
+    $(this).parent("li").toggleClass "opened"
