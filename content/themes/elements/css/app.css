@@ -1371,8 +1371,8 @@ a {
     text-transform: uppercase;
     letter-spacing: 2px; }
 
-p a, input[type="text"] a,
-input[type="email"] a, div.wpcf7-response-output a {
+p a:hover, input[type="text"] a:hover,
+input[type="email"] a:hover, div.wpcf7-response-output a:hover {
   text-decoration: underline; }
 
 html,
