@@ -1403,9 +1403,14 @@ main {
   background: white;
   z-index: 900; }
 
+@media only screen and (max-width: 43.75em) {
+  main {
+    padding-top: 0 !important; } }
 header {
+  position: fixed;
   z-index: 1100;
-  width: 100%; }
+  width: 100%;
+  background-color: white; }
   header .subheader {
     display: -webkit-box;
     /* OLD - iOS 6-, Safari 3.1-6 */
@@ -1445,6 +1450,9 @@ header {
     header .subheader input[type="email"], header .subheader div.wpcf7-response-output {
       font-size: 20px;
       text-align: center; } }
+@media only screen and (max-width: 43.75em) {
+  header {
+    position: relative; } }
 footer {
   display: -webkit-box;
   /* OLD - iOS 6-, Safari 3.1-6 */

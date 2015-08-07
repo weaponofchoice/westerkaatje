@@ -6,3 +6,9 @@ main{
   background: $white;
   z-index: $zIndex-main;
 }
+
+@media #{$small-only}{
+  main{
+    padding-top: 0 !important;
+  }
+}
