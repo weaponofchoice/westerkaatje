@@ -5,7 +5,9 @@
     'container' => ' ',
     'items_wrap' => '<ul>%3$s</ul>'
   );
-  
+
   wp_nav_menu( $nav );
   ?>
+
+  <a class="aside-open"><i></i></a>
 </nav>
