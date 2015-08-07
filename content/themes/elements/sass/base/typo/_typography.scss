@@ -62,6 +62,12 @@ a{
   }
 }
 
+p{
+  a{
+    text-decoration: underline;
+  }
+}
+
 span{
   @extend %base;
 }

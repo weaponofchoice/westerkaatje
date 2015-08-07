@@ -1371,6 +1371,10 @@ a {
     text-transform: uppercase;
     letter-spacing: 2px; }
 
+p a, input[type="text"] a,
+input[type="email"] a, div.wpcf7-response-output a {
+  text-decoration: underline; }
+
 html,
 body {
   height: 100% !important;
