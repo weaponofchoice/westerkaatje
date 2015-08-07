@@ -1,8 +1,9 @@
 <?php
 // Content
+$id = preg_replace( '/\s+/', '',  strtolower(get_sub_field( 'grid_c_id' )) );
 $images = get_sub_field( 'grid_c_images' );
 ?>
-<section class="section-grid row">
+<section <?php if($id){ echo 'id="' . $id . '"'; } ?> class="section-grid row">
   <div class="section-body row">
     <ul class="m-grid-2 l-grid-4">
       <?php

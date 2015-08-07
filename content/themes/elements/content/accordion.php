@@ -1,4 +1,7 @@
-<section class="section-accordion">
+<?php
+$id = preg_replace( '/\s+/', '',  strtolower(get_sub_field( 'accordion_c_id' )) );
+?>
+<section <?php if($id){ echo 'id="' . $id . '"'; } ?> class="section-accordion">
   <div class="section-body">
     <ul>
       <?php
