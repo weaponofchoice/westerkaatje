@@ -1569,6 +1569,9 @@ aside {
   max-width: 500px;
   height: 100%;
   background: white; }
+  aside .aside-body {
+    margin-top: 50px;
+    padding: 50px; }
 
 .overlay {
   top: 0;
