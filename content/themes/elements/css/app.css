@@ -1571,7 +1571,8 @@ aside {
   background: white; }
   aside .aside-body {
     margin-top: 50px;
-    padding: 50px; }
+    padding: 50px;
+    padding-right: 67px; }
 
 .overlay {
   top: 0;
@@ -1584,28 +1585,32 @@ aside {
   cursor: pointer; }
 
 .aside-open,
+.aside-open-container,
 .aside-close {
   top: 11px;
   right: 40px;
   position: absolute;
-  width: 22px;
+  width: 20px;
   height: 1em; }
 
-.aside-open:before, .aside-open:after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background-color: black; }
-.aside-open:after {
-  bottom: 0; }
-.aside-open i {
-  top: 50%;
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  margin-top: -1px;
-  background-color: black; }
+.aside-open {
+  top: 0;
+  right: 0; }
+  .aside-open:before, .aside-open:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: black; }
+  .aside-open:after {
+    bottom: 0; }
+  .aside-open i {
+    top: 50%;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    margin-top: -1px;
+    background-color: black; }
 
 .aside-close {
   -moz-transform: rotate(45deg);
@@ -1674,6 +1679,23 @@ body.aside-active .overlay {
   -o-transition: 0.5s;
   transition: 0.5s; }
 
+@media only screen and (max-width: 43.75em) {
+  .aside-open-container {
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background-color: black; }
+    .aside-open-container .aside-open {
+      bottom: 0;
+      left: 0;
+      margin: auto; }
+      .aside-open-container .aside-open:before, .aside-open-container .aside-open:after,
+      .aside-open-container .aside-open i {
+        background-color: white; }
+
+  .aside-close {
+    right: 27px; } }
 .button, form .form-row.form-submit input[type="submit"] {
   display: block;
   padding: 30px 50px;

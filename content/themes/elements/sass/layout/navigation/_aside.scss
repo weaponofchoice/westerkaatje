@@ -18,6 +18,7 @@ aside{
   .aside-body{
     margin-top: 50px;
     padding: 50px;
+    padding-right: 67px;
   }
 }
 
@@ -37,16 +38,20 @@ aside{
 
 // Triggers
 .aside-open,
+.aside-open-container,
 .aside-close{
   top: 11px;
   right: 40px;
   position: absolute;
 
-  width: 22px;
+  width: 20px;
   height: 1em;
 }
 
 .aside-open{
+  top: 0;
+  right: 0;
+
   &:before,
   &:after{
     content: "";
@@ -128,5 +133,34 @@ body.aside-active{
 body.aside-active{
   .overlay{
     @include show( .5s );
+  }
+}
+
+@media #{$small-only}{
+  .aside-open-container{
+    top: 0;
+    right: 0;
+
+    width: 40px;
+    height: 40px;
+
+    background-color: $black;
+
+    .aside-open{
+      bottom: 0;
+      left: 0;
+
+      margin: auto;
+
+      &:before,
+      &:after,
+      i{
+        background-color: $white;
+      }
+    }
+  }
+
+  .aside-close{
+    right: 27px;
   }
 }

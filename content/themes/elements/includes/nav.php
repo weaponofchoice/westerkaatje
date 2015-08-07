@@ -9,5 +9,7 @@
   wp_nav_menu( $nav );
   ?>
 
-  <a class="aside-open"><i></i></a>
+  <div class="aside-open-container">
+    <a class="aside-open"><i></i></a>
+  </div>
 </nav>
