@@ -1567,24 +1567,26 @@ nav ul li a:focus {
     display: block;
     border-bottom: thin solid #d9ccbb; } }
 aside {
-  -moz-transform: translateX(500px);
-  -o-transform: translateX(500px);
-  -ms-transform: translateX(500px);
-  -webkit-transform: translateX(500px);
-  transform: translateX(500px);
+  -moz-transform: translateX(600px);
+  -o-transform: translateX(600px);
+  -ms-transform: translateX(600px);
+  -webkit-transform: translateX(600px);
+  transform: translateX(600px);
   top: 0;
   right: -17px;
   position: fixed;
   overflow-y: scroll;
   z-index: 9900;
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
   height: 100%;
   background: white; }
   aside .aside-body {
     margin-top: 50px;
     padding: 50px;
     padding-right: 67px; }
+    aside .aside-body a {
+      text-decoration: underline; }
 
 .overlay {
   top: 0;
@@ -1667,11 +1669,11 @@ aside.is-open {
 body.aside-active header,
 body.aside-active main,
 body.aside-active footer {
-  -moz-transform: translateX(-166.6666666667px);
-  -o-transform: translateX(-166.6666666667px);
-  -ms-transform: translateX(-166.6666666667px);
-  -webkit-transform: translateX(-166.6666666667px);
-  transform: translateX(-166.6666666667px); }
+  -moz-transform: translateX(-200px);
+  -o-transform: translateX(-200px);
+  -ms-transform: translateX(-200px);
+  -webkit-transform: translateX(-200px);
+  transform: translateX(-200px); }
 
 .overlay {
   opacity: 0;

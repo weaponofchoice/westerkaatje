@@ -1,4 +1,4 @@
-$aside_w: 500px;
+$aside_w: 600px;
 
 aside{
   @include transform( translateX(#{$aside_w}) );
@@ -19,6 +19,10 @@ aside{
     margin-top: 50px;
     padding: 50px;
     padding-right: 67px;
+
+    a{
+      text-decoration: underline;
+    }
   }
 }
 
