@@ -2,4 +2,13 @@ body.ie{
   main{
     display: block;
   }
+
+  .section-block.text .section-body{
+    max-width: none;
+  }
+
+  .section-block.text .section-body > *{
+    max-width: 600px;
+    margin: auto;
+  }
 }

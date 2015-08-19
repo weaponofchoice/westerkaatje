@@ -2735,3 +2735,8 @@ body.is-mobile.is-loading > * {
     margin-left: -1.25rem; } }
 body.ie main {
   display: block; }
+body.ie .section-block.text .section-body {
+  max-width: none; }
+body.ie .section-block.text .section-body > * {
+  max-width: 600px;
+  margin: auto; }
