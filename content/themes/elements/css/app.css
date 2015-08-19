@@ -1920,7 +1920,7 @@ section {
   color: white; }
 
 .section-block.text .section-body {
-  max-width: 450px;
+  max-width: 600px;
   margin: auto; }
   .section-block.text .section-body > * {
     margin-bottom: 1em; }
