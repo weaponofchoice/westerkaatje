@@ -4,11 +4,12 @@ body.ie{
   }
 
   .section-block.text .section-body{
+    width: 100%;
     max-width: none;
   }
 
   .section-block.text .section-body > *{
     max-width: 600px;
-    margin: auto;
+    margin: 0 auto 1em;
   }
 }
