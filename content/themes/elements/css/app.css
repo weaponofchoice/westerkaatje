@@ -2735,6 +2735,8 @@ body.is-mobile.is-loading > * {
     margin-left: -1.25rem; } }
 body.ie main {
   display: block; }
+body.ie header .subheader img {
+  min-height: 40px; }
 body.ie .section-block.text .section-body {
   width: 100%;
   max-width: none; }
