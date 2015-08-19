@@ -11,5 +11,9 @@ body.ie{
   .section-block.text .section-body > *{
     max-width: 600px;
     margin: 0 auto 1em;
+
+    &:last-child{
+      margin: 0 auto 0;
+    }
   }
 }

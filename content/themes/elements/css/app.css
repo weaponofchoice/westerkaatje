@@ -2741,3 +2741,5 @@ body.ie .section-block.text .section-body {
 body.ie .section-block.text .section-body > * {
   max-width: 600px;
   margin: 0 auto 1em; }
+  body.ie .section-block.text .section-body > *:last-child {
+    margin: 0 auto 0; }
