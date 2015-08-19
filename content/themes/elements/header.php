@@ -18,9 +18,6 @@
 
   <!-- LINK tags -->
   <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/app.css">
-  <!--[if IE]>
-  	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/ie.css" />
-  <![endif]-->
 
   <!-- WP_HEAD() -->
   <?php wp_head(); ?>

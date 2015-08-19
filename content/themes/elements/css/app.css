@@ -2733,3 +2733,5 @@ body.is-mobile.is-loading > * {
   .is-fullwidth {
     width: calc( 100% + (1.25rem * 2) );
     margin-left: -1.25rem; } }
+body.ie main {
+  display: block; }
