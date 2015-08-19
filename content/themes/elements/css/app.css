@@ -1711,7 +1711,7 @@ body.aside-active .overlay {
   .aside-close {
     right: 27px; } }
 .button, form .form-row.form-submit input[type="submit"] {
-  display: block;
+  display: inline-block;
   padding: 30px 50px;
   cursor: pointer;
   outline: none;
