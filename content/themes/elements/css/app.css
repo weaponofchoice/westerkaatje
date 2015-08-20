@@ -2744,8 +2744,9 @@ body.ie .section-block.text .section-body {
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   top: 50%;
+  left: 15px;
   position: absolute;
-  width: 100%;
+  width: calc(100% - 30px);
   max-width: none; }
 body.ie .section-block.text .section-body > * {
   max-width: 600px;
