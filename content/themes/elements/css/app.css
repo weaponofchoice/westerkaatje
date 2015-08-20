@@ -2745,3 +2745,14 @@ body.ie .section-block.text .section-body > * {
   margin: 0 auto 1em; }
   body.ie .section-block.text .section-body > *:last-child {
     margin: 0 auto 0; }
+body.ie footer > p, body.ie footer > input[type="text"],
+body.ie footer > input[type="email"], body.ie footer > div.wpcf7-response-output,
+body.ie footer ul {
+  line-height: 60px; }
+body.ie footer > p, body.ie footer > input[type="text"],
+body.ie footer > input[type="email"], body.ie footer > div.wpcf7-response-output {
+  float: left; }
+body.ie footer ul {
+  float: right; }
+  body.ie footer ul img {
+    border: none; }
