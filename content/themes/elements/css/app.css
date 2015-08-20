@@ -2738,6 +2738,13 @@ body.ie main {
 body.ie header .subheader img {
   min-height: 40px; }
 body.ie .section-block.text .section-body {
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  top: 50%;
+  position: absolute;
   width: 100%;
   max-width: none; }
 body.ie .section-block.text .section-body > * {

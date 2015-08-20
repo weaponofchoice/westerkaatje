@@ -10,6 +10,11 @@ body.ie{
   }
 
   .section-block.text .section-body{
+    @include transform( translateY(-50%) );
+
+    top: 50%;
+    position: absolute;
+
     width: 100%;
     max-width: none;
   }
