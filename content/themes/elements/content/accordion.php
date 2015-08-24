@@ -1,7 +1,7 @@
 <?php
 $id = preg_replace( '/\s+/', '',  strtolower(get_sub_field( 'accordion_c_id' )) );
 ?>
-<section <?php if($id){ echo 'id="' . $id . '"'; } ?> class="section-accordion">
+<section <?php if($id){ echo 'id="' . $id . '"'; } ?> class="section-accordion has_no-pad">
   <div class="section-body">
     <ul>
       <?php
