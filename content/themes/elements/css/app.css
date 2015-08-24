@@ -1940,6 +1940,9 @@ section {
 
   .section-block.image {
     height: 400px; } }
+@media all and (max-width: 1050px) {
+  .section-block {
+    height: 800px; } }
 .section-text {
   clear: both; }
   .section-text .section-body {
