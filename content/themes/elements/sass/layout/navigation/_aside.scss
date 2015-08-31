@@ -1,0 +1,170 @@
+$aside_w: 600px;
+
+aside{
+  @include transform( translateX(#{$aside_w}) );
+
+  top: 0;
+  right: -17px;// This is to hide the scrollbar, widths from: http://www.textfixer.com/tutorials/browser-scrollbar-width.php
+  position: fixed;
+  overflow-y: scroll;
+  z-index: $zIndex-aside;
+
+  width: 100%;
+  max-width: $aside_w;
+  height: 100%;
+
+  background: $white;
+
+  .aside-body{
+    margin-top: 50px;
+    padding: 50px;
+    padding-right: 67px;
+
+    a{
+      text-decoration: underline;
+    }
+  }
+}
+
+// Overlay
+.overlay{
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: $zIndex-overlay;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0,0,0,.3);
+  cursor: pointer;
+}
+
+// Triggers
+.aside-open,
+.aside-open-container,
+.aside-close{
+  top: 11px;
+  right: 40px;
+  position: absolute;
+
+  width: 20px;
+  height: 1em;
+}
+
+.aside-open{
+  top: 0;
+  right: 0;
+
+  &:before,
+  &:after{
+    content: "";
+
+    position: absolute;
+
+    width: 100%;
+    height: 2px;
+
+    background-color: $black;
+  }
+
+  &:after{
+    bottom: 0;
+  }
+
+  i{
+    top: 50%;
+    position: absolute;
+
+    width: 100%;
+    height: 2px;
+    margin-top: -1px;
+
+    background-color: $black;
+  }
+}
+
+.aside-close{
+  @include transform( rotate(45deg) );
+
+  right: 57px;
+  bottom: auto;
+
+  &:before,
+  &:after{
+    content: "";
+
+    top: 50%;
+    position: absolute;
+
+    width: 100%;
+    height: 2px;
+    margin-top: -1px;
+
+    background-color: $black;
+  }
+
+  &:before{
+    @include transform( rotate(90deg) );
+  }
+}
+
+// Animations
+header,
+main,
+footer,
+aside{
+  @include transition( .5s );
+}
+
+aside.is-open{
+  @include transform( translateX(0) );
+}
+
+body.aside-active{
+  header,
+  main,
+  footer{
+    @include transform( translateX(-($aside_w / 3)) );
+  }
+}
+
+// Overlay
+.overlay{
+  @include hide( .5s );
+}
+
+body.aside-active{
+  .overlay{
+    @include show( .5s );
+  }
+}
+
+@media #{$small-only}{
+  .aside-open-container{
+    top: 0;
+    right: 0;
+
+    width: 40px;
+    height: 40px;
+
+    background-color: $black;
+
+    .aside-open{
+      bottom: 0;
+      left: 0;
+
+      margin: auto;
+
+      &:before,
+      &:after,
+      i{
+        background-color: $white;
+      }
+    }
+  }
+
+  .aside-close{
+    right: 27px;
+  }
+}

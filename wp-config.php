@@ -71,7 +71,7 @@ define( 'WP_SITEURL' , 'http://' . $_SERVER['HTTP_HOST'] . '/wordpress' );
 // Add language files to content/languages
 // =============================================
 
-define( 'WPLANG', '' );
+define( 'WPLANG', 'nl_NL' );
 
 // ========================
 // Wordpress debugging mode

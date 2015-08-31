@@ -1,0 +1,50 @@
+// Some extra css for the loser in the browser classroom
+
+body.ie{
+  main{
+    display: block;
+  }
+
+  header .subheader img{
+    min-height: 40px;
+  }
+
+  .section-block.text .section-body{
+    @include transform( translateY(-50%) );
+
+    top: 50%;
+    left: 15px;
+    position: absolute;
+
+    width: calc(100% - 30px);
+    max-width: none;
+  }
+
+  .section-block.text .section-body > *{
+    max-width: 600px;
+    margin: 0 auto 1em;
+
+    &:last-child{
+      margin: 0 auto 0;
+    }
+  }
+
+  footer{
+    > p,
+    ul{
+      line-height: 60px;
+    }
+
+    > p{
+      float: left;
+    }
+
+    ul{
+      float: right;
+
+      img{
+        border: none;
+      }
+    }
+  }
+}

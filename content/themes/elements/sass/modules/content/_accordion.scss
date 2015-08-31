@@ -6,11 +6,54 @@
     margin-bottom: 1em;
   }
 
-  .section-header{
+  ul li > p{
     cursor: pointer;
+    margin-bottom: 1em;
+
+    i{
+      @include transition( .5s );
+
+      top: 0;
+      right: 0;
+      position: absolute;
+
+      width: 1em;
+      height: 1em;
+
+      &:before,
+      &:after{
+        content: "";
+
+        top: 50%;
+        left: 50%;
+        position: absolute;
+
+        width: 1px;
+        height: 13px;
+        margin-top: -6px;
+
+        background: $black;
+      }
+
+      &:after{
+        @include transform( rotate(90deg) );
+      }
+    }
   }
 
-  .section-body{
+  ul li div{
     overflow: hidden;
+
+    p{
+      margin-bottom: 1em;
+    }
+  }
+}
+
+@media #{$small-only}{
+  .section-accordion{
+    ul li > p{
+      padding-right: 1.5em;
+    }
   }
 }

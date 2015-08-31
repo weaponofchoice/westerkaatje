@@ -2,17 +2,18 @@
   width: calc( 50% + 25px );
   height: 720px;
   float: left;
-  
+
+  text-align: center;
   background-color: #f2f2f2;
-  
+
   &.left{
     margin-left: -25px;
   }
-  
+
   &.right{
     margin-right: -25px;
   }
-  
+
   .section-body{
     padding: 0 $column-gutter;
   }
@@ -32,57 +33,60 @@
     top: 0;
     left: 0;
     position: absolute;
-    
+
     width: 100%;
     height: 100%;
-    
+
     li{
       width: 100%;
       height: 100%;
-      
+
       background-repeat: none;
       background-size: cover;
       background-position: center center;
     }
   }
-  
+
   p{
     @extend h1;
     @include transform( translateY(-50%) );
-    
+
     top: 50%;
     right: 0;
     left: 0;
     position: absolute;
-    
+
     max-width: 350px;
     margin: auto;
-    
+
     color: $white;
   }
 }
 
 // Image block with multiple images = slider
 .section-block.image.slider{
-  
+
 }
 
 // Text block
 .section-block.text{
   .section-body{
+    max-width: 600px;
+    margin: auto;
+
     > *{
       margin-bottom: 1em;
     }
-    
+
     a{
       margin-top: 3em;
     }
   }
-  
+
   &.odd{
     background-color: $brown-light;
   }
-  
+
   &.even{
     background-color: $brown;
   }
@@ -95,8 +99,14 @@
     margin-left: -25px;
     margin-right: 0;
   }
-  
+
   .section-block.image{
     height: 400px;
+  }
+}
+
+@media all and (max-width: 1050px){
+  .section-block{
+    height: 800px;
   }
 }

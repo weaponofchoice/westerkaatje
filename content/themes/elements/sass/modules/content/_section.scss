@@ -5,15 +5,15 @@ section{
   padding-bottom: $section-spacing;
   padding-left: $column-gutter / 2;
   padding-right: $column-gutter / 2;
-  
+
   background-color: $white;
   text-align: center;
-  
+
   .section-header,
   .section-body{
     clear: both;
   }
-  
+
   .section-header{
     margin-bottom: $section-spacing / 2;
   }
@@ -21,4 +21,10 @@ section{
 
 .section-header{
   max-width: 600px;
+}
+
+@media #{$small-only}{
+  section{
+    text-align: left;
+  }
 }

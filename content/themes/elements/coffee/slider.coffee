@@ -138,8 +138,8 @@ $ ->
 
         current.removeClass "is-active"
         target.addClass "is-active"
-      ), 3000
-      
+      ), 5000
+
     # Hiding bullets if there's only 1 image
     if image.length < 2
       bullets.hide()

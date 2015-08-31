@@ -1,21 +1,24 @@
 header {
+  position: fixed;
   z-index: $zIndex-header;
-  
+
   width: 100%;
-  
+
+  background-color: $white;
+
   .subheader{
     @include flex;
     @include align-items( flex-end );
     @include justify-content( space-between );
-    
+
     padding: 10px $side-margin;
-    
+
     background-color: $brown;
-    
+
     img{
       width: 300px;
     }
-    
+
     p{
       font-size: 28px;
       color: $white;
@@ -27,6 +30,18 @@ header {
   header{
     .subheader{
       @include flex-direction( column );
+      @include align-items( center );
+
+      p{
+        font-size: 20px;
+        text-align: center;
+      }
     }
+  }
+}
+
+@media #{$small-only}{
+  header{
+    position: relative;
   }
 }
