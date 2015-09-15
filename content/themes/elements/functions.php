@@ -42,7 +42,7 @@ function w3_flush_page_custom( $post_id ) {
 }
 
 // Add Google Analytics code to footer
-add_action('wp_footer', 'add_googleanalytics');
+add_action('wp_head', 'add_googleanalytics');
 function add_googleanalytics() { ?>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
