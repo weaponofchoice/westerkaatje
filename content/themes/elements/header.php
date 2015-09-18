@@ -15,6 +15,7 @@
   <meta charset="<?php bloginfo( 'charset' ); ?>" />
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
+  <meta name="description" content="In de keuken van Westerkaatje wordt uitsluitend gebruik gemaakt van mooie, verse producten en ingrediënten. De buitengewone gerechten wisselen wekelijkes, kijk op onze menu's van Westerkaatje Kralingen en Westerkaatje Noord voor het actuele aanbod.">
 
   <!-- LINK tags -->
   <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/app.css">
