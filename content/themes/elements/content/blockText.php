@@ -1,11 +1,15 @@
 <?php
 // Content
+$icon = get_sub_field( 'blockText_c_icon' );
 $id = preg_replace( '/\s+/', '',  strtolower(get_sub_field( 'blockText_c_id' )) );
 $text = get_sub_field( 'blockText_c_text' );
 ?>
 <section <?php if($id){ echo 'id="' . $id . '"'; } ?> class="section-block text">
   <div class="section-body">
-    <?php echo $text; ?>
+    <?php
+    echo '<img src="' . $icon['url'] . '">';
+    echo $text;
+    ?>
 
     <?php
     // Optional button

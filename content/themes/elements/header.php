@@ -15,7 +15,7 @@
   <meta charset="<?php bloginfo( 'charset' ); ?>" />
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
-  <meta name="description" content="In de keuken van Westerkaatje wordt uitsluitend gebruik gemaakt van mooie, verse producten en ingrediënten. De buitengewone gerechten wisselen wekelijkes, kijk op onze menu's van Westerkaatje Kralingen en Westerkaatje Noord voor het actuele aanbod.">
+  <meta name="description" content="Westerkaatje catert voor bedrijven, bij mensen thuis of op locatie, maar heeft ook een eigen traiteur en trattoria. De mediterrane kook- en eetcultuur is daarbij het voornaamste kenmerk. Daarbij maken we zoveel mogelijk gebruik van biologische en seizoensgebonden producten. Wij verzorgen feesten zowel voor particulieren als voor bedrijven; culturele evenementen, besloten congressen, symposia en recepties. Variërend van een tapasbuffet, een volledig uitgeserveerd meergangenmenu maar ook lunches, borrels, een hight tea of gewoon koffie met taart! Bij Westerkaatje Traiteur kunt u zelf voor een redelijke prijs een gezonde, verse en heerlijke maaltijd samenstellen. Alles wat bij de aankleding van een tafel hoort is er ook te koop. In onze Trattoria kunt u ook ter plekke zitten, proeven en genieten van al het lekkers dat de keuken van Westerkaatje voor u op tafel zet.">
 
   <!-- LINK tags -->
   <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/app.css">
